@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Now | Kings City</title>
+  <meta name="description"
+    content="Book your Kings City workspace — co-working desks, meeting rooms, events space, private offices and virtual office packages.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/book_now.css">
+  <link rel="stylesheet" href="../css/forms.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <style>
+    .accent-strip {
+      height: 5px;
+      background: linear-gradient(90deg, var(--clr-green-lt), var(--clr-green-md), var(--clr-rose-lt), var(--clr-lavender), var(--clr-amber))
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Announcement Bar ── -->
+  <div class="ann-bar" id="ann-bar">
+    <div class="ann-inner">
+      <span>See our Virtual Office Packages</span>
+      <a href="https://kingscity.com.ph/pages/virtual-office-packages" target="_blank" rel="noopener"
+        class="ann-link">View Packages &rarr;</a>
+    </div>
+    <button class="ann-close" id="ann-close" aria-label="Dismiss">&times;</button>
+  </div>
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-wrap">
+      <a href="../index.html" class="nav-logo">
+        <div>
+          <img src="../images/kings_city_logo_white.png" alt="Kings City Logo" class="logo-img-white">
+          <img src="../images/kings_city_logo_black.png" alt="Kings City Logo" class="logo-img-color">
+        </div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="../who_we_are.html">Who We Are</a></li>
+        <li class="nav-drop">
+          <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true">
+            What We Offer <span class="caret" aria-hidden="true"></span>
+          </button>
+          <ul class="drop-menu" role="menu">
+            <li><a href="spaces.html" role="menuitem">Spaces</a></li>
+            <li><a href="offshoring.html" role="menuitem">Offshoring</a></li>
+          </ul>
+        </li>
+        <li><a href="book_now.html">Book Now</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="tel:0383759477" class="nav-phone">+63 --- --- ---</a>
+        <div class="nav-drop flag-drop">
+          <button class="nav-drop-btn flag-btn" aria-expanded="false" aria-haspopup="true"
+            style="display: flex; align-items: center; gap: 0.3rem; padding: 0.5rem; background: transparent; border: none; cursor: pointer;">
+            <img src="https://flagcdn.com/w20/ph.png" alt="Philippines" width="20" style="border-radius: 2px;">
+            <span class="caret" aria-hidden="true"></span>
+          </button>
+          <ul class="drop-menu flag-menu" role="menu" style="min-width: 140px; padding: 0.5rem; border-radius: 8px;">
+            <li><a href="#" role="menuitem"
+                style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem;"><img
+                  src="https://flagcdn.com/w20/ph.png" alt="Philippines" width="20" style="border-radius: 2px;">
+                Philippines</a></li>
+            <li><a href="#" role="menuitem"
+                style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem;"><span
+                  style="font-size: 16px;">🌏</span> Asia</a></li>
+            <li><a href="#" role="menuitem"
+                style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem;"><img
+                  src="https://flagcdn.com/w20/eu.png" alt="Europe" width="20" style="border-radius: 2px;"> Europe</a>
+            </li>
+          </ul>
+        </div>
+        <a href="https://kingscity.com.ph/" target="_blank" rel="noopener" class="btn btn-nav-outline">Shop</a>
+        <a href="apply.html" class="btn btn-nav-outline">Apply</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Mobile Drawer ── -->
+  <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation">
+    <div class="drawer-head">
+      <img src="../images/kings_city_logo_black.png" alt="Kings City Logo" class="drawer-logo-img">
+      <button class="drawer-close" id="drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="../who_we_are.html">Who We Are</a>
+      <a href="spaces.html">Spaces</a>
+      <a href="offshoring.html">Offshoring</a>
+      <a href="book_now.html">Book Now</a>
+      <a href="apply.html">Apply</a>
+      <a href="https://kingscity.com.ph/" target="_blank" rel="noopener">Shop</a>
+    </nav>
+    <div class="drawer-foot">
+      <a href="tel:0383759477">03 8375 9477</a>
+      <a href="mailto:kingscity@kingsgroup.com.ph">kingscity@kingsgroup.com.ph</a>
+    </div>
+  </aside>
+
+  <!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+  <section class="book-hero">
+    <div class="book-hero-bg">
+      <div class="img-ph ph-book-hero"><img src="../images/meeting_rooms.jpg" alt="Book Your Space"
+          style="width:100%; height:100%; object-fit:cover;"><span class="ph-label" style="display:none">Book Your Space
+          — Kings City</span></div>
+      <div class="book-hero-overlay"></div>
+    </div>
+    <div class="book-hero-content">
+      <span class="book-hero-eyebrow">Reservations</span>
+      <h1>Book Your Space</h1>
+      <p>We're a beautiful space designed for connections to happen. Our communal tables, working stations, events and
+        networking opportunities give you the solution to your monotonous daily routine.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+     TAB NAVIGATION
+══════════════════════════════════════════ -->
+  <div class="book-type-nav" role="navigation" aria-label="Booking types">
+    <div class="book-type-inner">
+      <button class="book-tab active" data-tab="coworking">
+        <span class="tab-icon" id="icon-cowork"></span> Co-Working
+      </button>
+      <button class="book-tab" data-tab="meeting_small">
+        <span class="tab-icon" id="icon-meeting-sm"></span> Small Meeting Room
+      </button>
+      <button class="book-tab" data-tab="meeting_conf">
+        <span class="tab-icon" id="icon-meeting-cf"></span> Conference Room
+      </button>
+      <button class="book-tab" data-tab="events">
+        <span class="tab-icon" id="icon-events"></span> Events Place
+      </button>
+      <button class="book-tab" data-tab="office">
+        <span class="tab-icon" id="icon-office"></span> Office Leasing
+      </button>
+      <button class="book-tab" data-tab="virtual">
+        <span class="tab-icon" id="icon-virtual"></span> Virtual Office
+      </button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+     SECTION: CO-WORKING
+══════════════════════════════════════════ -->
+  <section class="book-section active" data-book-section="coworking">
+    <div class="container">
+      <div class="book-layout">
+
+        <!-- Left: showcase -->
+        <div class="book-space-showcase">
+          <div class="book-showcase-img">
+            <div class="img-ph ph-cowork"><img src="../images/coworking_space.jpg" alt="Co-Working Space"><span
+                class="ph-label" style="display:none">Co-Working Space</span></div>
+          </div>
+          <div class="book-showcase-details">
+            <span class="eyebrow">Co-Working</span>
+            <h3>Hot Desks &amp; Communal Tables</h3>
+            <p>Staying true to our purpose, it is our mission to contribute to the growth of the economy by continuously
+              providing jobs, beautiful workspaces and flexible offshoring solutions for our members. Our vibrant
+              co-working environment helps you break your monotonous daily routine.</p>
+            <div class="book-amenity-list">
+              <span class="book-amenity">High-Speed Wi-Fi</span>
+              <span class="book-amenity">Printing &amp; Scanning</span>
+              <span class="book-amenity">Kitchen Access</span>
+              <span class="book-amenity">In-House Cafe</span>
+              <span class="book-amenity">Lockers Available</span>
+              <span class="book-amenity">24/7 Access</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: booking form -->
+        <div class="book-form-card">
+          <div class="book-form-head">
+            <h3>Book Co-Working</h3>
+            <p>Select your dates and duration below</p>
+          </div>
+          <div class="book-form-body">
+            <div class="book-form-price-preview">
+              <span>Estimated Price</span>
+              <strong class="bfp-price">Php 500</strong>
+            </div>
+            <form class="book-form" id="book-form-cowork" novalidate>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="cw-name">Full Name</label>
+                <input class="form-input" type="text" id="cw-name" name="full_name" placeholder="Your full name"
+                  required>
+                <span class="form-error-msg">This field is required.</span>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="cw-email">Email Address</label>
+                <input class="form-input" type="email" id="cw-email" name="email" placeholder="you@company.com"
+                  required>
+                <span class="form-error-msg">Please enter a valid email.</span>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="cw-phone">Phone Number</label>
+                <input class="form-input" type="tel" id="cw-phone" name="phone" placeholder="+63 XXX XXX XXXX">
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="cw-duration">Duration</label>
+                <select class="form-select book-duration-select" id="cw-duration" name="duration">
+                  <option value="day">Day Pass — Php 500</option>
+                  <option value="week">Weekly Pass — Php 2,500</option>
+                  <option value="month">Monthly Pass — Php 6,000</option>
+                  <option value="annual">Annual Pass — Php 60,000</option>
+                </select>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="cw-date">Start Date</label>
+                <input class="form-input" type="date" id="cw-date" name="start_date" required>
+                <span class="form-error-msg">Please select a start date.</span>
+              </div>
+              <div class="form-group" style="margin-bottom:1.5rem">
+                <label class="form-label" for="cw-notes">Special Requests</label>
+                <textarea class="form-textarea" id="cw-notes" name="notes" rows="3"
+                  placeholder="Any special requirements..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-green"
+                style="width:100%;justify-content:center;font-size:.95rem;padding:1rem">Confirm Booking</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+     SECTION: SMALL MEETING ROOM
+══════════════════════════════════════════ -->
+  <section class="book-section" data-book-section="meeting_small">
+    <div class="container">
+      <div class="book-layout">
+        <div class="book-space-showcase">
+          <div class="book-showcase-img">
+            <div class="img-ph ph-meeting"><img src="../images/meeting_rooms.jpg" alt="Small Meeting Room"><span
+                class="ph-label" style="display:none">Small Meeting Room</span></div>
+          </div>
+          <div class="book-showcase-details">
+            <span class="eyebrow">Up to 6 Pax</span>
+            <h3>Small Meeting Room</h3>
+            <p>A meeting is like a delicate eco-system — all the participants and amenities have to be in perfect
+              balance for the call or presentation to reach its greatest potential. Our small meeting rooms are ideal
+              for focused team meetings and client calls.</p>
+            <div class="book-amenity-list">
+              <span class="book-amenity">Up to 6 Participants</span>
+              <span class="book-amenity">HD Display Screen</span>
+              <span class="book-amenity">Video Conferencing</span>
+              <span class="book-amenity">High-Speed Wi-Fi</span>
+              <span class="book-amenity">Whiteboard</span>
+              <span class="book-amenity">Kitchen Access</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-form-card">
+          <div class="book-form-head">
+            <h3>Book Small Meeting Room</h3>
+            <p>Up to 6 participants</p>
+          </div>
+          <div class="book-form-body">
+            <div class="book-form-price-preview">
+              <span>Estimated Price</span>
+              <strong class="bfp-price">Php 500</strong>
+            </div>
+            <form class="book-form" id="book-form-sm" novalidate>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="sm-name">Full Name</label>
+                <input class="form-input" type="text" id="sm-name" name="full_name" placeholder="Your full name"
+                  required>
+                <span class="form-error-msg">This field is required.</span>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="sm-email">Email Address</label>
+                <input class="form-input" type="email" id="sm-email" name="email" placeholder="you@company.com"
+                  required>
+                <span class="form-error-msg">Please enter a valid email.</span>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="sm-duration">Duration</label>
+                <select class="form-select book-duration-select" id="sm-duration" name="duration">
+                  <option value="hourly">Per Hour — Php 500</option>
+                  <option value="day">Full Day — Php 4,000</option>
+                </select>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="sm-date">Date</label>
+                <input class="form-input" type="date" id="sm-date" name="start_date" required>
+                <span class="form-error-msg">Please select a date.</span>
+              </div>
+              <div class="form-row" style="margin-bottom:1rem">
+                <div class="form-group">
+                  <label class="form-label" for="sm-start">Start Time</label>
+                  <input class="form-input" type="time" id="sm-start" name="start_time">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="sm-end">End Time</label>
+                  <input class="form-input" type="time" id="sm-end" name="end_time">
+                </div>
+              </div>
+              <div class="form-group" style="margin-bottom:1.5rem">
+                <label class="form-label" for="sm-persons">Number of Participants</label>
+                <select class="form-select" id="sm-persons" name="persons">
+                  <option value="1">1 person</option>
+                  <option value="2">2 people</option>
+                  <option value="3">3 people</option>
+                  <option value="4">4 people</option>
+                  <option value="5">5 people</option>
+                  <option value="6">6 people</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-green"
+                style="width:100%;justify-content:center;font-size:.95rem;padding:1rem">Confirm Booking</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+     SECTION: CONFERENCE ROOM
+══════════════════════════════════════════ -->
+  <section class="book-section" data-book-section="meeting_conf">
+    <div class="container">
+      <div class="book-layout">
+        <div class="book-space-showcase">
+          <div class="book-showcase-img">
+            <div class="img-ph ph-meeting"><img src="../images/meeting_rooms.jpg" alt="Conference Room"><span
+                class="ph-label" style="display:none">Conference Room</span></div>
+          </div>
+          <div class="book-showcase-details">
+            <span class="eyebrow">Up to 12 Pax</span>
+            <h3>Conference Room</h3>
+            <p>To make the best impression, your company can reserve a private and professional conference room with
+              comfortable furniture, high-speed Internet, kitchen facilities, state-of-the-art presentation equipment or
+              anything else you need to produce your best work.</p>
+            <div class="book-amenity-list">
+              <span class="book-amenity">Up to 12 Participants</span>
+              <span class="book-amenity">4K Presentation Screen</span>
+              <span class="book-amenity">Video Conferencing</span>
+              <span class="book-amenity">High-Speed Wi-Fi</span>
+              <span class="book-amenity">Whiteboard</span>
+              <span class="book-amenity">Full Kitchen</span>
+              <span class="book-amenity">Catering Available</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-form-card">
+          <div class="book-form-head">
+            <h3>Book Conference Room</h3>
+            <p>Up to 12 participants</p>
+          </div>
+          <div class="book-form-body">
+            <div class="book-form-price-preview">
+              <span>Estimated Price</span>
+              <strong class="bfp-price">Php 1,000</strong>
+            </div>
+            <form class="book-form" id="book-form-conf" novalidate>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="cf-name">Full Name</label>
+                <input class="form-input" type="text" id="cf-name" name="full_name" placeholder="Your full name"
+                  required>
+                <span class="form-error-msg">This field is required.</span>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="cf-email">Email Address</label>
+                <input class="form-input" type="email" id="cf-email" name="email" placeholder="you@company.com"
+                  required>
+                <span class="form-error-msg">Please enter a valid email.</span>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="cf-company">Company Name</label>
+                <input class="form-input" type="text" id="cf-company" name="company" placeholder="Your company">
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="cf-duration">Duration</label>
+                <select class="form-select book-duration-select" id="cf-duration" name="duration">
+                  <option value="hourly">Per Hour — Php 1,000</option>
+                  <option value="day">Full Day — Php 8,000</option>
+                </select>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="cf-date">Date</label>
+                <input class="form-input" type="date" id="cf-date" name="start_date" required>
+                <span class="form-error-msg">Please select a date.</span>
+              </div>
+              <div class="form-row" style="margin-bottom:1rem">
+                <div class="form-group">
+                  <label class="form-label" for="cf-start">Start Time</label>
+                  <input class="form-input" type="time" id="cf-start" name="start_time">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="cf-end">End Time</label>
+                  <input class="form-input" type="time" id="cf-end" name="end_time">
+                </div>
+              </div>
+              <div class="form-group" style="margin-bottom:1.5rem">
+                <label class="form-label" for="cf-notes">Special Requirements</label>
+                <textarea class="form-textarea" id="cf-notes" name="notes" rows="3"
+                  placeholder="Catering, AV setup, etc."></textarea>
+              </div>
+              <button type="submit" class="btn btn-green"
+                style="width:100%;justify-content:center;font-size:.95rem;padding:1rem">Confirm Booking</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+     SECTION: EVENTS PLACE
+══════════════════════════════════════════ -->
+  <section class="book-section" data-book-section="events">
+    <div class="container">
+      <div class="book-layout">
+        <div class="book-space-showcase">
+          <div class="book-showcase-img">
+            <div class="img-ph ph-event"><img src="../images/engagements.jpg" alt="Events Place"><span class="ph-label"
+                style="display:none">Events Place</span></div>
+          </div>
+          <div class="book-showcase-details">
+            <span class="eyebrow">Up to 100+ Guests</span>
+            <h3>Events Place</h3>
+            <p>We offer venue for your company's special events — a space perfect for more intimate functions. The
+              layout can accommodate over 100 guests if there will be no tables included in the layout. Perfect for
+              product launches, team events, training seminars and networking functions.</p>
+            <div class="book-amenity-list">
+              <span class="book-amenity">100+ Guests</span>
+              <span class="book-amenity">Flexible Layouts</span>
+              <span class="book-amenity">AV Equipment</span>
+              <span class="book-amenity">Stage Area</span>
+              <span class="book-amenity">Catering Ready</span>
+              <span class="book-amenity">Parking Available</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-form-card">
+          <div class="book-form-head">
+            <h3>Book Events Place</h3>
+            <p>Functions, launches &amp; seminars</p>
+          </div>
+          <div class="book-form-body">
+            <div class="book-form-price-preview">
+              <span>Estimated Price</span>
+              <strong class="bfp-price">Php 5,000</strong>
+            </div>
+            <form class="book-form" id="book-form-ev" novalidate>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="ev-name">Full Name</label>
+                <input class="form-input" type="text" id="ev-name" name="full_name" placeholder="Your full name"
+                  required>
+                <span class="form-error-msg">This field is required.</span>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="ev-email">Email Address</label>
+                <input class="form-input" type="email" id="ev-email" name="email" placeholder="you@company.com"
+                  required>
+                <span class="form-error-msg">Please enter a valid email.</span>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="ev-phone">Phone Number</label>
+                <input class="form-input" type="tel" id="ev-phone" name="phone" placeholder="+63 XXX XXX XXXX" required>
+                <span class="form-error-msg">This field is required.</span>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="ev-event-type">Event Type</label>
+                <select class="form-select" id="ev-event-type" name="event_type">
+                  <option value="">Select event type</option>
+                  <option value="launch">Product / Brand Launch</option>
+                  <option value="seminar">Training / Seminar</option>
+                  <option value="networking">Networking Event</option>
+                  <option value="party">Company Party</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="ev-duration">Duration</label>
+                <select class="form-select book-duration-select" id="ev-duration" name="duration">
+                  <option value="hourly">Per Hour — Php 5,000</option>
+                  <option value="4hr">4 Hours — Php 18,000</option>
+                  <option value="fullday">Full Day — Php 40,000</option>
+                </select>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="ev-date">Event Date</label>
+                <input class="form-input" type="date" id="ev-date" name="start_date" required>
+                <span class="form-error-msg">Please select a date.</span>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="ev-guests">Expected Guests</label>
+                <input class="form-input" type="number" id="ev-guests" name="persons" placeholder="e.g. 80" min="1"
+                  max="120">
+              </div>
+              <div class="form-group" style="margin-bottom:1.5rem">
+                <label class="form-label" for="ev-notes">Additional Requirements</label>
+                <textarea class="form-textarea" id="ev-notes" name="notes" rows="3"
+                  placeholder="Catering, tables, stage, AV needs..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-green"
+                style="width:100%;justify-content:center;font-size:.95rem;padding:1rem">Confirm Booking</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+     SECTION: OFFICE LEASING
+══════════════════════════════════════════ -->
+  <section class="book-section" data-book-section="office">
+    <div class="container">
+      <div class="book-layout">
+        <div class="book-space-showcase">
+          <div class="book-showcase-img">
+            <div class="img-ph ph-office"><img src="../images/office_leasing.jpg" alt="Private Office"><span
+                class="ph-label" style="display:none">Private Office</span></div>
+          </div>
+          <div class="book-showcase-details">
+            <span class="eyebrow">Private Offices</span>
+            <h3>Office Leasing</h3>
+            <p>Whether your company is an established enterprise or a growing startup, we offer office spaces that
+              inspire your most impactful work to be more productive. Fully equipped, fully managed — so your team can
+              focus on what matters.</p>
+            <div class="book-amenity-list">
+              <span class="book-amenity">6, 9 or 14 Seats</span>
+              <span class="book-amenity">Dedicated IT Support</span>
+              <span class="book-amenity">High-Speed Fibre</span>
+              <span class="book-amenity">In-House Cafe</span>
+              <span class="book-amenity">Meeting Rooms</span>
+              <span class="book-amenity">HR Support</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-form-card">
+          <div class="book-form-head">
+            <h3>Enquire — Office Leasing</h3>
+            <p>Our team will contact you within 24 hours</p>
+          </div>
+          <div class="book-form-body">
+            <div class="book-form-price-preview">
+              <span>Starting From</span>
+              <strong class="bfp-price">Php 48,000</strong>
+            </div>
+            <form class="book-form" id="book-form-off" novalidate>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="off-name">Full Name</label>
+                <input class="form-input" type="text" id="off-name" name="full_name" placeholder="Your full name"
+                  required>
+                <span class="form-error-msg">This field is required.</span>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="off-email">Email Address</label>
+                <input class="form-input" type="email" id="off-email" name="email" placeholder="you@company.com"
+                  required>
+                <span class="form-error-msg">Please enter a valid email.</span>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="off-phone">Phone Number</label>
+                <input class="form-input" type="tel" id="off-phone" name="phone" placeholder="+63 XXX XXX XXXX"
+                  required>
+                <span class="form-error-msg">This field is required.</span>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="off-company">Company Name</label>
+                <input class="form-input" type="text" id="off-company" name="company" placeholder="Your company"
+                  required>
+                <span class="form-error-msg">This field is required.</span>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="off-seats">Office Size</label>
+                <select class="form-select book-duration-select" id="off-seats" name="duration">
+                  <option value="6seat">6-Seat Office — Php 48,000 / mo</option>
+                  <option value="9seat">9-Seat Office — Php 55,000 / mo</option>
+                  <option value="14seat">14-Seat Office — Php 112,000 / mo</option>
+                </select>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="off-date">Preferred Move-In Date</label>
+                <input class="form-input" type="date" id="off-date" name="start_date">
+              </div>
+              <div class="form-group" style="margin-bottom:1.5rem">
+                <label class="form-label" for="off-notes">Additional Notes</label>
+                <textarea class="form-textarea" id="off-notes" name="notes" rows="3"
+                  placeholder="Tell us about your business needs..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-green"
+                style="width:100%;justify-content:center;font-size:.95rem;padding:1rem">Submit Enquiry</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+     SECTION: VIRTUAL OFFICE
+══════════════════════════════════════════ -->
+  <section class="book-section" data-book-section="virtual">
+    <div class="container">
+      <div class="book-layout">
+        <div class="book-space-showcase">
+          <div class="book-showcase-img">
+            <div class="img-ph ph-virtual"><img src="../images/community.jpg" alt="Virtual Office"><span
+                class="ph-label" style="display:none">Virtual Office</span></div>
+          </div>
+          <div class="book-showcase-details">
+            <span class="eyebrow">Work From Anywhere</span>
+            <h3>Virtual Office</h3>
+            <p>Virtual office is part of a flexible workspace that provides businesses with any combination of services,
+              space and/or technology — without those businesses bearing the capital expenses of owning or leasing a
+              traditional office.</p>
+            <div class="book-amenity-list">
+              <span class="book-amenity">Business Address</span>
+              <span class="book-amenity">Mail Handling</span>
+              <span class="book-amenity">Call Answering</span>
+              <span class="book-amenity">Meeting Room Credits</span>
+              <span class="book-amenity">Co-Working Access</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-form-card">
+          <div class="book-form-head">
+            <h3>Book Virtual Office</h3>
+            <p>Standard &amp; Pro plans available</p>
+          </div>
+          <div class="book-form-body">
+            <div class="book-form-price-preview">
+              <span>Starting From</span>
+              <strong class="bfp-price">Php 3,000</strong>
+            </div>
+            <form class="book-form" id="book-form-virt" novalidate>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="vt-name">Full Name</label>
+                <input class="form-input" type="text" id="vt-name" name="full_name" placeholder="Your full name"
+                  required>
+                <span class="form-error-msg">This field is required.</span>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="vt-email">Email Address</label>
+                <input class="form-input" type="email" id="vt-email" name="email" placeholder="you@company.com"
+                  required>
+                <span class="form-error-msg">Please enter a valid email.</span>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="vt-phone">Phone Number</label>
+                <input class="form-input" type="tel" id="vt-phone" name="phone" placeholder="+63 XXX XXX XXXX" required>
+                <span class="form-error-msg">This field is required.</span>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="vt-company">Business Name</label>
+                <input class="form-input" type="text" id="vt-company" name="company" placeholder="Your business name"
+                  required>
+                <span class="form-error-msg">This field is required.</span>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem">
+                <label class="form-label" for="vt-plan">Plan</label>
+                <select class="form-select book-duration-select" id="vt-plan" name="duration">
+                  <option value="std_month">Standard / Month — Php 3,000</option>
+                  <option value="std_year">Standard / Year — Php 30,000</option>
+                  <option value="pro_month">Pro / Month — Php 5,000</option>
+                  <option value="pro_year">Pro / Year — Php 50,000</option>
+                </select>
+              </div>
+              <div class="form-group" style="margin-bottom:1.5rem">
+                <label class="form-label" for="vt-notes">Business Description</label>
+                <textarea class="form-textarea" id="vt-notes" name="notes" rows="3"
+                  placeholder="Brief description of your business..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-green"
+                style="width:100%;justify-content:center;font-size:.95rem;padding:1rem">Confirm Subscription</button>
+              <p style="font-size:.75rem;color:var(--ink-40);text-align:center;margin-top:.75rem">
+                Or view full packages at <a href="https://kingscity.com.ph/pages/virtual-office-packages"
+                  target="_blank" style="color:var(--clr-green-dk);font-weight:600">kingscity.com.ph</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+     BOOKING CONFIRMATION (hidden until submit)
+══════════════════════════════════════════ -->
+  <div class="book-confirm" id="booking-confirm">
+    <div class="container">
+      <div class="confirm-check">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <span class="eyebrow" style="display:block;text-align:center">Booking Received</span>
+      <h2>You're All Set!</h2>
+      <p>Thank you for your booking request. Our team will confirm your reservation and send a confirmation email within
+        24 hours. If you have any questions, call us on <a href="tel:0383759477"
+          style="color:var(--clr-green-dk);font-weight:600">03 8375 9477</a>.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="spaces.html" class="btn btn-primary btn-lg">Browse More Spaces</a>
+        <a href="../index.html" class="btn btn-outline btn-lg">Back to Home</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+     CONTACT BAR
+══════════════════════════════════════════ -->
+  <section style="background:var(--clr-green-lt);padding:3rem 0">
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem">
+        <div>
+          <h3 style="margin-bottom:.35rem">Need Help Booking?</h3>
+          <p style="margin:0">Our team is happy to help you find the perfect space for your needs.</p>
+        </div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="tel:0383759477" class="btn btn-primary">Call 03 8375 9477</a>
+          <a href="mailto:kingscity@kingsgroup.com.ph" class="btn btn-outline">Email Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <div class="accent-strip"></div>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-brand-name">KINGS CITY</span>
+          <span class="footer-brand-sub">A Community of Jobs &amp; Workspaces</span>
+          <p class="footer-address">Ground Level, RCS Building,<br>Doña Soledad Ave, Better Living,<br>Parañaque City,
+            Philippines</p>
+          <div class="footer-contacts">
+            <a href="tel:0383759477">03 8375 9477</a>
+            <a href="mailto:kingscity@kingsgroup.com.ph">kingscity@kingsgroup.com.ph</a>
+          </div>
+          <span class="footer-social-label">Connect</span>
+          <div class="social-row">
+            <a href="https://instagram.com/kingscityph" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/KingsCityPH/" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+              </svg>
+            </a>
+            <a href="mailto:kingscity@kingsgroup.com.ph" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul>
+            <li><a href="../who_we_are.html">Who We Are</a></li>
+            <li><a href="spaces.html">Spaces</a></li>
+            <li><a href="offshoring.html">Offshoring</a></li>
+            <li><a href="apply.html">Apply</a></li>
+            <li><a href="https://kingscity.com.ph/" target="_blank" rel="noopener">Shop</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Spaces</h4>
+          <ul>
+            <li><a href="spaces.html#coworking">Co-Working</a></li>
+            <li><a href="spaces.html#meeting">Meeting Rooms</a></li>
+            <li><a href="spaces.html#events">Events Place</a></li>
+            <li><a href="spaces.html#office">Office Leasing</a></li>
+            <li><a href="spaces.html#virtual">Virtual Office</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-col-title">Stay In The Loop</h4>
+          <p>Drop your info below to get marketing emails you'll actually want to open from The Kings.</p>
+          <form class="nl-form" id="nl-form" novalidate>
+            <input type="email" placeholder="Your email address" required aria-label="Email address">
+            <button type="submit" class="btn btn-primary">Join</button>
+            <div class="nl-success" id="nl-success">Thanks for submitting!</div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 The Kings City. All rights reserved.</p>
+        <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/book_now.js"></script>
+  <script src="../js/forms.js"></script>
+  <script src="../js/footer.js"></script>
+  <script>
+    // Assign tab icons via JS (no emoji API, pure character references)
+    document.getElementById('icon-cowork').innerHTML = '';
+    document.getElementById('icon-meeting-sm').innerHTML = '';
+    document.getElementById('icon-meeting-cf').innerHTML = '';
+    document.getElementById('icon-events').innerHTML = '';
+    document.getElementById('icon-office').innerHTML = '';
+    document.getElementById('icon-virtual').innerHTML = '';
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+/* ================================================================
+   KINGS CITY — apply.css
+================================================================ */
+
+/* ── Page hero ── */
+.apply-hero {
+  background: var(--clr-dark);
+  position: relative;
+  overflow: hidden;
+  padding: calc(var(--nav-h) + 80px) 0 80px;
+  text-align: center;
+}
+
+.apply-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 60%, rgba(213, 237, 206, .12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.apply-hero h1 {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  margin-bottom: .75rem
+}
+
+.apply-hero p {
+  color: rgba(255, 255, 255, .65);
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+  margin: 0 auto
+}
+
+/* ── Benefits strip ── */
+.apply-benefits {
+  background: var(--clr-green-lt);
+  padding: 3rem 0;
+}
+
+.apply-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.apply-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.apply-benefit-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--clr-green-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.apply-benefit-icon svg {
+  width: 22px;
+  height: 22px;
+  color: var(--clr-dark)
+}
+
+.apply-benefit-text strong {
+  display: block;
+  font-size: .95rem;
+  margin-bottom: .25rem
+}
+
+.apply-benefit-text span {
+  font-size: .85rem;
+  color: var(--ink-60)
+}
+
+/* ── Main layout ── */
+.apply-layout {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 4rem;
+  align-items: start;
+  padding: 80px 0;
+}
+
+/* ── Form wrapper ── */
+.apply-form-section {}
+
+.apply-form-section h2 {
+  margin-bottom: .5rem
+}
+
+.apply-form-section>p {
+  margin-bottom: 2.5rem
+}
+
+/* ── Sidebar ── */
+.apply-sidebar {
+  position: sticky;
+  top: calc(var(--nav-h) + 2rem)
+}
+
+.apply-sidebar-card {
+  background: #fff;
+  border: 1px solid var(--ink-10);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .06);
+}
+
+.apply-sidebar-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: .75rem
+}
+
+.apply-sidebar-card p {
+  font-size: .875rem
+}
+
+.apply-sidebar-card .apply-contact-list {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.apply-sidebar-card .apply-contact-list a {
+  font-size: .875rem;
+  font-weight: 500;
+  color: var(--clr-green-dk);
+  transition: opacity .2s;
+}
+
+.apply-sidebar-card .apply-contact-list a:hover {
+  opacity: .75;
+  text-decoration: none
+}
+
+.apply-accent-card {
+  background: linear-gradient(135deg, var(--clr-green-dk), #1f4e33);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  color: #fff;
+}
+
+.apply-accent-card h3 {
+  color: #fff;
+  font-size: 1.15rem;
+  margin-bottom: .75rem
+}
+
+.apply-accent-card p {
+  color: rgba(255, 255, 255, .7);
+  font-size: .875rem;
+  margin-bottom: 1.5rem
+}
+
+.apply-accent-card .stat-row {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem
+}
+
+.apply-accent-card .mini-stat strong {
+  display: block;
+  font-family: var(--f-head);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.apply-accent-card .mini-stat span {
+  font-size: .72rem;
+  color: rgba(255, 255, 255, .55);
+  font-weight: 500
+}
+
+/* ── Success state ── */
+.apply-success {
+  text-align: center;
+  padding: 80px 0;
+}
+
+.apply-success-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--clr-green-lt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+}
+
+.apply-success-icon svg {
+  width: 40px;
+  height: 40px;
+  color: var(--clr-green-dk)
+}
+
+.apply-success h2 {
+  margin-bottom: .75rem
+}
+
+.apply-success p {
+  max-width: 480px;
+  margin: 0 auto 2rem
+}
+
+/* ── Responsive ── */
+@media(max-width:1024px) {
+  .apply-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem
+  }
+
+  .apply-sidebar {
+    position: static
+  }
+
+  .apply-benefits-grid {
+    grid-template-columns: 1fr
+  }
+}

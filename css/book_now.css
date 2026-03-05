@@ -1,0 +1,360 @@
+/* ================================================================
+   KINGS CITY — book_now.css
+================================================================ */
+
+/* ── Hero ── */
+.book-hero {
+  position: relative;
+  min-height: 55vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--clr-dark);
+  padding-bottom: 0;
+}
+
+.book-hero-bg {
+  position: absolute;
+  inset: 0
+}
+
+.book-hero-bg .img-ph {
+  height: 100%;
+  opacity: .5
+}
+
+.book-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(17, 17, 17, .9) 0%, rgba(17, 17, 17, .4) 60%, transparent 100%);
+}
+
+.book-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+  padding-top: calc(var(--nav-h) + 60px);
+  padding-bottom: 60px;
+}
+
+.book-hero-eyebrow {
+  display: inline-block;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--clr-green-md);
+  border: 1px solid rgba(159, 211, 175, .3);
+  padding: .32rem .85rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.25rem;
+}
+
+.book-hero h1 {
+  color: #fff;
+  margin-bottom: 1rem;
+  max-width: 680px
+}
+
+.book-hero p {
+  color: rgba(255, 255, 255, .65);
+  max-width: 540px;
+  margin-bottom: 2rem
+}
+
+/* ── Booking nav pills ── */
+.book-type-nav {
+  background: #fff;
+  border-bottom: 1px solid var(--ink-10);
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 90;
+}
+
+.book-type-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.book-type-inner::-webkit-scrollbar {
+  display: none
+}
+
+.book-tab {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: 1.1rem 1.4rem;
+  font-family: var(--f-body);
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--ink-60);
+  background: none;
+  border: none;
+  border-bottom: 2.5px solid transparent;
+  cursor: pointer;
+  transition: color .22s, border-color .22s;
+  white-space: nowrap;
+}
+
+.book-tab .tab-icon {
+  font-size: 1rem
+}
+
+.book-tab:hover {
+  color: var(--clr-dark)
+}
+
+.book-tab.active {
+  color: var(--clr-dark);
+  border-bottom-color: var(--clr-orange)
+}
+
+/* ── Booking sections ── */
+.book-section {
+  padding: 80px 0;
+  display: none
+}
+
+.book-section.active {
+  display: block
+}
+
+.book-section:nth-child(even) {
+  background: var(--clr-footer)
+}
+
+.book-layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Space showcase in book layout */
+.book-space-showcase {
+  position: relative;
+}
+
+.book-showcase-img {
+  height: 420px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 20px 56px rgba(0, 0, 0, .15);
+}
+
+.book-showcase-img .img-ph {
+  height: 100%
+}
+
+.book-showcase-details {
+  margin-top: 2rem
+}
+
+.book-showcase-details h3 {
+  margin-bottom: .5rem
+}
+
+.book-showcase-details p {
+  font-size: .9rem;
+  margin-bottom: 1.5rem
+}
+
+.book-amenity-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem
+}
+
+.book-amenity {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--clr-green-dk);
+  background: var(--clr-green-lt);
+  padding: .25rem .75rem;
+  border-radius: 20px;
+}
+
+/* Booking form card */
+.book-form-card {
+  position: sticky;
+  top: calc(var(--nav-h) + 1.5rem);
+  background: #fff;
+  border: 1px solid var(--ink-10);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .1);
+}
+
+.book-form-head {
+  background: var(--clr-green-dk);
+  padding: 1.5rem 2rem;
+}
+
+.book-form-head h3 {
+  color: #fff;
+  font-size: 1.25rem
+}
+
+.book-form-head p {
+  color: rgba(255, 255, 255, .7);
+  font-size: .875rem;
+  margin-top: .25rem
+}
+
+.book-form-body {
+  padding: 1.75rem 2rem
+}
+
+.book-form-price-preview {
+  background: var(--clr-green-lt);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-form-price-preview span {
+  font-size: .82rem;
+  color: var(--ink-60)
+}
+
+.book-form-price-preview strong {
+  font-family: var(--f-head);
+  font-size: 1.4rem;
+  color: var(--clr-dark)
+}
+
+/* ── Summary card ── */
+.booking-summary {
+  background: var(--clr-dark);
+  color: #fff;
+  border-radius: var(--radius-xl);
+  padding: 2rem
+}
+
+.booking-summary h4 {
+  color: rgba(255, 255, 255, .5);
+  font-size: .7rem;
+  letter-spacing: .15em;
+  margin-bottom: 1.25rem
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: .6rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .1)
+}
+
+.summary-row:last-child {
+  border-bottom: none
+}
+
+.summary-row span:first-child {
+  font-size: .88rem;
+  color: rgba(255, 255, 255, .55)
+}
+
+.summary-row span:last-child {
+  font-size: .88rem;
+  font-weight: 600;
+  color: #fff
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0 0;
+  margin-top: .5rem;
+  border-top: 1px solid rgba(255, 255, 255, .15);
+}
+
+.summary-total span:first-child {
+  font-size: .88rem;
+  color: rgba(255, 255, 255, .7)
+}
+
+.summary-total span:last-child {
+  font-family: var(--f-head);
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 700
+}
+
+/* ── Confirmation ── */
+.book-confirm {
+  text-align: center;
+  padding: 80px var(--pad-x);
+  display: none;
+}
+
+.book-confirm.show {
+  display: block
+}
+
+.confirm-check {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--clr-green-lt);
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm-check svg {
+  width: 40px;
+  height: 40px;
+  color: var(--clr-green-dk)
+}
+
+.book-confirm h2 {
+  margin-bottom: .75rem
+}
+
+.book-confirm p {
+  max-width: 480px;
+  margin: 0 auto 2rem
+}
+
+/* ── Responsive ── */
+@media(max-width:1024px) {
+  .book-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem
+  }
+
+  .book-form-card {
+    position: static
+  }
+
+  .book-showcase-img {
+    height: 300px
+  }
+}
+
+@media(max-width:640px) {
+  .book-type-inner {
+    gap: 0
+  }
+
+  .book-tab {
+    padding: .9rem 1rem;
+    font-size: .78rem
+  }
+}

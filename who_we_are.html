@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who We Are | Kings City</title>
+    <meta name="description"
+        content="Learn about Kings City — a community of jobs and workspaces in Parañaque City, Philippines, founded in 1999.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <style>
+        /* ── Page hero ── */
+        .page-hero {
+            position: relative;
+            background: var(--clr-dark);
+            overflow: hidden;
+            padding: calc(var(--nav-h) + 80px) 0 80px;
+            text-align: center;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 60%, rgba(213, 237, 206, .14) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .page-hero-label {
+            display: inline-block;
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--clr-green-md);
+            border: 1px solid rgba(159, 211, 175, .3);
+            padding: .35rem .9rem;
+            border-radius: var(--radius);
+            margin-bottom: 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-hero h1 {
+            color: #fff;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 1rem
+        }
+
+        .page-hero p {
+            color: rgba(255, 255, 255, .65);
+            max-width: 580px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1
+        }
+
+        /* ── Story ── */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center
+        }
+
+        .story-img {
+            height: 520px;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, .15)
+        }
+
+        .story-img .img-ph {
+            height: 100%
+        }
+
+        .story-text h2 {
+            margin-bottom: 1rem
+        }
+
+        .story-text p {
+            margin-bottom: 1rem
+        }
+
+        .story-text .btn {
+            margin-top: .75rem
+        }
+
+        /* ── Timeline ── */
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto
+        }
+
+        .tl-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative
+        }
+
+        .tl-item::before {
+            content: '';
+            position: absolute;
+            left: 120px;
+            top: 0;
+            bottom: -2.5rem;
+            width: 1px;
+            background: var(--ink-20);
+            z-index: 0;
+        }
+
+        .tl-item:last-child::before {
+            display: none
+        }
+
+        .tl-year {
+            font-family: var(--f-head);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--clr-green-dk);
+            text-align: right;
+            padding-top: .2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tl-content {
+            background: #fff;
+            border: 1px solid var(--ink-10);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem 1.75rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tl-content::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 1.2rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--clr-green-md);
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 1px var(--clr-green-md);
+        }
+
+        .tl-content h4 {
+            font-family: var(--f-head);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--clr-dark);
+            margin-bottom: .4rem
+        }
+
+        .tl-content p {
+            font-size: .875rem
+        }
+
+        /* ── Team values ── */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem
+        }
+
+        .val-card {
+            background: #fff;
+            border: 1px solid var(--ink-10);
+            border-radius: var(--radius-xl);
+            padding: 2rem 1.75rem;
+            text-align: center;
+            transition: box-shadow .3s var(--ease), transform .3s var(--ease), background .22s;
+        }
+
+        .val-card:hover {
+            box-shadow: 0 12px 36px rgba(0, 0, 0, .1);
+            transform: translateY(-4px);
+            background: var(--clr-pink-lt)
+        }
+
+        .val-n {
+            font-family: var(--f-head);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--clr-green-md);
+            margin-bottom: .75rem
+        }
+
+        .val-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: .5rem
+        }
+
+        .val-card p {
+            font-size: .875rem
+        }
+
+        /* ── CTA band ── */
+        .cta-band {
+            background: linear-gradient(135deg, var(--clr-green-dk), #1f4e33, rgba(255, 98, 36, .15));
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-band h2 {
+            color: #fff;
+            margin-bottom: 1rem
+        }
+
+        .cta-band p {
+            color: rgba(255, 255, 255, .7);
+            max-width: 520px;
+            margin: 0 auto 2.5rem
+        }
+
+        .cta-band .ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        /* ── Accent ── */
+        .accent-strip {
+            height: 5px;
+            background: linear-gradient(90deg, var(--clr-green-lt), var(--clr-green-md), var(--clr-pink-lt), var(--clr-pink-md), var(--clr-lavender), var(--clr-amber), var(--clr-orange))
+        }
+
+        @media(max-width:1024px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem
+            }
+
+            .story-img {
+                height: 360px
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr 1fr
+            }
+        }
+
+        @media(max-width:640px) {
+            .values-grid {
+                grid-template-columns: 1fr
+            }
+
+            .tl-item {
+                grid-template-columns: 80px 1fr;
+                gap: 1.25rem
+            }
+
+            .tl-year {
+                font-size: 1.1rem
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ── Announcement Bar ── -->
+    <div class="ann-bar" id="ann-bar">
+        <div class="ann-inner">
+            <span>See our Virtual Office Packages</span>
+            <a href="https://kingscity.com.ph/pages/virtual-office-packages" target="_blank" rel="noopener"
+                class="ann-link">View Packages &rarr;</a>
+        </div>
+        <button class="ann-close" id="ann-close" aria-label="Dismiss">&times;</button>
+    </div>
+
+    <!-- ── Navbar ── -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-wrap">
+            <a href="index.html" class="nav-logo">
+                <img src="images/kings_city_logo_white.png" alt="Kings City Logo" class="logo-img-white">
+                <img src="images/kings_city_logo_black.png" alt="Kings City Logo" class="logo-img-color">
+            </a>
+            <ul class="nav-links" role="list">
+                <li><a href="who_we_are.html">Who We Are</a></li>
+                <li class="nav-drop">
+                    <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true">What We Offer <span
+                            class="caret" aria-hidden="true"></span></button>
+                    <ul class="drop-menu" role="menu">
+                        <li><a href="what_we_offer/spaces.html" role="menuitem">Spaces</a></li>
+                        <li><a href="what_we_offer/offshoring.html" role="menuitem">Offshoring</a></li>
+                    </ul>
+                </li>
+                <li><a href="what_we_offer/book_now.html">Book Now</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:0383759477" class="nav-phone">+63 --- --- ---</a>
+                <div class="nav-drop flag-drop">
+                    <button class="nav-drop-btn flag-btn" aria-expanded="false" aria-haspopup="true"
+                        style="display: flex; align-items: center; gap: 0.3rem; padding: 0.5rem; background: transparent; border: none; cursor: pointer;">
+                        <img src="https://flagcdn.com/w20/ph.png" alt="Philippines" width="20"
+                            style="border-radius: 2px;">
+                        <span class="caret" aria-hidden="true"></span>
+                    </button>
+                    <ul class="drop-menu flag-menu" role="menu"
+                        style="min-width: 140px; padding: 0.5rem; border-radius: 8px;">
+                        <li><a href="#" role="menuitem"
+                                style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem;"><img
+                                    src="https://flagcdn.com/w20/ph.png" alt="Philippines" width="20"
+                                    style="border-radius: 2px;"> Philippines</a></li>
+                        <li><a href="#" role="menuitem"
+                                style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem;"><span
+                                    style="font-size: 16px;">🌏</span> Asia</a></li>
+                        <li><a href="#" role="menuitem"
+                                style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem;"><img
+                                    src="https://flagcdn.com/w20/eu.png" alt="Europe" width="20"
+                                    style="border-radius: 2px;"> Europe</a></li>
+                    </ul>
+                </div>
+                <a href="https://kingscity.com.ph/" target="_blank" rel="noopener" class="btn btn-nav-outline">Shop</a>
+                <a href="what_we_offer/apply.html" class="btn btn-nav-outline">Apply</a>
+
+                <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
+    <aside class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation">
+        <div class="drawer-head">
+            <img src="images/kings_city_logo_black.png" alt="Kings City Logo" class="drawer-logo-img">
+            <button class="drawer-close" id="drawer-close" aria-label="Close menu">&times;</button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="who_we_are.html">Who We Are</a>
+            <a href="what_we_offer/spaces.html">Spaces</a>
+            <a href="what_we_offer/offshoring.html">Offshoring</a>
+            <a href="what_we_offer/book_now.html">Book Now</a>
+            <a href="what_we_offer/apply.html">Apply</a>
+            <a href="https://kingscity.com.ph/" target="_blank" rel="noopener">Shop</a>
+        </nav>
+        <div class="drawer-foot">
+            <a href="tel:0383759477">03 8375 9477</a>
+            <a href="mailto:kingscity@kingsgroup.com.ph">kingscity@kingsgroup.com.ph</a>
+        </div>
+    </aside>
+
+    <!-- ── Page Hero ── -->
+    <section class="page-hero" style="position:relative; overflow:hidden;">
+        <div class="img-ph ph-who" style="position:absolute; inset:0; z-index:0;">
+            <img src="images/who we are.jpg" alt="Who We Are" style="width:100%; height:100%; object-fit:cover;">
+            <div
+                style="position:absolute; inset:0; background:linear-gradient(160deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);">
+            </div>
+        </div>
+        <div class="container"
+            style="position:relative; z-index:1; padding-top:120px; padding-bottom:120px; color:#fff;">
+            <span class="page-hero-label" style="color:var(--clr-green-lt);">Our Story</span>
+            <h1>Who We Are</h1>
+            <p style="color:rgba(255,255,255,0.85);">A community of jobs and workspaces built to empower businesses and
+                professionals across the Philippines
+                and beyond.</p>
+        </div>
+    </section>
+
+    <!-- ── Our Story ── -->
+    <section class="section-pad" style="background:var(--clr-cream)">
+        <div class="container">
+            <div class="story-grid">
+                <div data-reveal>
+                    <div class="story-img">
+                        <div class="img-ph ph-about"><img src="images/community.jpg" alt="Kings City Story"><span
+                                class="ph-label" style="display:none">Kings City Story</span></div>
+                    </div>
+                </div>
+                <div class="story-text" data-reveal>
+                    <span class="eyebrow">Our Story</span>
+                    <h2>From Humble Beginnings to a Nationwide Community</h2>
+                    <p>Kings Group of Companies was founded in 1999 with a simple yet powerful mission — to provide jobs
+                        and create meaningful opportunities for Filipinos.</p>
+                    <p>In 2009, we expanded that vision to include Kings City, a premium co-working and offshoring
+                        destination in Parañaque City. Today, we support more than 10,000 employees nationwide and help
+                        businesses from Australia and around the world build high-performing teams in the Philippines.
+                    </p>
+                    <p>We are not just a co-working space. We are a community of workforce and workspace — a place where
+                        connections are made, businesses are built, and careers are launched.</p>
+                    <a href="what_we_offer/apply.html" class="btn btn-primary">Join Our Community</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Timeline ── -->
+    <section class="section-pad" style="background:var(--clr-footer)">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:3rem" data-reveal>
+                <span class="eyebrow">Our Journey</span>
+                <h2>Milestones &amp; Growth</h2>
+            </div>
+            <div class="timeline">
+                <div class="tl-item" data-reveal>
+                    <div class="tl-year">1999</div>
+                    <div class="tl-content">
+                        <h4>Kings Group Founded</h4>
+                        <p>Kings Group of Companies is established in the Philippines, beginning its journey of
+                            providing quality employment opportunities.</p>
+                    </div>
+                </div>
+                <div class="tl-item" data-reveal>
+                    <div class="tl-year">2009</div>
+                    <div class="tl-content">
+                        <h4>The Kings Community Launches</h4>
+                        <p>The Kings expands beyond recruitment to form a growing community of jobs across the country.
+                        </p>
+                    </div>
+                </div>
+                <div class="tl-item" data-reveal>
+                    <div class="tl-year">2018</div>
+                    <div class="tl-content">
+                        <h4>Kings City Opens</h4>
+                        <p>Kings City — our premium co-working and offshoring space in Parañaque City — opens its doors
+                            to the public.</p>
+                    </div>
+                </div>
+                <div class="tl-item" data-reveal>
+                    <div class="tl-year">2020</div>
+                    <div class="tl-content">
+                        <h4>Offshoring Division Grows</h4>
+                        <p>We launch our dedicated offshoring solution, helping Australian and international companies
+                            build teams in the Philippines.</p>
+                    </div>
+                </div>
+                <div class="tl-item" data-reveal>
+                    <div class="tl-year">Today</div>
+                    <div class="tl-content">
+                        <h4>10,000+ Employees Nationwide</h4>
+                        <p>Kings Group now supports over 10,000 employees across the Philippines, with virtual offices,
+                            co-working, events and offshoring services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Values ── -->
+    <section class="section-pad" style="background:var(--clr-cream)">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:3rem" data-reveal>
+                <span class="eyebrow">Our Values</span>
+                <h2>What We Stand For</h2>
+            </div>
+            <div class="values-grid">
+                <div class="val-card" data-reveal>
+                    <div class="val-n">01</div>
+                    <h3>Integrity</h3>
+                    <p>We do the right thing — always. With our members, partners and employees.</p>
+                </div>
+                <div class="val-card" data-reveal>
+                    <div class="val-n">02</div>
+                    <h3>Transparency</h3>
+                    <p>No hidden agendas. Open communication at every level of our business.</p>
+                </div>
+                <div class="val-card" data-reveal>
+                    <div class="val-n">03</div>
+                    <h3>Professionalism</h3>
+                    <p>Excellence in everything we do, from our spaces to our staffing solutions.</p>
+                </div>
+                <div class="val-card" data-reveal>
+                    <div class="val-n">04</div>
+                    <h3>Community</h3>
+                    <p>Building lasting connections and creating environments where people thrive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CTA Band ── -->
+    <section class="cta-band">
+        <div class="container">
+            <span class="eyebrow light">Get Started</span>
+            <h2>Ready to Join the Kings?</h2>
+            <p>Become part of our growing community of professionals and businesses. Apply for membership or book a tour
+                today.</p>
+            <div class="ctas">
+                <a href="what_we_offer/apply.html" class="btn btn-light btn-lg">Apply Now</a>
+                <a href="what_we_offer/book_now.html" class="btn btn-outline-light btn-lg">Book a Tour</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Footer ── -->
+    <div class="accent-strip"></div>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="footer-brand-name">KINGS CITY</span>
+                    <span class="footer-brand-sub">A Community of Jobs &amp; Workspaces</span>
+                    <p class="footer-address">Ground Level, RCS Building,<br>Doña Soledad Ave, Better
+                        Living,<br>Parañaque City, Philippines</p>
+                    <div class="footer-contacts">
+                        <a href="tel:0383759477">03 8375 9477</a>
+                        <a href="mailto:kingscity@kingsgroup.com.ph">kingscity@kingsgroup.com.ph</a>
+                    </div>
+                    <span class="footer-social-label">Connect</span>
+                    <div class="social-row">
+                        <a href="https://instagram.com/kingscityph" target="_blank" rel="noopener"
+                            aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                aria-hidden="true">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/KingsCityPH/" target="_blank" rel="noopener"
+                            aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                aria-hidden="true">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                            </svg>
+                        </a>
+                        <a href="mailto:kingscity@kingsgroup.com.ph" aria-label="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Company</h4>
+                    <ul>
+                        <li><a href="who_we_are.html">Who We Are</a></li>
+                        <li><a href="what_we_offer/spaces.html">Spaces</a></li>
+                        <li><a href="what_we_offer/offshoring.html">Offshoring</a></li>
+                        <li><a href="what_we_offer/apply.html">Apply</a></li>
+                        <li><a href="https://kingscity.com.ph/" target="_blank" rel="noopener">Shop</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Solutions</h4>
+                    <ul>
+                        <li><a href="what_we_offer/offshoring.html">Why Kings City</a></li>
+                        <li><a href="what_we_offer/offshoring.html">Why Philippines</a></li>
+                        <li><a href="what_we_offer/offshoring.html">Outsourcing Models</a></li>
+                        <li><a href="what_we_offer/offshoring.html">Key to Success</a></li>
+                        <li><a href="#">News</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4 class="footer-col-title">Stay In The Loop</h4>
+                    <p>Drop your info below to get marketing emails you'll actually want to open from The Kings.</p>
+                    <form class="nl-form" id="nl-form" novalidate>
+                        <input type="email" placeholder="Your email address" required aria-label="Email address">
+                        <button type="submit" class="btn btn-primary">Join</button>
+                        <div class="nl-success" id="nl-success">Thanks for submitting!</div>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Kings City. All rights reserved.</p>
+                <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/footer.js"></script>
+</body>
+
+</html>

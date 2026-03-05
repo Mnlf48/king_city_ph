@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offshoring | Kings City</title>
+  <meta name="description"
+    content="Build your full-time dedicated team in the Philippines with Kings City offshoring solutions. Save up to 70% on labour costs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/offshoring.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <style>
+    .accent-strip {
+      height: 5px;
+      background: linear-gradient(90deg, var(--clr-green-lt), var(--clr-green-md), var(--clr-rose-lt), var(--clr-lavender), var(--clr-amber))
+    }
+
+    /* Compare table */
+    .compare-sec {
+      background: var(--clr-cream)
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2.5rem;
+      border: 1px solid var(--ink-10);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+
+    .compare-table th {
+      background: var(--clr-dark);
+      color: #fff;
+      padding: 1.1rem 1.5rem;
+      font-family: var(--f-body);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-align: left;
+    }
+
+    .compare-table th:first-child {
+      background: var(--clr-dark)
+    }
+
+    .compare-table th.highlight {
+      background: var(--clr-green-dk)
+    }
+
+    .compare-table td {
+      padding: .9rem 1.5rem;
+      border-bottom: 1px solid var(--ink-10);
+      font-size: .875rem;
+      color: var(--ink-60);
+      background: #fff;
+    }
+
+    .compare-table td.highlight {
+      background: rgba(213, 237, 206, .3);
+      font-weight: 600;
+      color: var(--clr-dark)
+    }
+
+    .compare-table td.feature {
+      color: var(--clr-dark);
+      font-weight: 500
+    }
+
+    .compare-table tr:last-child td {
+      border-bottom: none
+    }
+
+    .check {
+      color: var(--clr-green-dk);
+      font-weight: 700;
+      font-size: 1.1rem
+    }
+
+    .cross {
+      color: var(--clr-red);
+      font-weight: 700
+    }
+
+    @media(max-width:640px) {
+      .compare-table {
+        font-size: .78rem
+      }
+
+      .compare-table td,
+      .compare-table th {
+        padding: .75rem .875rem
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Announcement Bar ── -->
+  <div class="ann-bar" id="ann-bar">
+    <div class="ann-inner">
+      <span>See our Virtual Office Packages</span>
+      <a href="https://kingscity.com.ph/pages/virtual-office-packages" target="_blank" rel="noopener"
+        class="ann-link">View Packages &rarr;</a>
+    </div>
+    <button class="ann-close" id="ann-close" aria-label="Dismiss">&times;</button>
+  </div>
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-wrap">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/kings_city_logo_white.png" alt="Kings City Logo" class="logo-img-white">
+        <img src="../images/kings_city_logo_black.png" alt="Kings City Logo" class="logo-img-color">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="../who_we_are.html">Who We Are</a></li>
+        <li class="nav-drop">
+          <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true">What We Offer <span class="caret"
+              aria-hidden="true"></span></button>
+          <ul class="drop-menu" role="menu">
+            <li><a href="spaces.html" role="menuitem">Spaces</a></li>
+            <li><a href="offshoring.html" role="menuitem">Offshoring</a></li>
+          </ul>
+        </li>
+        <li><a href="book_now.html">Book Now</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="tel:0383759477" class="nav-phone">+63 --- --- ---</a>
+        <div class="nav-drop flag-drop">
+          <button class="nav-drop-btn flag-btn" aria-expanded="false" aria-haspopup="true"
+            style="display: flex; align-items: center; gap: 0.3rem; padding: 0.5rem; background: transparent; border: none; cursor: pointer;">
+            <img src="https://flagcdn.com/w20/ph.png" alt="Philippines" width="20" style="border-radius: 2px;">
+            <span class="caret" aria-hidden="true"></span>
+          </button>
+          <ul class="drop-menu flag-menu" role="menu" style="min-width: 140px; padding: 0.5rem; border-radius: 8px;">
+            <li><a href="#" role="menuitem"
+                style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem;"><img
+                  src="https://flagcdn.com/w20/ph.png" alt="Philippines" width="20" style="border-radius: 2px;">
+                Philippines</a></li>
+            <li><a href="#" role="menuitem"
+                style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem;"><span
+                  style="font-size: 16px;">🌏</span> Asia</a></li>
+            <li><a href="#" role="menuitem"
+                style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem;"><img
+                  src="https://flagcdn.com/w20/eu.png" alt="Europe" width="20" style="border-radius: 2px;"> Europe</a>
+            </li>
+          </ul>
+        </div>
+        <a href="https://kingscity.com.ph/" target="_blank" rel="noopener" class="btn btn-nav-outline">Shop</a>
+        <a href="apply.html" class="btn btn-nav-outline">Apply</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation">
+    <div class="drawer-head">
+      <img src="../images/kings_city_logo_black.png" alt="Kings City Logo" class="drawer-logo-img">
+      <button class="drawer-close" id="drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="../who_we_are.html">Who We Are</a>
+      <a href="spaces.html">Spaces</a>
+      <a href="offshoring.html">Offshoring</a>
+      <a href="book_now.html">Book Now</a>
+      <a href="apply.html">Apply</a>
+      <a href="https://kingscity.com.ph/" target="_blank" rel="noopener">Shop</a>
+    </nav>
+    <div class="drawer-foot">
+      <a href="tel:0383759477">03 8375 9477</a>
+      <a href="mailto:kingscity@kingsgroup.com.ph">kingscity@kingsgroup.com.ph</a>
+    </div>
+  </aside>
+
+  <!-- ── Hero ── -->
+  <section class="off-hero" id="off-hero">
+    <div class="off-hero-bg">
+      <div class="img-ph ph-offsh"><img src="../images/offshoring_office.jpg" alt="Offshoring Office"><span
+          class="ph-label" style="display:none">Offshoring Office Philippines</span></div>
+      <div class="off-hero-overlay"></div>
+    </div>
+    <div class="off-hero-content">
+      <span class="off-hero-tag">Offshoring &amp; Staffing</span>
+      <h1>Build Your Dedicated<br>Team in the Philippines</h1>
+      <p>We make it easy and affordable for businesses to build their own full-time, dedicated teams in the Philippines.
+        Cut labour costs by up to 70% without sacrificing quality or control.</p>
+      <div class="off-hero-ctas">
+        <a href="apply.html" class="btn btn-green btn-lg">Apply Now</a>
+        <a href="book_now.html" class="btn btn-outline-light btn-lg">Book a Consultation</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── Why Offshore ── -->
+  <section class="off-why section-pad compare-sec">
+    <div class="container">
+      <div class="off-why-grid">
+        <div data-reveal>
+          <div class="off-why-img">
+            <div class="img-ph ph-about"><img src="../images/philippines.jpg" alt="Why Philippines"><span
+                class="ph-label" style="display:none">Why Philippines</span></div>
+            <div class="off-why-badge">
+              <span class="off-why-badge-n">70%</span>
+              <div class="off-why-badge-l">Cost Savings</div>
+            </div>
+          </div>
+        </div>
+        <div data-reveal>
+          <span class="eyebrow">Why Offshore with Kings City</span>
+          <h2>The Smarter Way to Scale</h2>
+          <p>The Philippines offers an exceptional talent pool of English-speaking, highly educated professionals who
+            are eager to work with international companies. With Kings City, you get the infrastructure, HR support, and
+            facilities management — so you can focus on your business.</p>
+          <p>Our clients are primarily from Australia, but we help businesses from all around the world build
+            high-performing, dedicated teams that feel like a natural extension of their local team.</p>
+          <div style="display:flex;flex-direction:column;gap:.875rem;margin-top:1.75rem">
+            <div style="display:flex;align-items:flex-start;gap:.875rem">
+              <svg style="width:22px;height:22px;color:var(--clr-green-dk);flex-shrink:0;margin-top:.1rem"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div><strong>Full control</strong> — you manage your team directly, Kings City manages the infrastructure.
+              </div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:.875rem">
+              <svg style="width:22px;height:22px;color:var(--clr-green-dk);flex-shrink:0;margin-top:.1rem"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div><strong>Fixed monthly fee</strong> — no hidden costs, no surprises. Total cost transparency.</div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:.875rem">
+              <svg style="width:22px;height:22px;color:var(--clr-green-dk);flex-shrink:0;margin-top:.1rem"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div><strong>Fast launch</strong> — your team is up and running in as little as 6 weeks.</div>
+            </div>
+          </div>
+          <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
+            <a href="apply.html" class="btn btn-primary">Apply Now</a>
+            <a href="book_now.html" class="btn btn-outline">Book a Consultation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Process ── -->
+  <section class="off-process section-pad">
+    <div class="container">
+      <div style="text-align:center" data-reveal>
+        <span class="eyebrow">How It Works</span>
+        <h2>Your Journey to Offshoring</h2>
+        <p class="lead mx-auto" style="margin-top:.75rem">From initial consultation to a fully operational team — in as
+          little as 6 weeks.</p>
+      </div>
+      <div class="off-process-grid">
+        <div class="process-card" data-reveal data-step="01">
+          <span class="process-week">Week 1–2</span>
+          <h3>Discovery &amp; Scoping</h3>
+          <p>We meet with you to understand your business needs, define the roles you need, and establish the team
+            structure and hiring criteria.</p>
+        </div>
+        <div class="process-card" data-reveal data-step="02">
+          <span class="process-week">Week 2–3</span>
+          <h3>Talent Acquisition</h3>
+          <p>Our dedicated recruitment team sources, screens and shortlists top candidates from our extensive network of
+            Filipino professionals.</p>
+        </div>
+        <div class="process-card" data-reveal data-step="03">
+          <span class="process-week">Week 3–5</span>
+          <h3>Onboarding &amp; Setup</h3>
+          <p>Your team is onboarded, workstations are set up, systems are configured, and training begins — all managed
+            by Kings City.</p>
+        </div>
+        <div class="process-card" data-reveal data-step="04">
+          <span class="process-week">Week 6</span>
+          <h3>Launch &amp; Go Live</h3>
+          <p>Your dedicated Philippines team is live and productive. You take the reins of day-to-day management while
+            we handle everything else.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Roles ── -->
+  <section class="off-roles section-pad-sm">
+    <div class="container">
+      <div style="text-align:center" data-reveal>
+        <span class="eyebrow">Talent We Place</span>
+        <h2 style="color:var(--clr-dark)">Roles We Can Staff</h2>
+        <p style="color:var(--ink-60);margin:.75rem auto 0;max-width:560px">We can source talented professionals
+          across a wide range of disciplines and industries.</p>
+      </div>
+      <div class="off-roles-grid">
+        <div class="role-item" data-reveal>
+          <div class="role-icon"></div>
+          <h4>Accountants</h4>
+          <p>CPA-qualified and experienced in international accounting standards.</p>
+        </div>
+        <div class="role-item" data-reveal>
+          <div class="role-icon"></div>
+          <h4>Bookkeepers</h4>
+          <p>Proficient in MYOB, Xero, QuickBooks and other platforms.</p>
+        </div>
+        <div class="role-item" data-reveal>
+          <div class="role-icon"></div>
+          <h4>Virtual Assistants</h4>
+          <p>Skilled in admin, scheduling, CRM and executive support.</p>
+        </div>
+        <div class="role-item" data-reveal>
+          <div class="role-icon"></div>
+          <h4>Graphic Designers</h4>
+          <p>Creative professionals with expertise in Adobe Suite and digital design.</p>
+        </div>
+        <div class="role-item" data-reveal>
+          <div class="role-icon"></div>
+          <h4>Web Developers</h4>
+          <p>Full-stack developers across all major frameworks and platforms.</p>
+        </div>
+        <div class="role-item" data-reveal>
+          <div class="role-icon"></div>
+          <h4>Customer Service</h4>
+          <p>Fluent English-speaking agents trained in your products and processes.</p>
+        </div>
+        <div class="role-item" data-reveal>
+          <div class="role-icon"></div>
+          <h4>Digital Marketers</h4>
+          <p>SEO, SEM, social media and content specialists for your brand.</p>
+        </div>
+        <div class="role-item" data-reveal>
+          <div class="role-icon"></div>
+          <h4>Data Analysts</h4>
+          <p>Excel, SQL, Power BI and analytics professionals for data-driven decisions.</p>
+        </div>
+        <div class="role-item" data-reveal>
+          <div class="role-icon"></div>
+          <h4>HR Specialists</h4>
+          <p>Recruitment, onboarding and HR operations expertise.</p>
+        </div>
+        <div class="role-item" data-reveal>
+          <div class="role-icon"></div>
+          <h4>IT Support</h4>
+          <p>Level 1 and Level 2 helpdesk and technical support professionals.</p>
+        </div>
+        <div class="role-item" data-reveal>
+          <div class="role-icon"></div>
+          <h4>Content Writers</h4>
+          <p>Native-level English writers for blogs, websites and marketing copy.</p>
+        </div>
+        <div class="role-item" data-reveal>
+          <div class="role-icon"></div>
+          <h4>Project Managers</h4>
+          <p>PMP-certified and experienced project delivery professionals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Comparison Table ── -->
+  <section class="section-pad compare-sec">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:2.5rem" data-reveal>
+        <span class="eyebrow">Cost Comparison</span>
+        <h2>Onshore vs. Offshoring with Kings City</h2>
+        <p class="lead mx-auto" style="margin-top:.75rem">See how much your business can save by building your team in
+          the Philippines.</p>
+      </div>
+      <div style="overflow-x:auto" data-reveal>
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Role</th>
+              <th>Australia (Annual)</th>
+              <th class="highlight">Philippines with Kings City</th>
+              <th class="highlight">You Save</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="feature">Accountant</td>
+              <td>AUD $85,000</td>
+              <td class="highlight">AUD $25,000</td>
+              <td class="highlight">~70%</td>
+            </tr>
+            <tr>
+              <td class="feature">Virtual Assistant</td>
+              <td>AUD $65,000</td>
+              <td class="highlight">AUD $18,000</td>
+              <td class="highlight">~72%</td>
+            </tr>
+            <tr>
+              <td class="feature">Web Developer</td>
+              <td>AUD $105,000</td>
+              <td class="highlight">AUD $32,000</td>
+              <td class="highlight">~70%</td>
+            </tr>
+            <tr>
+              <td class="feature">Customer Service Rep</td>
+              <td>AUD $60,000</td>
+              <td class="highlight">AUD $16,000</td>
+              <td class="highlight">~73%</td>
+            </tr>
+            <tr>
+              <td class="feature">Graphic Designer</td>
+              <td>AUD $75,000</td>
+              <td class="highlight">AUD $22,000</td>
+              <td class="highlight">~71%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:.78rem;color:var(--ink-40);margin-top:1rem;text-align:center">*Indicative figures. Actual
+        costs depend on experience level and specific role requirements. Contact us for a custom quote.</p>
+    </div>
+  </section>
+
+  <!-- ── CTA Band ── -->
+  <section class="off-cta-band">
+    <div class="container">
+      <span class="eyebrow light">Get Started</span>
+      <h2>Ready to Build Your Philippines Team?</h2>
+      <p>Join the growing list of Australian and international companies that trust Kings City to build and manage their
+        offshore teams.</p>
+      <div class="ctas">
+        <a href="apply.html" class="btn btn-light btn-lg">Apply Now</a>
+        <a href="book_now.html" class="btn btn-outline-light btn-lg">Book a Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <div class="accent-strip"></div>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-brand-name">KINGS CITY</span>
+          <span class="footer-brand-sub">A Community of Jobs &amp; Workspaces</span>
+          <p class="footer-address">Ground Level, RCS Building,<br>Doña Soledad Ave, Better Living,<br>Parañaque City,
+            Philippines</p>
+          <div class="footer-contacts">
+            <a href="tel:0383759477">03 8375 9477</a>
+            <a href="mailto:kingscity@kingsgroup.com.ph">kingscity@kingsgroup.com.ph</a>
+          </div>
+          <span class="footer-social-label">Connect</span>
+          <div class="social-row">
+            <a href="https://instagram.com/kingscityph" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/KingsCityPH/" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+              </svg>
+            </a>
+            <a href="mailto:kingscity@kingsgroup.com.ph" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul>
+            <li><a href="../who_we_are.html">Who We Are</a></li>
+            <li><a href="spaces.html">Spaces</a></li>
+            <li><a href="offshoring.html">Offshoring</a></li>
+            <li><a href="apply.html">Apply</a></li>
+            <li><a href="https://kingscity.com.ph/" target="_blank" rel="noopener">Shop</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Solutions</h4>
+          <ul>
+            <li><a href="offshoring.html">Why Kings City</a></li>
+            <li><a href="offshoring.html">Why Philippines</a></li>
+            <li><a href="offshoring.html">Outsourcing Models</a></li>
+            <li><a href="offshoring.html">Offshoring Staffing</a></li>
+            <li><a href="#">News</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-col-title">Stay In The Loop</h4>
+          <p>Drop your info below to get marketing emails you'll actually want to open from The Kings.</p>
+          <form class="nl-form" id="nl-form" novalidate>
+            <input type="email" placeholder="Your email address" required aria-label="Email address">
+            <button type="submit" class="btn btn-primary">Join</button>
+            <div class="nl-success" id="nl-success">Thanks for submitting!</div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 The Kings City. All rights reserved.</p>
+        <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/offshoring.js"></script>
+  <script src="../js/footer.js"></script>
+</body>
+
+</html>

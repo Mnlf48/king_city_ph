@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply | Kings City</title>
+  <meta name="description"
+    content="Apply for Kings City membership or offshoring services. Join our growing community of professionals and businesses in Parañaque City.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/apply.css">
+  <link rel="stylesheet" href="../css/forms.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <style>
+    .accent-strip {
+      height: 5px;
+      background: linear-gradient(90deg, var(--clr-green-lt), var(--clr-green-md), var(--clr-rose-lt), var(--clr-lavender), var(--clr-amber))
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Announcement Bar ── -->
+  <div class="ann-bar" id="ann-bar">
+    <div class="ann-inner">
+      <span>See our Virtual Office Packages</span>
+      <a href="https://kingscity.com.ph/pages/virtual-office-packages" target="_blank" rel="noopener"
+        class="ann-link">View Packages &rarr;</a>
+    </div>
+    <button class="ann-close" id="ann-close" aria-label="Dismiss">&times;</button>
+  </div>
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-wrap">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/kings_city_logo_white.png" alt="Kings City Logo" class="logo-img-white">
+        <img src="../images/kings_city_logo_black.png" alt="Kings City Logo" class="logo-img-color">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="../who_we_are.html">Who We Are</a></li>
+        <li class="nav-drop">
+          <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true">
+            What We Offer <span class="caret" aria-hidden="true"></span>
+          </button>
+          <ul class="drop-menu" role="menu">
+            <li><a href="spaces.html" role="menuitem">Spaces</a></li>
+            <li><a href="offshoring.html" role="menuitem">Offshoring</a></li>
+          </ul>
+        </li>
+        <li><a href="book_now.html">Book Now</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="tel:0383759477" class="nav-phone">+63 --- --- ---</a>
+        <div class="nav-drop flag-drop">
+          <button class="nav-drop-btn flag-btn" aria-expanded="false" aria-haspopup="true"
+            style="display: flex; align-items: center; gap: 0.3rem; padding: 0.5rem; background: transparent; border: none; cursor: pointer;">
+            <img src="https://flagcdn.com/w20/ph.png" alt="Philippines" width="20" style="border-radius: 2px;">
+            <span class="caret" aria-hidden="true"></span>
+          </button>
+          <ul class="drop-menu flag-menu" role="menu" style="min-width: 140px; padding: 0.5rem; border-radius: 8px;">
+            <li><a href="#" role="menuitem"
+                style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem;"><img
+                  src="https://flagcdn.com/w20/ph.png" alt="Philippines" width="20" style="border-radius: 2px;">
+                Philippines</a></li>
+            <li><a href="#" role="menuitem"
+                style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem;"><span
+                  style="font-size: 16px;">🌏</span> Asia</a></li>
+            <li><a href="#" role="menuitem"
+                style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem;"><img
+                  src="https://flagcdn.com/w20/eu.png" alt="Europe" width="20" style="border-radius: 2px;"> Europe</a>
+            </li>
+          </ul>
+        </div>
+        <a href="https://kingscity.com.ph/" target="_blank" rel="noopener" class="btn btn-nav-outline">Shop</a>
+        <a href="apply.html" class="btn btn-nav-outline">Apply</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Mobile Drawer ── -->
+  <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation">
+    <div class="drawer-head">
+      <img src="../images/kings_city_logo_black.png" alt="Kings City Logo" class="drawer-logo-img">
+      <button class="drawer-close" id="drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="../who_we_are.html">Who We Are</a>
+      <a href="spaces.html">Spaces</a>
+      <a href="offshoring.html">Offshoring</a>
+      <a href="book_now.html">Book Now</a>
+      <a href="apply.html">Apply</a>
+      <a href="https://kingscity.com.ph/" target="_blank" rel="noopener">Shop</a>
+    </nav>
+    <div class="drawer-foot">
+      <a href="tel:0383759477">03 8375 9477</a>
+      <a href="mailto:kingscity@kingsgroup.com.ph">kingscity@kingsgroup.com.ph</a>
+    </div>
+  </aside>
+
+  <!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+  <section class="apply-hero" style="position:relative; overflow:hidden;">
+    <div class="img-ph ph-apply" style="position:absolute; inset:0; z-index:0;">
+      <img src="../images/engagements.jpg" alt="Apply" style="width:100%; height:100%; object-fit:cover;">
+      <div
+        style="position:absolute; inset:0; background:linear-gradient(160deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);">
+      </div>
+    </div>
+    <div class="container" style="position:relative; z-index:1;">
+      <span class="eyebrow light">Get Started</span>
+      <h1>Apply for Membership<br>&amp; Offshoring</h1>
+      <p style="color:rgba(255,255,255,0.85);">Whether you want to join our co-working community or build a dedicated
+        offshore team — we'd love to hear from
+        you. Fill in the form and our team will be in touch within 24 hours.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+     BENEFITS STRIP
+══════════════════════════════════════════ -->
+  <div class="apply-benefits">
+    <div class="container">
+      <div class="apply-benefits-grid">
+        <div class="apply-benefit" data-reveal>
+          <div class="apply-benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path
+                d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div class="apply-benefit-text">
+            <strong>Save Up to 70%</strong>
+            <span>On labour and operational costs</span>
+          </div>
+        </div>
+        <div class="apply-benefit" data-reveal>
+          <div class="apply-benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path
+                d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+            </svg>
+          </div>
+          <div class="apply-benefit-text">
+            <strong>Launch in 6 Weeks</strong>
+            <span>From application to operational team</span>
+          </div>
+        </div>
+        <div class="apply-benefit" data-reveal>
+          <div class="apply-benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path
+                d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+            </svg>
+          </div>
+          <div class="apply-benefit-text">
+            <strong>10,000+ Community</strong>
+            <span>Join a thriving professional network</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+     MAIN LAYOUT
+══════════════════════════════════════════ -->
+  <section style="background:var(--clr-cream)">
+    <div class="container">
+      <div class="apply-layout">
+
+        <!-- ── Application Form ── -->
+        <div class="apply-form-section" id="apply-form-section">
+          <span class="eyebrow">Tell Us About You</span>
+          <h2>Start Your Application</h2>
+          <p>Complete the form below and a member of our team will be in touch within 24 hours to discuss your needs and
+            next steps.</p>
+
+          <form class="form-card" id="apply-form" style="margin-top:2rem" novalidate>
+
+            <!-- Application type -->
+            <div style="margin-bottom:2rem">
+              <p
+                style="font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--clr-dark);margin-bottom:.875rem">
+                I am applying for</p>
+              <div style="display:flex;gap:.75rem;flex-wrap:wrap">
+                <label
+                  style="display:flex;align-items:center;gap:.5rem;cursor:pointer;font-size:.9rem;font-weight:500;padding:.65rem 1.1rem;border:1.5px solid var(--ink-20);border-radius:var(--radius);transition:border-color .22s,background .22s"
+                  id="lbl-cowork">
+                  <input type="radio" name="application_type" value="coworking" checked
+                    style="accent-color:var(--clr-green-dk)"> Co-Working Membership
+                </label>
+                <label
+                  style="display:flex;align-items:center;gap:.5rem;cursor:pointer;font-size:.9rem;font-weight:500;padding:.65rem 1.1rem;border:1.5px solid var(--ink-20);border-radius:var(--radius);transition:border-color .22s,background .22s"
+                  id="lbl-offsh">
+                  <input type="radio" name="application_type" value="offshoring"
+                    style="accent-color:var(--clr-green-dk)"> Offshoring / Staffing
+                </label>
+                <label
+                  style="display:flex;align-items:center;gap:.5rem;cursor:pointer;font-size:.9rem;font-weight:500;padding:.65rem 1.1rem;border:1.5px solid var(--ink-20);border-radius:var(--radius);transition:border-color .22s,background .22s"
+                  id="lbl-both">
+                  <input type="radio" name="application_type" value="both" style="accent-color:var(--clr-green-dk)">
+                  Both
+                </label>
+              </div>
+            </div>
+
+            <!-- Personal info -->
+            <div class="form-row" style="margin-bottom:1.25rem">
+              <div class="form-group">
+                <label class="form-label" for="ap-firstname">First Name</label>
+                <input class="form-input" type="text" id="ap-firstname" name="first_name" placeholder="First name"
+                  required>
+                <span class="form-error-msg">This field is required.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="ap-lastname">Last Name</label>
+                <input class="form-input" type="text" id="ap-lastname" name="last_name" placeholder="Last name"
+                  required>
+                <span class="form-error-msg">This field is required.</span>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom:1.25rem">
+              <label class="form-label" for="ap-email">Email Address</label>
+              <input class="form-input" type="email" id="ap-email" name="email" placeholder="you@company.com" required>
+              <span class="form-error-msg">Please enter a valid email address.</span>
+            </div>
+
+            <div class="form-row" style="margin-bottom:1.25rem">
+              <div class="form-group">
+                <label class="form-label" for="ap-phone">Phone Number</label>
+                <input class="form-input" type="tel" id="ap-phone" name="phone" placeholder="+63 XXX XXX XXXX" required>
+                <span class="form-error-msg">This field is required.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="ap-country">Country</label>
+                <select class="form-select" id="ap-country" name="country">
+                  <option value="ph">Philippines</option>
+                  <option value="au">Australia</option>
+                  <option value="nz">New Zealand</option>
+                  <option value="us">United States</option>
+                  <option value="uk">United Kingdom</option>
+                  <option value="sg">Singapore</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom:1.25rem">
+              <label class="form-label" for="ap-company">Company / Business Name</label>
+              <input class="form-input" type="text" id="ap-company" name="company"
+                placeholder="Your company or business name">
+            </div>
+
+            <div class="form-group" style="margin-bottom:1.25rem">
+              <label class="form-label" for="ap-industry">Industry</label>
+              <select class="form-select" id="ap-industry" name="industry">
+                <option value="">Select your industry</option>
+                <option value="accounting">Accounting &amp; Finance</option>
+                <option value="tech">Technology &amp; IT</option>
+                <option value="marketing">Marketing &amp; Creative</option>
+                <option value="ecommerce">E-Commerce &amp; Retail</option>
+                <option value="legal">Legal &amp; Compliance</option>
+                <option value="healthcare">Healthcare</option>
+                <option value="realestate">Real Estate</option>
+                <option value="education">Education</option>
+                <option value="logistics">Logistics &amp; Supply Chain</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom:1.25rem">
+              <label class="form-label" for="ap-team-size">Team Size Needed</label>
+              <select class="form-select" id="ap-team-size" name="team_size">
+                <option value="">Select team size</option>
+                <option value="1">Just me (1 person)</option>
+                <option value="2-5">Small team (2–5 people)</option>
+                <option value="6-15">Medium team (6–15 people)</option>
+                <option value="16-30">Large team (16–30 people)</option>
+                <option value="30+">Enterprise (30+ people)</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom:1.25rem">
+              <label class="form-label" for="apply-message">
+                Tell Us About Your Needs
+                <span style="color:var(--ink-40);font-weight:400;margin-left:.35rem">(<span
+                    id="apply-msg-count">0</span> characters)</span>
+              </label>
+              <textarea class="form-textarea" id="apply-message" name="message" rows="5"
+                placeholder="Describe what you're looking for — workspace, offshore team, specific roles, timeline, etc."
+                style="min-height:140px"></textarea>
+            </div>
+
+            <div style="display:flex;align-items:flex-start;gap:.65rem;margin-bottom:1.75rem">
+              <input type="checkbox" id="ap-consent" name="consent" required
+                style="margin-top:.2rem;accent-color:var(--clr-green-dk)">
+              <label for="ap-consent" style="font-size:.85rem;color:var(--ink-60);cursor:pointer">
+                I agree to receive communications from Kings City regarding my application and relevant updates. I
+                understand I can unsubscribe at any time.
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-green btn-lg" style="width:100%;justify-content:center">
+              Submit Application
+            </button>
+          </form>
+        </div>
+
+        <!-- ── Success State ── -->
+        <div class="apply-success" id="apply-success" style="display:none">
+          <div class="apply-success-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <span class="eyebrow" style="display:block">Application Received</span>
+          <h2>Thank You for Applying!</h2>
+          <p>We've received your application and a member of our team will be in touch within 24 hours. In the meantime,
+            feel free to explore our spaces or learn more about offshoring with Kings City.</p>
+          <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+            <a href="spaces.html" class="btn btn-primary btn-lg">Explore Spaces</a>
+            <a href="offshoring.html" class="btn btn-outline btn-lg">Learn About Offshoring</a>
+          </div>
+        </div>
+
+        <!-- ── Sidebar ── -->
+        <aside>
+          <!-- Contact card -->
+          <div class="apply-sidebar-card" data-reveal>
+            <h3>Get in Touch</h3>
+            <p>Our friendly team is available Monday to Friday, 8am–6pm Philippine Standard Time.</p>
+            <div class="apply-contact-list">
+              <a href="tel:0383759477">
+                <span
+                  style="display:block;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-40);margin-bottom:.2rem">Phone</span>
+                03 8375 9477
+              </a>
+              <a href="mailto:kingscity@kingsgroup.com.ph" style="margin-top:.75rem">
+                <span
+                  style="display:block;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-40);margin-bottom:.2rem">Email</span>
+                kingscity@kingsgroup.com.ph
+              </a>
+              <div style="margin-top:.75rem">
+                <span
+                  style="display:block;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-40);margin-bottom:.2rem">Address</span>
+                <span style="font-size:.875rem;color:var(--ink-60);line-height:1.6">
+                  Ground Level, RCS Building,<br>
+                  Doña Soledad Ave, Better Living,<br>
+                  Parañaque City, Philippines
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Offshoring stats card -->
+          <div class="apply-accent-card" data-reveal>
+            <h3>Why Kings City Offshoring?</h3>
+            <p>Join the growing list of businesses saving big by building their teams in the Philippines with us.</p>
+
+            <a href="offshoring.html" class="btn btn-outline-light" style="width:100%;justify-content:center">Learn More
+              About Offshoring</a>
+          </div>
+
+          <!-- Quick links card -->
+          <div class="apply-sidebar-card" data-reveal>
+            <h3>Helpful Links</h3>
+            <ul style="display:flex;flex-direction:column;gap:.6rem;margin-top:.75rem">
+              <li><a href="spaces.html"
+                  style="font-size:.875rem;color:var(--clr-green-dk);font-weight:600;display:flex;justify-content:space-between">Explore
+                  Spaces <span>&rarr;</span></a></li>
+              <li><a href="offshoring.html"
+                  style="font-size:.875rem;color:var(--clr-green-dk);font-weight:600;display:flex;justify-content:space-between">How
+                  Offshoring Works <span>&rarr;</span></a></li>
+              <li><a href="book_now.html"
+                  style="font-size:.875rem;color:var(--clr-green-dk);font-weight:600;display:flex;justify-content:space-between">Book
+                  a Tour <span>&rarr;</span></a></li>
+              <li><a href="https://kingscity.com.ph/pages/virtual-office-packages" target="_blank" rel="noopener"
+                  style="font-size:.875rem;color:var(--clr-green-dk);font-weight:600;display:flex;justify-content:space-between">Virtual
+                  Office Packages <span>&rarr;</span></a></li>
+            </ul>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <div class="accent-strip"></div>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-brand-name">KINGS CITY</span>
+          <span class="footer-brand-sub">A Community of Jobs &amp; Workspaces</span>
+          <p class="footer-address">Ground Level, RCS Building,<br>Doña Soledad Ave, Better Living,<br>Parañaque City,
+            Philippines</p>
+          <div class="footer-contacts">
+            <a href="tel:0383759477">03 8375 9477</a>
+            <a href="mailto:kingscity@kingsgroup.com.ph">kingscity@kingsgroup.com.ph</a>
+          </div>
+          <span class="footer-social-label">Connect</span>
+          <div class="social-row">
+            <a href="https://instagram.com/kingscityph" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/KingsCityPH/" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+              </svg>
+            </a>
+            <a href="mailto:kingscity@kingsgroup.com.ph" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul>
+            <li><a href="../who_we_are.html">Who We Are</a></li>
+            <li><a href="spaces.html">Spaces</a></li>
+            <li><a href="offshoring.html">Offshoring</a></li>
+            <li><a href="apply.html">Apply</a></li>
+            <li><a href="https://kingscity.com.ph/" target="_blank" rel="noopener">Shop</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Solutions</h4>
+          <ul>
+            <li><a href="offshoring.html">Why Kings City</a></li>
+            <li><a href="offshoring.html">Why Philippines</a></li>
+            <li><a href="offshoring.html">Outsourcing Models</a></li>
+            <li><a href="offshoring.html">Offshoring Staffing</a></li>
+            <li><a href="#">News</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-col-title">Stay In The Loop</h4>
+          <p>Drop your info below to get marketing emails you'll actually want to open from The Kings.</p>
+          <form class="nl-form" id="nl-form" novalidate>
+            <input type="email" placeholder="Your email address" required aria-label="Email address">
+            <button type="submit" class="btn btn-primary">Join</button>
+            <div class="nl-success" id="nl-success">Thanks for submitting!</div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 The Kings City. All rights reserved.</p>
+        <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/apply.js"></script>
+  <script src="../js/forms.js"></script>
+  <script src="../js/footer.js"></script>
+</body>
+
+</html>
