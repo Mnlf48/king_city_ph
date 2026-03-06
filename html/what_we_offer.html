@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What We Offer | Kings City</title>
+  <meta name="description"
+    content="Discover what Kings City offers — premium co-working spaces, meeting rooms, events venue, private offices, virtual offices, and offshoring solutions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <style>
+    .accent-strip {
+      height: 5px;
+      background: linear-gradient(90deg, var(--clr-green-lt), var(--clr-green-md), var(--clr-pink-lt), var(--clr-lavender), var(--clr-amber))
+    }
+
+    /* ── Hero ── */
+    .wwo-hero {
+      position: relative;
+      min-height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--clr-dark);
+    }
+
+    .wwo-hero-bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    .wwo-hero-bg .img-ph {
+      height: 100%;
+      opacity: .45;
+    }
+
+    .wwo-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: none;
+    }
+
+    .wwo-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: calc(var(--nav-h) + 20px) var(--pad-x) 40px;
+    }
+
+    .wwo-hero h1 {
+      color: #fff;
+      margin-bottom: .75rem;
+    }
+
+    .wwo-hero p {
+      color: rgba(255, 255, 255, .7);
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+
+    /* ── Spaces Section ── */
+    .wwo-spaces {
+      padding: 64px 0;
+      background: var(--clr-cream);
+    }
+
+    .wwo-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .wwo-block.reverse {
+      direction: rtl;
+    }
+
+    .wwo-block.reverse>* {
+      direction: ltr;
+    }
+
+    .wwo-block-img {
+      position: relative;
+      height: 420px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 20px 56px rgba(0, 0, 0, .15);
+    }
+
+    .wwo-block-img .img-ph {
+      height: 100%;
+    }
+
+    .wwo-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      background: var(--clr-green-md);
+      color: var(--clr-dark);
+      padding: .25rem .75rem;
+      border-radius: 20px;
+      z-index: 3;
+    }
+
+    .wwo-block-text h2 {
+      margin-bottom: .75rem;
+    }
+
+    .wwo-block-text p {
+      margin-bottom: 1rem;
+    }
+
+    .wwo-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .wwo-feat {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--clr-green-dk);
+      background: var(--clr-green-lt);
+      padding: .28rem .8rem;
+      border-radius: 20px;
+    }
+
+    .wwo-block-ctas {
+      display: flex;
+      gap: .875rem;
+      flex-wrap: wrap;
+    }
+
+    /* ── Offshoring Section ── */
+    .wwo-offshoring {
+      padding: 64px 0;
+      background: #fff;
+    }
+
+
+
+    /* ── CTA Strip (Showcase Style) ── */
+    .showcase-sec {
+      background: #d5edce;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 0;
+    }
+    .showcase-sec::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 65% 50%, var(--clr-pink-md) 0%, transparent 60%);
+      opacity: .25;
+      pointer-events: none;
+    }
+    .showcase-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .showcase-title {
+      font-family: var(--f-script);
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      font-weight: 700;
+      color: var(--clr-dark);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .showcase-ctas {
+      display: flex;
+      gap: .875rem;
+      flex-wrap: wrap;
+      margin-top: 1.75rem;
+    }
+    .ring-outer {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(0, 0, 0, .12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      animation: ringP 5s ease-in-out infinite;
+    }
+    .ring-inner {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .3);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ring-text {
+      font-family: var(--f-script);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--clr-dark);
+      text-align: center;
+      line-height: 1.1;
+    }
+    @keyframes ringP {
+      0%, 100% { transform: scale(1) }
+      50% { transform: scale(1.05) }
+    }
+    @media(max-width:1024px) {
+      .showcase-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    /* ── Off benefits list ── */
+    .wwo-benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .wwo-ben {
+      display: flex;
+      align-items: flex-start;
+      gap: .875rem;
+    }
+
+    .wwo-ben svg {
+      width: 22px;
+      height: 22px;
+      color: var(--clr-green-md);
+      flex-shrink: 0;
+      margin-top: .15rem;
+    }
+
+    .wwo-ben strong {
+      font-size: .9rem;
+      color: var(--clr-dark);
+      display: block;
+    }
+
+    .wwo-ben span {
+      font-size: .84rem;
+      color: var(--ink-60);
+    }
+
+    /* ── Responsive ── */
+    @media(max-width:1024px) {
+      .wwo-block {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .wwo-block.reverse {
+        direction: ltr;
+      }
+
+      .wwo-block-img {
+        height: 300px;
+      }
+
+      .wwo-stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width:640px) {
+      .wwo-stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Announcement Bar ── -->
+  <div class="ann-bar" id="ann-bar">
+    <div class="ann-inner">
+      <span>See our Virtual Office Packages</span>
+      <a href="https://kingscity.com.ph/pages/virtual-office-packages" target="_blank" rel="noopener"
+        class="ann-link">View Packages &rarr;</a>
+    </div>
+    <button class="ann-close" id="ann-close" aria-label="Dismiss">&times;</button>
+  </div>
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-wrap">
+      <a href="../index.html" class="nav-logo">
+        <div>
+          <img src="../images/kings_city_logo_white.png" alt="Kings City Logo" class="logo-img-white">
+          <img src="../images/kings_city_logo_black.png" alt="Kings City Logo" class="logo-img-color">
+        </div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="who_we_are.html">Who We Are</a></li>
+        <li><a href="what_we_offer.html">What We Offer</a></li>
+        <li><a href="book_now.html">Book Now</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="tel:0383759477" class="nav-phone">+63 --- --- ---</a>
+        <div class="nav-drop flag-drop">
+          <button class="nav-drop-btn flag-btn" aria-expanded="false" aria-haspopup="true"
+            style="display: flex; align-items: center; gap: 0.3rem; padding: 0.5rem; background: transparent; border: none; cursor: pointer;">
+            <img src="https://flagcdn.com/w20/ph.png" alt="Philippines" width="20" style="border-radius: 2px;">
+            <span class="caret" aria-hidden="true"></span>
+          </button>
+          <ul class="drop-menu flag-menu" role="menu" style="min-width: 140px; padding: 0.5rem; border-radius: 8px;">
+            <li><a href="#" role="menuitem"
+                style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem;"><img
+                  src="https://flagcdn.com/w20/ph.png" alt="Philippines" width="20" style="border-radius: 2px;">
+                Philippines</a></li>
+            <li><a href="#" role="menuitem"
+                style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem;"><span
+                  style="font-size: 16px;">🌏</span> Asia</a></li>
+            <li><a href="#" role="menuitem"
+                style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem;"><img
+                  src="https://flagcdn.com/w20/eu.png" alt="Europe" width="20" style="border-radius: 2px;"> Europe</a>
+            </li>
+          </ul>
+        </div>
+        <a href="https://kingscity.com.ph/" target="_blank" rel="noopener" class="btn btn-nav-outline">Shop</a>
+        <a href="apply.html" class="btn btn-nav-outline">Apply</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation">
+    <div class="drawer-head">
+      <img src="../images/kings_city_logo_black.png" alt="Kings City Logo" class="drawer-logo-img">
+      <button class="drawer-close" id="drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="who_we_are.html">Who We Are</a>
+      <a href="what_we_offer.html">What We Offer</a>
+      <a href="spaces.html">Spaces</a>
+      <a href="offshoring.html">Offshoring</a>
+      <a href="book_now.html">Book Now</a>
+      <a href="apply.html">Apply</a>
+      <a href="https://kingscity.com.ph/" target="_blank" rel="noopener">Shop</a>
+    </nav>
+    <div class="drawer-foot">
+      <a href="tel:0383759477">03 8375 9477</a>
+      <a href="mailto:kingscity@kingsgroup.com.ph">kingscity@kingsgroup.com.ph</a>
+    </div>
+  </aside>
+
+  <!-- ── Hero ── -->
+  <section class="wwo-hero">
+    <div class="wwo-hero-bg">
+      <div class="img-ph ph-cowork"><img src="../images/coworking_space.jpg" alt="What We Offer"
+          style="width:100%; height:100%; object-fit:cover;"></div>
+      <div class="wwo-hero-overlay"></div>
+    </div>
+    <div class="wwo-hero-content">
+      <span class="eyebrow light">Explore Our Solutions</span>
+      <h1>What We Offer</h1>
+      <p>From flexible workspaces to offshore staffing — Kings City provides the infrastructure, talent, and community
+        your business needs to thrive in Parañaque City and beyond.</p>
+    </div>
+  </section>
+
+  <!-- ── Spaces Block ── -->
+  <section class="wwo-spaces">
+    <div class="container">
+      <div class="wwo-block" data-reveal>
+        <div class="wwo-block-img">
+          <div class="img-ph ph-cowork"><img src="../images/coworking_space.jpg" alt="Kings City Spaces"></div>
+          <span class="wwo-badge">Spaces</span>
+        </div>
+        <div class="wwo-block-text">
+          <span class="eyebrow">Workspaces &amp; Venues</span>
+          <h2>Spaces for Every Need</h2>
+          <p>Our communal tables and working stations are designed for connections to happen. Staying true to our
+            purpose, it is our mission to contribute to the growth of the economy by continuously providing jobs and
+            beautiful workspaces for our members.</p>
+          <p>Whether you need a hot desk for a day, a dedicated office for your team, a professional meeting room, or a
+            venue for your next big event — Kings City has the perfect space waiting for you.</p>
+          <div class="wwo-features">
+            <span class="wwo-feat">Co-Working</span>
+            <span class="wwo-feat">Meeting Rooms</span>
+            <span class="wwo-feat">Events Place</span>
+            <span class="wwo-feat">Office Leasing</span>
+            <span class="wwo-feat">Virtual Office</span>
+            <span class="wwo-feat">24/7 Access</span>
+          </div>
+          <div class="wwo-block-ctas">
+            <a href="spaces.html" class="btn btn-primary">Explore Spaces</a>
+            <a href="book_now.html" class="btn btn-outline">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ── Offshoring Block ── -->
+  <section class="wwo-offshoring">
+    <div class="container">
+      <div class="wwo-block reverse" data-reveal>
+        <div class="wwo-block-img">
+          <div class="img-ph ph-offsh"><img src="../images/offshoring_office.jpg" alt="Offshoring"></div>
+          <span class="wwo-badge">Offshoring</span>
+        </div>
+        <div class="wwo-block-text">
+          <span class="eyebrow">Dedicated Teams</span>
+          <h2>Build Your Dedicated Team in the Philippines</h2>
+          <p>We make it easy and affordable for businesses to build their own full-time, dedicated teams in the
+            Philippines. Most of our clients are Australian companies, but we help businesses from all around the
+            world.</p>
+          <p>The one thing they all have in common is their desire to cut labour costs, scale faster, find specialist
+            skills and improve operational efficiencies.</p>
+          <div class="wwo-benefits">
+            <div class="wwo-ben">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path
+                  d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div><strong>Reduce Cost</strong><span>Save up to 70% on labour costs</span></div>
+            </div>
+            <div class="wwo-ben">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path
+                  d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+              </svg>
+              <div><strong>Scale Fast</strong><span>Team up and running in 6 weeks</span></div>
+            </div>
+            <div class="wwo-ben">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div><strong>Increase Quality</strong><span>You retain full control of your team</span></div>
+            </div>
+          </div>
+          <div class="wwo-block-ctas">
+            <a href="offshoring.html" class="btn btn-primary">Learn More</a>
+            <a href="apply.html" class="btn btn-outline">Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Strip ── -->
+  <section class="showcase-sec section-pad" id="join">
+    <div class="container">
+      <div class="showcase-wrap">
+        <div data-reveal>
+          <span class="eyebrow" style="color:var(--clr-green-dk); margin-bottom:.5rem;">Ready to Start?</span>
+          <h2 class="showcase-title">Find the Right Solution</h2>
+          <p>Whether you need a workspace or a dedicated offshore team, we have the perfect solution. Let's talk.</p>
+          <div class="showcase-ctas">
+            <a href="book_now.html" class="btn btn-primary btn-lg">Book Now</a>
+            <a href="apply.html" class="btn btn-outline btn-lg">Apply for Membership</a>
+          </div>
+        </div>
+        <div data-reveal aria-hidden="true">
+          <div class="ring-outer">
+            <div class="ring-inner">
+              <div class="ring-text">Kings<br>City</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <div class="accent-strip"></div>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-brand-name">KINGS CITY</span>
+          <span class="footer-brand-sub">A Community of Jobs &amp; Workspaces</span>
+          <p class="footer-address">Ground Level, RCS Building,<br>Doña Soledad Ave, Better Living,<br>Parañaque City,
+            Philippines</p>
+          <div class="footer-contacts">
+            <a href="tel:0383759477">03 8375 9477</a>
+            <a href="mailto:kingscity@kingsgroup.com.ph">kingscity@kingsgroup.com.ph</a>
+          </div>
+          <span class="footer-social-label">Connect</span>
+          <div class="social-row">
+            <a href="https://instagram.com/kingscityph" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/KingsCityPH/" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+              </svg>
+            </a>
+            <a href="mailto:kingscity@kingsgroup.com.ph" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul>
+            <li><a href="who_we_are.html">Who We Are</a></li>
+            <li><a href="spaces.html">Spaces</a></li>
+            <li><a href="offshoring.html">Offshoring</a></li>
+            <li><a href="apply.html">Apply</a></li>
+            <li><a href="https://kingscity.com.ph/" target="_blank" rel="noopener">Shop</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Solutions</h4>
+          <ul>
+            <li><a href="offshoring.html">Why Kings City</a></li>
+            <li><a href="offshoring.html">Why Philippines</a></li>
+            <li><a href="offshoring.html">Outsourcing Models</a></li>
+            <li><a href="offshoring.html">Offshoring Staffing</a></li>
+            <li><a href="#">News</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-col-title">Stay In The Loop</h4>
+          <p>Drop your info below to get marketing emails you'll actually want to open from The Kings.</p>
+          <form class="nl-form" id="nl-form" novalidate>
+            <input type="email" placeholder="Your email address" required aria-label="Email address">
+            <button type="submit" class="btn btn-primary">Join</button>
+            <div class="nl-success" id="nl-success">Thanks for submitting!</div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 The Kings City. All rights reserved.</p>
+        <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/footer.js"></script>
+
+</body>
+
+</html>
