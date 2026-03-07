@@ -88,6 +88,81 @@
       font-weight: 700
     }
 
+    /* ── CTA Strip (Showcase Style) ── */
+    .showcase-sec {
+      background: #d5edce;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 0;
+    }
+    .showcase-sec::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 65% 50%, var(--clr-green-md) 0%, transparent 60%);
+      opacity: .25;
+      pointer-events: none;
+    }
+    .showcase-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .showcase-title {
+      font-family: var(--f-script);
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      font-weight: 700;
+      color: var(--clr-dark);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .showcase-ctas {
+      display: flex;
+      gap: .875rem;
+      flex-wrap: wrap;
+      margin-top: 1.75rem;
+    }
+    .ring-outer {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(0, 0, 0, .12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      animation: ringP 5s ease-in-out infinite;
+    }
+    .ring-inner {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .3);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ring-text {
+      font-family: var(--f-script);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--clr-dark);
+      text-align: center;
+      line-height: 1.1;
+    }
+    @keyframes ringP {
+      0%, 100% { transform: scale(1) }
+      50% { transform: scale(1.05) }
+    }
+    @media(max-width:1024px) {
+      .showcase-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
     @media(max-width:640px) {
       .compare-table {
         font-size: .78rem
@@ -251,7 +326,7 @@
     </div>
   </section>
 
-  <!-- ── Process ── -->
+  <!-- ── Process (WeWork-inspired) ── -->
   <section class="off-process section-pad">
     <div class="container">
       <div style="text-align:center" data-reveal>
@@ -261,107 +336,148 @@
           little as 6 weeks.</p>
       </div>
       <div class="off-process-grid">
-        <div class="process-card" data-reveal data-step="01">
-          <span class="process-week">Week 1–2</span>
-          <h3>Discovery &amp; Scoping</h3>
-          <p>We meet with you to understand your business needs, define the roles you need, and establish the team
-            structure and hiring criteria.</p>
+        <div class="process-card" data-reveal>
+          <div class="process-card-body">
+            <div class="process-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </div>
+            <h3>Discovery &amp; Scoping</h3>
+            <p>We meet with you to understand your business needs, define the roles you need, and establish the team structure and hiring criteria.</p>
+          </div>
+          <div class="process-card-img">
+            <img src="../images/discover_scoping.jpg" alt="Discovery and Scoping">
+          </div>
         </div>
-        <div class="process-card" data-reveal data-step="02">
-          <span class="process-week">Week 2–3</span>
-          <h3>Talent Acquisition</h3>
-          <p>Our dedicated recruitment team sources, screens and shortlists top candidates from our extensive network of
-            Filipino professionals.</p>
+
+        <div class="process-card" data-reveal>
+          <div class="process-card-body">
+            <div class="process-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h3>Talent Acquisition</h3>
+            <p>Our dedicated recruitment team sources, screens and shortlists top candidates from our extensive network of Filipino professionals.</p>
+          </div>
+          <div class="process-card-img">
+            <img src="../images/talent_acquisition.jpg" alt="Talent Acquisition">
+          </div>
         </div>
-        <div class="process-card" data-reveal data-step="03">
-          <span class="process-week">Week 3–5</span>
-          <h3>Onboarding &amp; Setup</h3>
-          <p>Your team is onboarded, workstations are set up, systems are configured, and training begins — all managed
-            by Kings City.</p>
+
+        <div class="process-card" data-reveal>
+          <div class="process-card-body">
+            <div class="process-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <h3>Onboarding &amp; Setup</h3>
+            <p>Your team is onboarded, workstations are set up, systems are configured, and training begins — all managed by Kings City.</p>
+          </div>
+          <div class="process-card-img">
+            <img src="../images/onboarding_setup.jpg" alt="Onboarding and Setup">
+          </div>
         </div>
-        <div class="process-card" data-reveal data-step="04">
-          <span class="process-week">Week 6</span>
-          <h3>Launch &amp; Go Live</h3>
-          <p>Your dedicated Philippines team is live and productive. You take the reins of day-to-day management while
-            we handle everything else.</p>
+
+        <div class="process-card" data-reveal>
+          <div class="process-card-body">
+            <div class="process-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <h3>Launch &amp; Go Live</h3>
+            <p>Your dedicated Philippines team is live and productive. You take the reins of day-to-day management while we handle everything else.</p>
+          </div>
+          <div class="process-card-img">
+            <img src="../images/launch_go_live.jpg" alt="Launch and Go Live">
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Roles ── -->
-  <section class="off-roles section-pad-sm">
+  <!-- ── Roles (WeWork-inspired) ── -->
+  <section class="off-roles section-pad">
     <div class="container">
       <div style="text-align:center" data-reveal>
         <span class="eyebrow">Talent We Place</span>
-        <h2 style="color:var(--clr-dark)">Roles We Can Staff</h2>
+        <h2>Roles We Can Staff</h2>
         <p style="color:var(--ink-60);margin:.75rem auto 0;max-width:560px">We can source talented professionals
           across a wide range of disciplines and industries.</p>
       </div>
       <div class="off-roles-grid">
         <div class="role-item" data-reveal>
-          <div class="role-icon"></div>
           <h4>Accountants</h4>
           <p>CPA-qualified and experienced in international accounting standards.</p>
         </div>
+
         <div class="role-item" data-reveal>
-          <div class="role-icon"></div>
           <h4>Bookkeepers</h4>
           <p>Proficient in MYOB, Xero, QuickBooks and other platforms.</p>
         </div>
+
         <div class="role-item" data-reveal>
-          <div class="role-icon"></div>
           <h4>Virtual Assistants</h4>
           <p>Skilled in admin, scheduling, CRM and executive support.</p>
         </div>
+
         <div class="role-item" data-reveal>
-          <div class="role-icon"></div>
           <h4>Graphic Designers</h4>
           <p>Creative professionals with expertise in Adobe Suite and digital design.</p>
         </div>
+
         <div class="role-item" data-reveal>
-          <div class="role-icon"></div>
           <h4>Web Developers</h4>
           <p>Full-stack developers across all major frameworks and platforms.</p>
         </div>
+
         <div class="role-item" data-reveal>
-          <div class="role-icon"></div>
           <h4>Customer Service</h4>
           <p>Fluent English-speaking agents trained in your products and processes.</p>
         </div>
+
         <div class="role-item" data-reveal>
-          <div class="role-icon"></div>
           <h4>Digital Marketers</h4>
           <p>SEO, SEM, social media and content specialists for your brand.</p>
         </div>
+
         <div class="role-item" data-reveal>
-          <div class="role-icon"></div>
           <h4>Data Analysts</h4>
           <p>Excel, SQL, Power BI and analytics professionals for data-driven decisions.</p>
         </div>
+
         <div class="role-item" data-reveal>
-          <div class="role-icon"></div>
           <h4>HR Specialists</h4>
           <p>Recruitment, onboarding and HR operations expertise.</p>
         </div>
+
         <div class="role-item" data-reveal>
-          <div class="role-icon"></div>
           <h4>IT Support</h4>
           <p>Level 1 and Level 2 helpdesk and technical support professionals.</p>
         </div>
+
         <div class="role-item" data-reveal>
-          <div class="role-icon"></div>
           <h4>Content Writers</h4>
           <p>Native-level English writers for blogs, websites and marketing copy.</p>
         </div>
+
         <div class="role-item" data-reveal>
-          <div class="role-icon"></div>
           <h4>Project Managers</h4>
           <p>PMP-certified and experienced project delivery professionals.</p>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- ── Comparison Table ── -->
   <section class="section-pad compare-sec">
@@ -421,16 +537,26 @@
     </div>
   </section>
 
-  <!-- ── CTA Band ── -->
-  <section class="off-cta-band">
+  <!-- ── CTA Strip ── -->
+  <section class="showcase-sec section-pad" id="join">
     <div class="container">
-      <span class="eyebrow light">Get Started</span>
-      <h2>Ready to Build Your Philippines Team?</h2>
-      <p>Join the growing list of Australian and international companies that trust Kings City to build and manage their
-        offshore teams.</p>
-      <div class="ctas">
-        <a href="apply.html" class="btn btn-light btn-lg">Apply Now</a>
-        <a href="book_now.html" class="btn btn-outline-light btn-lg">Book a Consultation</a>
+      <div class="showcase-wrap">
+        <div data-reveal>
+          <span class="eyebrow" style="color:var(--clr-green-dk); margin-bottom:.5rem;">Get Started</span>
+          <h2 class="showcase-title">Ready to Build Your Philippines Team?</h2>
+          <p>Join the growing list of Australian and international companies that trust Kings City to build and manage their offshore teams.</p>
+          <div class="showcase-ctas">
+            <a href="apply.html" class="btn btn-primary btn-lg">Apply Now</a>
+            <a href="book_now.html" class="btn btn-outline btn-lg">Book a Consultation</a>
+          </div>
+        </div>
+        <div data-reveal aria-hidden="true">
+          <div class="ring-outer">
+            <div class="ring-inner">
+              <div class="ring-text">Kings<br>City</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

@@ -5,7 +5,7 @@
 /* ── Hero ── */
 .book-hero {
   position: relative;
-  min-height: 55vh;
+  min-height: 420px;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -120,7 +120,7 @@
 
 /* ── Booking sections ── */
 .book-section {
-  padding: 80px 0;
+  padding: 96px 0;
   display: none
 }
 

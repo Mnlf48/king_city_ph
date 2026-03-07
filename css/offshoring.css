@@ -7,7 +7,7 @@
 /* ── Hero ── */
 .off-hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 600px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -66,15 +66,14 @@
 }
 
 .off-hero-ctas .btn-green {
-  background: var(--clr-orange);
+  background: transparent;
   color: #fff;
-  border-color: var(--clr-orange);
+  border-color: rgba(255, 255, 255, .5);
 }
 
 .off-hero-ctas .btn-green:hover {
-  background: #e8551d;
-  color: #fff;
-  border-color: #e8551d;
+  border-color: #ff6224;
+  color: #ff6224;
   box-shadow: var(--shadow-md);
 }
 
@@ -85,9 +84,8 @@
 }
 
 .off-hero-ctas .btn-outline-light:hover {
-  background: #fff;
-  color: var(--clr-dark);
-  border-color: #fff;
+  border-color: #ff6224;
+  color: #ff6224;
 }
 
 .off-hero-ctas {
@@ -151,7 +149,7 @@
 
 .off-why-img {
   position: relative;
-  height: 560px;
+  height: 520px;
   border-radius: var(--radius-xl);
   overflow: hidden
 }
@@ -190,9 +188,9 @@
   color: var(--ink-60)
 }
 
-/* ── Process ── */
+/* ── Process (WeWork-inspired) ── */
 .off-process {
-  background: var(--clr-footer)
+  background: #fff;
 }
 
 .off-process-grid {
@@ -203,106 +201,120 @@
 }
 
 .process-card {
-  background: #fff;
-  border: 1px solid var(--ink-10);
-  border-radius: var(--radius-lg);
-  padding: 2rem 1.75rem;
-  position: relative;
+  background: #f7f7f7;
+  border-radius: 12px;
   overflow: hidden;
-  transition: box-shadow .3s var(--ease), transform .3s var(--ease);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow .3s var(--ease), transform .3s var(--ease), background .25s var(--ease);
 }
 
 .process-card:hover {
-  box-shadow: 0 12px 36px rgba(0, 0, 0, .1);
-  transform: translateY(-4px)
+  box-shadow: 0 16px 48px rgba(0, 0, 0, .08);
+  transform: translateY(-5px);
+  background: #ffd2df;
 }
 
-.process-card::before {
-  content: attr(data-step);
-  position: absolute;
-  top: -.5rem;
-  right: 1rem;
-  font-family: var(--f-head);
-  font-size: 5rem;
-  font-weight: 700;
-  color: var(--clr-lavender);
-  line-height: 1;
-  z-index: 0;
-  pointer-events: none;
+.process-card-body {
+  padding: 1.75rem 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
-.process-card>* {
-  position: relative;
-  z-index: 1
+.process-card-icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 1.25rem;
+  color: var(--clr-dark);
 }
 
-.process-week {
-  display: inline-block;
-  font-size: .65rem;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--clr-green-dk);
-  background: var(--clr-green-lt);
-  padding: .2rem .65rem;
-  border-radius: 20px;
-  margin-bottom: .875rem;
+.process-card-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .process-card h3 {
-  font-size: 1.1rem;
-  margin-bottom: .5rem
+  font-family: var(--f-head);
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin-bottom: .6rem;
+  color: var(--clr-dark);
 }
 
 .process-card p {
-  font-size: .875rem
+  font-size: .92rem;
+  line-height: 1.6;
+  color: var(--ink-60);
 }
 
-/* ── Roles ── */
+.process-card-img {
+  height: 200px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.process-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s var(--ease);
+}
+
+.process-card:hover .process-card-img img {
+  transform: scale(1.05);
+}
+
+/* ── Roles (WeWork-inspired, no images) ── */
 .off-roles {
-  background: #fffdf3;
+  background: #fff;
 }
 
 .off-roles-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
+  gap: 1.5rem;
   margin-top: 3rem;
-  border: 1px solid rgba(255, 255, 255, .08);
-  border-radius: var(--radius-xl);
-  overflow: hidden
 }
 
 .role-item {
-  padding: 1.75rem 2rem;
-  background: rgba(255, 255, 255, .8);
-  border-right: 1px solid rgba(0, 0, 0, .06);
-  border-bottom: 1px solid rgba(0, 0, 0, .06);
-  transition: background .22s;
+  background: #f7f7f7;
+  border-radius: 12px;
+  padding: 1.75rem 1.5rem;
+  transition: box-shadow .3s var(--ease), transform .3s var(--ease), background .25s var(--ease);
 }
 
 .role-item:hover {
-  background: #fff
+  box-shadow: 0 16px 48px rgba(0, 0, 0, .08);
+  transform: translateY(-5px);
+  background: #ffd2df;
 }
 
 .role-icon {
-  font-size: 1.5rem;
-  margin-bottom: .75rem;
-  display: none;
-  /* Hide emojis */
+  width: 36px;
+  height: 36px;
+  margin-bottom: 1.25rem;
+  color: var(--clr-dark);
+  display: block;
+}
+
+.role-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .role-item h4 {
+  font-family: var(--f-head);
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin-bottom: .6rem;
   color: var(--clr-dark);
-  font-size: .95rem;
-  font-weight: 600;
-  margin-bottom: .35rem;
-  font-family: var(--f-head)
 }
 
 .role-item p {
-  font-size: .82rem;
-  color: var(--ink-60)
+  font-size: .92rem;
+  line-height: 1.6;
+  color: var(--ink-60);
 }
 
 /* ── CTA band ── */

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/footer.css">
     <style>
-        /* ── Page hero ── */
+        /* ── Page Hero ── */
         .page-hero {
             position: relative;
             background: var(--clr-dark);
@@ -62,7 +62,7 @@
             z-index: 1
         }
 
-        /* ── Story ── */
+        /* ── Our Story split ── */
         .story-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -93,177 +93,532 @@
             margin-top: .75rem
         }
 
-        /* ── Timeline ── */
-        .timeline {
-            max-width: 800px;
-            margin: 0 auto
+        .story-check-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.25rem 0 0;
+            display: flex;
+            flex-direction: column;
+            gap: .65rem;
         }
 
-        .tl-item {
-            display: grid;
-            grid-template-columns: 120px 1fr;
-            gap: 2rem;
-            margin-bottom: 2.5rem;
-            position: relative
+        .story-check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: .65rem;
+            font-size: .9375rem;
+            color: var(--ink-60);
+            line-height: 1.55;
         }
 
-        .tl-item::before {
-            content: '';
-            position: absolute;
-            left: 120px;
-            top: 0;
-            bottom: -2.5rem;
-            width: 1px;
-            background: var(--ink-20);
-            z-index: 0;
-        }
-
-        .tl-item:last-child::before {
-            display: none
-        }
-
-        .tl-year {
-            font-family: var(--f-head);
-            font-size: 1.5rem;
-            font-weight: 700;
+        .story-check-list li svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
             color: var(--clr-green-dk);
-            text-align: right;
-            padding-top: .2rem;
-            position: relative;
-            z-index: 1;
+            margin-top: 2px;
         }
 
-        .tl-content {
+        /* ── Vision & Mission Split Layout ── */
+        .vmv-split-sec {
             background: #fff;
-            border: 1px solid var(--ink-10);
-            border-radius: var(--radius-lg);
-            padding: 1.5rem 1.75rem;
-            position: relative;
-            z-index: 1;
         }
 
-        .tl-content::before {
-            content: '';
-            position: absolute;
-            left: -9px;
-            top: 1.2rem;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: var(--clr-green-md);
-            border: 3px solid #fff;
-            box-shadow: 0 0 0 1px var(--clr-green-md);
+        .vmv-split-sec.bg-cream {
+            background: var(--clr-cream);
         }
 
-        .tl-content h4 {
-            font-family: var(--f-head);
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--clr-dark);
-            margin-bottom: .4rem
+        .vmv-split-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
         }
 
-        .tl-content p {
-            font-size: .875rem
+        .vmv-split-img {
+            height: 480px;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, .12);
         }
 
-        /* ── Team values ── */
+        .vmv-split-img .img-ph {
+            height: 100%;
+        }
+
+        .vmv-split-text h2 {
+            margin-bottom: 1rem;
+        }
+
+        .vmv-split-text p {
+            font-size: 1.05rem;
+            margin-bottom: 1.25rem;
+            color: var(--ink-80);
+        }
+        
+        .vmv-split-grid.reverse .vmv-split-img {
+            order: 2;
+        }
+
+        /* ── Core Values (WeWork-inspired) ── */
         .values-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
         }
 
         .val-card {
-            background: #fff;
-            border: 1px solid var(--ink-10);
-            border-radius: var(--radius-xl);
-            padding: 2rem 1.75rem;
-            text-align: center;
-            transition: box-shadow .3s var(--ease), transform .3s var(--ease), background .22s;
+            background: #f7f7f7;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow .3s var(--ease), transform .3s var(--ease), background .25s var(--ease);
         }
 
         .val-card:hover {
-            box-shadow: 0 12px 36px rgba(0, 0, 0, .1);
-            transform: translateY(-4px);
-            background: var(--clr-pink-lt)
+            box-shadow: 0 16px 48px rgba(0, 0, 0, .08);
+            transform: translateY(-5px);
+            background: #ffd2df;
         }
 
-        .val-n {
-            font-family: var(--f-head);
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--clr-green-md);
-            margin-bottom: .75rem
+        .val-card-body {
+            padding: 1.75rem 1.5rem 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .val-card-icon {
+            width: 36px;
+            height: 36px;
+            margin-bottom: 1.25rem;
+            color: var(--clr-dark);
+        }
+
+        .val-card-icon svg {
+            width: 100%;
+            height: 100%;
         }
 
         .val-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: .5rem
+            font-family: var(--f-head);
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin-bottom: .6rem;
+            color: var(--clr-dark);
         }
 
         .val-card p {
-            font-size: .875rem
+            font-size: .92rem;
+            line-height: 1.6;
+            color: var(--ink-60);
         }
 
-        /* ── CTA band ── */
-        .cta-band {
-            background: linear-gradient(135deg, var(--clr-green-dk), #1f4e33, rgba(255, 98, 36, .15));
-            padding: 60px 0;
+        .val-card-img {
+            height: 200px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .val-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s var(--ease);
+        }
+
+        .val-card:hover .val-card-img img {
+            transform: scale(1.05);
+        }
+
+        /* ── Our Roots Timeline ── */
+        .roots-sec {
+            background: #ffaec5;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .roots-sec::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 30% 70%, rgba(255,255,255,.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .roots-head {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .roots-head .eyebrow {
+            color: var(--clr-green-dk);
+        }
+
+        .roots-head h2 {
+            color: fff;
+        }
+
+        .roots-head p {
+            color: rgba(255,255,255,.6);
+            max-width: 520px;
+            margin: .5rem auto 0;
+        }
+
+        .roots-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            position: relative;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .roots-item {
+            display: grid;
+            grid-template-columns: 180px auto 1fr;
+            gap: 2rem;
+            align-items: start;
+            padding: 1.75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,.1);
+            position: relative;
+        }
+
+        .roots-item:last-child {
+            border-bottom: none;
+        }
+
+        .roots-logo-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+        }
+
+        .roots-logo {
+            font-family: var(--f-head);
+            font-size: .85rem;
+            font-weight: 700;
+            color: rgba(10, 2, 2, 0.5);
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            text-align: right;
+            line-height: 1.2;
+        }
+
+        .roots-year {
+            font-family: var(--f-script);
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: fff;
+            line-height: 1;
+            padding-top: .1rem;
+            min-width: 80px;
+        }
+
+        .roots-info h4 {
+            font-family: var(--f-body);
+            font-size: .82rem;
+            font-weight: 700;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            color: fff;
+            margin-bottom: .35rem;
+        }
+
+        .roots-info p {
+            font-size: .875rem;
+            color: rgba(28, 5, 5, 0.6);
+            line-height: 1.6;
+        }
+
+        /* ── The Keepers (Founders) ── */
+        .keepers-sec {
+            background: var(--clr-cream);
+        }
+
+        .keepers-head {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .keepers-head .eyebrow {
+            color: var(--clr-green-dk);;
+        }
+
+        .keepers-head h2 {
+            font-family: var(--f-head);
+        }
+
+        .keepers-head .keepers-line {
+            width: 50px;
+            height: 3px;
+            background: var(--clr-green-dk);;
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        .keepers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .keeper-card {
             text-align: center;
         }
 
-        .cta-band h2 {
-            color: #fff;
-            margin-bottom: 1rem
+        .keeper-img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 16px 48px rgba(0,0,0,.12);
+            transition: transform .4s var(--ease), box-shadow .4s var(--ease);
         }
 
-        .cta-band p {
-            color: rgba(255, 255, 255, .7);
-            max-width: 520px;
-            margin: 0 auto 2.5rem
+        .keeper-img:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 64px rgba(0,0,0,.18);
         }
 
-        .cta-band .ctas {
+        .keeper-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .keeper-role {
+            display: block;
+            font-size: .65rem;
+            font-weight: 700;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--clr-green-dk);
+            margin-bottom: .4rem;
+        }
+
+        .keeper-card h3 {
+            font-family: var(--f-head);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--clr-dark);
+            margin-bottom: 1rem;
+        }
+
+        .keeper-creds {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+
+        .keeper-creds li {
+            font-size: .82rem;
+            line-height: 1.5;
+            color: var(--ink-60);
+            padding: .4rem 0;
+            border-bottom: 1px solid var(--ink-06);
             display: flex;
-            gap: 1rem;
+            align-items: flex-start;
+            gap: .5rem;
+        }
+
+        .keeper-creds li:last-child {
+            border-bottom: none;
+        }
+
+        .keeper-creds li::before {
+            content: '•';
+            color: var(--clr-orange);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: -1px;
+        }
+
+        /* ── Showcase CTA ── */
+        .showcase-sec {
+            background: #d5edce;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .showcase-sec::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 65% 50%, var(--clr-green-md) 0%, transparent 60%);
+            opacity: .25;
+            pointer-events: none;
+        }
+
+        .showcase-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .showcase-title {
+            font-family: var(--f-script);
+            font-size: clamp(2.4rem, 5vw, 4.5rem);
+            font-weight: 700;
+            color: var(--clr-dark);
+            line-height: 1.1;
+        }
+
+        .showcase-text p {
+            font-size: .9375rem;
+            margin-bottom: 1rem;
+        }
+
+        .showcase-ctas {
+            display: flex;
+            gap: .875rem;
+            flex-wrap: wrap;
+            margin-top: 1.75rem;
+        }
+
+        .ring-outer {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(0,0,0,.12);
+            display: flex;
+            align-items: center;
             justify-content: center;
-            flex-wrap: wrap
+            margin: 0 auto;
+            animation: ringP 5s ease-in-out infinite;
+        }
+
+        .ring-inner {
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(0,0,0,.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,.3);
+            animation: ringP 5s 1.5s ease-in-out infinite;
+        }
+
+        @keyframes ringP {
+            0%, 100% { transform: scale(1); opacity: .6 }
+            50% { transform: scale(1.04); opacity: 1 }
+        }
+
+        .ring-text {
+            font-family: var(--f-script);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--clr-dark);
+            opacity: .8;
+            text-align: center;
         }
 
         /* ── Accent ── */
         .accent-strip {
             height: 5px;
-            background: linear-gradient(90deg, var(--clr-green-lt), var(--clr-green-md), var(--clr-pink-lt), var(--clr-pink-md), var(--clr-lavender), var(--clr-amber), var(--clr-orange))
+            background: linear-gradient(90deg, var(--clr-green-lt), var(--clr-green-md), var(--clr-pink-lt), var(--clr-pink-md), var(--clr-lavender), var(--clr-amber), var(--clr-orange));
         }
 
+        /* ── Responsive ── */
         @media(max-width:1024px) {
             .story-grid {
                 grid-template-columns: 1fr;
-                gap: 2.5rem
+                gap: 2.5rem;
             }
 
             .story-img {
-                height: 360px
+                height: 360px;
+            }
+
+            .vmv-split-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .vmv-split-grid.reverse .vmv-split-img {
+                order: -1;
+            }
+
+            .vmv-split-img {
+                height: 360px;
+                order: -1;
             }
 
             .values-grid {
-                grid-template-columns: 1fr 1fr
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .keepers-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .showcase-wrap {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .roots-item {
+                grid-template-columns: 100px auto 1fr;
+                gap: 1.25rem;
+            }
+
+            .roots-logo {
+                font-size: .72rem;
+            }
+
+            .roots-year {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media(max-width:768px) {
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .keepers-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .roots-item {
+                grid-template-columns: 1fr;
+                gap: .75rem;
+                padding: 1.25rem 0;
+            }
+
+            .roots-logo-wrap {
+                justify-content: flex-start;
+            }
+
+            .roots-logo {
+                text-align: left;
+            }
+
+            .showcase-ctas {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .showcase-ctas .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
             }
         }
 
         @media(max-width:640px) {
-            .values-grid {
-                grid-template-columns: 1fr
-            }
-
-            .tl-item {
-                grid-template-columns: 80px 1fr;
-                gap: 1.25rem
-            }
-
-            .tl-year {
-                font-size: 1.1rem
+            .roots-year {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -347,10 +702,13 @@
         </div>
     </aside>
 
-    <!-- ── Page Hero ── -->
+    <!-- ════════════════════════════════════════════════
+     HERO
+    ════════════════════════════════════════════════ -->
     <section class="page-hero" style="position:relative; overflow:hidden;">
         <div class="img-ph ph-who" style="position:absolute; inset:0; z-index:0;">
-            <img src="../images/who we are.jpg" alt="Who We Are" style="width:100%; height:100%; object-fit:cover;">
+            <img src="../images/who we are.jpg" alt="Who We Are"
+                style="width:100%; height:100%; object-fit:cover;">
             <div
                 style="position:absolute; inset:0; background:linear-gradient(160deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);">
             </div>
@@ -359,93 +717,102 @@
             style="position:relative; z-index:1; padding-top:60px; padding-bottom:60px; color:#fff;">
             <span class="page-hero-label" style="color:var(--clr-green-lt);">Our Story</span>
             <h1>Who We Are</h1>
-            <p style="color:rgba(255,255,255,0.85);">A community of jobs and workspaces built to empower businesses and
-                professionals across the Philippines
-                and beyond.</p>
+            <p style="color:rgba(255,255,255,0.85);">A legacy formed on ethical practices, worker empowerment, and
+                shared success since 1999.</p>
         </div>
     </section>
 
-    <!-- ── Our Story ── -->
-    <section class="section-pad" style="background:var(--clr-cream); padding:64px 0;">
+    <!-- ════════════════════════════════════════════════
+     OUR STORY — Split Image-Text
+    ════════════════════════════════════════════════ -->
+    <section class="section-pad" style="background:var(--clr-cream);">
         <div class="container">
             <div class="story-grid">
                 <div data-reveal>
                     <div class="story-img">
-                        <div class="img-ph ph-about"><img src="../images/community.jpg" alt="Kings City Story"><span
-                                class="ph-label" style="display:none">Kings City Story</span></div>
+                        <div class="img-ph ph-about" style="background:transparent;"><img src="../images/ph_map.png"
+                                alt="Philippines Map" style="object-fit:contain; position:relative;"></div>
                     </div>
                 </div>
                 <div class="story-text" data-reveal>
-                    <span class="eyebrow">Our Story</span>
-                    <h2>From Humble Beginnings to a Nationwide Community</h2>
-                    <p>Kings Group of Companies was founded in 1999 with a simple yet powerful mission — to provide jobs
-                        and create meaningful opportunities for Filipinos.</p>
-                    <p>In 2009, we expanded that vision to include Kings City, a premium co-working and offshoring
-                        destination in Parañaque City. Today, we support more than 10,000 employees nationwide and help
+                    <span class="eyebrow">Who We Are</span>
+                    <h2>More Than a Workspace — A Community Built for Growth</h2>
+                    <p>Founded in 1999, Kings Group of Companies began with a simple yet powerful mission — to
+                        provide jobs and create meaningful opportunities for Filipinos. What started as a
+                        microfinancing cooperative in Zamboanga City has grown into a nationwide network of
+                        businesses.</p>
+                    <p>In 2020, we launched Kings City — a premium co-working and offshoring destination in
+                        Parañaque City. Today, we support more than 10,000 members nationwide and help
                         businesses from Australia and around the world build high-performing teams in the Philippines.
                     </p>
-                    <p>We are not just a co-working space. We are a community of workforce and workspace — a place where
-                        connections are made, businesses are built, and careers are launched.</p>
-                    <a href="apply.html" class="btn btn-primary">Join Our Community</a>
+                    <ul class="story-check-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>10,000+</strong> members across the Philippines</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Premium</strong> coworking, events & office spaces</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Offshoring</strong> solutions for global businesses</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Worker-owned</strong> cooperative model</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── Timeline ── -->
-    <section class="section-pad" style="background:var(--clr-footer); padding:64px 0;">
+    <!-- ════════════════════════════════════════════════
+     VISION & MISSION
+    ════════════════════════════════════════════════ -->
+    <section class="vmv-split-sec section-pad" aria-labelledby="vmv-h-vision" style="background: #fff;">
         <div class="container">
-            <div style="text-align:center;margin-bottom:3rem" data-reveal>
-                <span class="eyebrow">Our Journey</span>
-                <h2>Milestones &amp; Growth</h2>
-            </div>
-            <div class="timeline">
-                <div class="tl-item" data-reveal>
-                    <div class="tl-year">1999</div>
-                    <div class="tl-content">
-                        <h4>Kings Group Founded</h4>
-                        <p>Kings Group of Companies is established in the Philippines, beginning its journey of
-                            providing quality employment opportunities.</p>
-                    </div>
+            <div class="vmv-split-grid reverse" data-reveal>
+                <div class="vmv-split-img">
+                    <div class="img-ph"><img src="../images/vmv_vision.png" alt="Our Vision"></div>
                 </div>
-                <div class="tl-item" data-reveal>
-                    <div class="tl-year">2009</div>
-                    <div class="tl-content">
-                        <h4>The Kings Community Launches</h4>
-                        <p>The Kings expands beyond recruitment to form a growing community of jobs across the country.
-                        </p>
-                    </div>
-                </div>
-                <div class="tl-item" data-reveal>
-                    <div class="tl-year">2018</div>
-                    <div class="tl-content">
-                        <h4>Kings City Opens</h4>
-                        <p>Kings City — our premium co-working and offshoring space in Parañaque City — opens its doors
-                            to the public.</p>
-                    </div>
-                </div>
-                <div class="tl-item" data-reveal>
-                    <div class="tl-year">2020</div>
-                    <div class="tl-content">
-                        <h4>Offshoring Division Grows</h4>
-                        <p>We launch our dedicated offshoring solution, helping Australian and international companies
-                            build teams in the Philippines.</p>
-                    </div>
-                </div>
-                <div class="tl-item" data-reveal>
-                    <div class="tl-year">Today</div>
-                    <div class="tl-content">
-                        <h4>10,000+ Employees Nationwide</h4>
-                        <p>Kings Group now supports over 10,000 employees across the Philippines, with virtual offices,
-                            co-working, events and offshoring services.</p>
-                    </div>
+                <div class="vmv-split-text">
+                    <span class="eyebrow">The Future We See</span>
+                    <h2 id="vmv-h-vision">Our Vision</h2>
+                    <p>To be the leading professional workforce provider with satisfied clients and secured members in the Philippines.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── Values ── -->
-    <section class="section-pad" style="background:var(--clr-cream); padding:64px 0;">
+    <section class="vmv-split-sec section-pad-sm bg-cream" aria-labelledby="vmv-h-mission" style="background: var(--clr-cream);">
+        <div class="container">
+            <div class="vmv-split-grid" data-reveal>
+                <div class="vmv-split-img">
+                    <div class="img-ph"><img src="../images/vmv_mission.png" alt="Our Mission"></div>
+                </div>
+                <div class="vmv-split-text">
+                    <span class="eyebrow">What Drives Us</span>
+                    <h2 id="vmv-h-mission">Our Mission</h2>
+                    <p>Driven with passion, agility, and excellence in everything we do, we are committed to maintain a successful partnership with our clients as we also help with the needs and aspirations of our members. It is our mission to be a responsible member of the Cooperative Development Authority in contributing to the growth of the economy by continuously providing jobs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════
+     CORE VALUES (WeWork-inspired)
+    ════════════════════════════════════════════════ -->
+    <section class="section-pad" style="background:#fff;">
         <div class="container">
             <div style="text-align:center;margin-bottom:3rem" data-reveal>
                 <span class="eyebrow">Our Values</span>
@@ -453,39 +820,379 @@
             </div>
             <div class="values-grid">
                 <div class="val-card" data-reveal>
-                    <div class="val-n">01</div>
-                    <h3>Integrity</h3>
-                    <p>We do the right thing — always. With our members, partners and employees.</p>
+                    <div class="val-card-body">
+                        <div class="val-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </div>
+                        <h3>Member-Centric</h3>
+                        <p>Our members' welfare is our top priority. We help improve the lives of our members by providing jobs that uplift their dignity.</p>
+                    </div>
+                    <div class="val-card-img">
+                        <img src="../images/member_centric.jpg" alt="Member-Centric">
+                    </div>
                 </div>
+
                 <div class="val-card" data-reveal>
-                    <div class="val-n">02</div>
-                    <h3>Transparency</h3>
-                    <p>No hidden agendas. Open communication at every level of our business.</p>
+                    <div class="val-card-body">
+                        <div class="val-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="8" x2="12" y2="12"/>
+                                <line x1="12" y1="16" x2="12.01" y2="16"/>
+                            </svg>
+                        </div>
+                        <h3>Truth</h3>
+                        <p>We strive to promote and implement truthful and transparent transactions with our Clients and Co-Members.</p>
+                    </div>
+                    <div class="val-card-img">
+                        <img src="../images/truth.jpg" alt="Truth">
+                    </div>
                 </div>
+
                 <div class="val-card" data-reveal>
-                    <div class="val-n">03</div>
-                    <h3>Professionalism</h3>
-                    <p>Excellence in everything we do, from our spaces to our staffing solutions.</p>
+                    <div class="val-card-body">
+                        <div class="val-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <h3>Quality</h3>
+                        <p>What we do, we do well. Delivering only the best products and exceptional services for you.</p>
+                    </div>
+                    <div class="val-card-img">
+                        <img src="../images/quality.jpg" alt="Quality">
+                    </div>
                 </div>
+
                 <div class="val-card" data-reveal>
-                    <div class="val-n">04</div>
-                    <h3>Community</h3>
-                    <p>Building lasting connections and creating environments where people thrive.</p>
+                    <div class="val-card-body">
+                        <div class="val-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <h3>Value</h3>
+                        <p>Developing systems to ensure the best possible return on investment for our members, clients and other stakeholders.</p>
+                    </div>
+                    <div class="val-card-img">
+                        <img src="../images/value.jpg" alt="Value">
+                    </div>
+                </div>
+
+                <div class="val-card" data-reveal>
+                    <div class="val-card-body">
+                        <div class="val-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h3>Integrity</h3>
+                        <p>Possessing and practicing fairness, objectivity and strong moral principles even in the most challenging situations.</p>
+                    </div>
+                    <div class="val-card-img">
+                        <img src="../images/integrity.jpg" alt="Integrity">
+                    </div>
+                </div>
+
+                <div class="val-card" data-reveal>
+                    <div class="val-card-body">
+                        <div class="val-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </div>
+                        <h3>Excellence</h3>
+                        <p>Providing our clients with superb services and exceptional overall experience, exceeding expectations by working smart and hard.</p>
+                    </div>
+                    <div class="val-card-img">
+                        <img src="../images/excellence.jpg" alt="Excellence">
+                    </div>
+                </div>
+
+                <div class="val-card" data-reveal>
+                    <div class="val-card-body">
+                        <div class="val-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                                <polyline points="2 17 12 22 22 17"/>
+                                <polyline points="2 12 12 17 22 12"/>
+                            </svg>
+                        </div>
+                        <h3>Innovation</h3>
+                        <p>Actively creative and open to all possibilities in meeting our clients' unique needs.</p>
+                    </div>
+                    <div class="val-card-img">
+                        <img src="../images/innovation.jpg" alt="Innovation">
+                    </div>
+                </div>
+
+                <div class="val-card" data-reveal>
+                    <div class="val-card-body">
+                        <div class="val-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <line x1="19" y1="8" x2="19" y2="14"/>
+                                <line x1="22" y1="11" x2="16" y2="11"/>
+                            </svg>
+                        </div>
+                        <h3>Accountability</h3>
+                        <p>Demonstrating dependability and personal ownership necessary in achieving desired results.</p>
+                    </div>
+                    <div class="val-card-img">
+                        <img src="../images/accountability.jpg" alt="Accountability">
+                    </div>
+                </div>
+
+                <div class="val-card" data-reveal>
+                    <div class="val-card-body">
+                        <div class="val-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                            </svg>
+                        </div>
+                        <h3>Professionalism</h3>
+                        <p>Making sure that everyone who seeks our services is treated with respect, courtesy and efficiency.</p>
+                    </div>
+                    <div class="val-card-img">
+                        <img src="../images/professionalism.jpg" alt="Professionalism">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── CTA Band ── -->
-    <section class="cta-band">
+    <!-- ════════════════════════════════════════════════
+     OUR ROOTS — Timeline
+    ════════════════════════════════════════════════ -->
+    <section class="roots-sec section-pad">
         <div class="container">
-            <span class="eyebrow light">Get Started</span>
-            <h2>Ready to Join the Kings?</h2>
-            <p>Become part of our growing community of professionals and businesses. Apply for membership or book a tour
-                today.</p>
-            <div class="ctas">
-                <a href="apply.html" class="btn btn-light btn-lg">Apply Now</a>
-                <a href="book_now.html" class="btn btn-outline-light btn-lg">Book a Tour</a>
+            <div class="roots-head" data-reveal>
+                <span class="eyebrow">Our Roots</span>
+                <h2>Since 1999, Kings Has Been Redefining the Staffing Industry</h2>
+            </div>
+
+            <div class="roots-timeline">
+                <!-- 1999 -->
+                <div class="roots-item" data-reveal>
+                    <div class="roots-logo-wrap">
+                        <div class="roots-logo">KINGS<br>Lending</div>
+                    </div>
+                    <div class="roots-year">1999</div>
+                    <div class="roots-info">
+                        <h4>Kings Lending Corporation</h4>
+                        <p>Founded in Zamboanga City, providing microfinancing services to hardworking Filipinos and
+                            laying the foundation for what would become a nationwide cooperative.</p>
+                    </div>
+                </div>
+
+                <!-- 2005 -->
+                <div class="roots-item" data-reveal>
+                    <div class="roots-logo-wrap">
+                        <div class="roots-logo">KINGS<br>Asia Pacific</div>
+                    </div>
+                    <div class="roots-year">2005</div>
+                    <div class="roots-info">
+                        <h4>Kings Asia Pacific Trading</h4>
+                        <p>The umbrella organization of Kings' retail businesses launched Pacific Water in Zamboanga City.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2009 -->
+                <div class="roots-item" data-reveal>
+                    <div class="roots-logo-wrap">
+                        <div class="roots-logo">KINGS<br>Manpower</div>
+                    </div>
+                    <div class="roots-year">2009</div>
+                    <div class="roots-info">
+                        <h4>Kings Manpower Established</h4>
+                        <p>Established in Zamboanga City to provide professional manpower services to different
+                            industries across the region.</p>
+                    </div>
+                </div>
+
+                <!-- 2011 -->
+                <div class="roots-item" data-reveal>
+                    <div class="roots-logo-wrap">
+                        <div class="roots-logo">KINGS<br>Manpower</div>
+                    </div>
+                    <div class="roots-year">2011</div>
+                    <div class="roots-info">
+                        <h4>Metro Manila Expansion</h4>
+                        <p>Kings Manpower expanded to Metro Manila, establishing offices in Parañaque, Manila, Makati
+                            and BGC.</p>
+                    </div>
+                </div>
+
+                <!-- 2016 -->
+                <div class="roots-item" data-reveal>
+                    <div class="roots-logo-wrap">
+                        <div class="roots-logo">Home<br>Culinary</div>
+                    </div>
+                    <div class="roots-year">2016</div>
+                    <div class="roots-info">
+                        <h4>Home Culinary &amp; Technical School</h4>
+                        <p>Established to offer livelihood and educational programs to Kings Members. Subsequently
+                            accredited by TESDA as a Training and Assessment Center for Bread and Pastry Production NC
+                            II, Cookery NC II, Food and Beverage Services NC II, Housekeeping NC II, and Culinary Arts.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2017 -->
+                <div class="roots-item" data-reveal>
+                    <div class="roots-logo-wrap">
+                        <div class="roots-logo">KINGS<br>Manpower</div>
+                    </div>
+                    <div class="roots-year">2017</div>
+                    <div class="roots-info">
+                        <h4>Visayas Expansion</h4>
+                        <p>Kings Manpower expanded its reach into the Visayas region, strengthening the cooperative's
+                            nationwide presence.</p>
+                    </div>
+                </div>
+
+                <!-- 2019 -->
+                <div class="roots-item" data-reveal>
+                    <div class="roots-logo-wrap">
+                        <div class="roots-logo">KINGS<br>Headquarters</div>
+                    </div>
+                    <div class="roots-year">2019</div>
+                    <div class="roots-info">
+                        <h4>Kings Headquarters</h4>
+                        <p>Reached the 10,000 member mark and expanded services to include serviced offices, meeting
+                            rooms and private offices.</p>
+                    </div>
+                </div>
+
+                <!-- 2020 -->
+                <div class="roots-item" data-reveal>
+                    <div class="roots-logo-wrap">
+                        <div class="roots-logo">KINGS<br>City</div>
+                    </div>
+                    <div class="roots-year">2020</div>
+                    <div class="roots-info">
+                        <h4>Kings City</h4>
+                        <p>Events place, bigger meeting rooms, and coworking space for members, located in Parañaque.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2025 -->
+                <div class="roots-item" data-reveal>
+                    <div class="roots-logo-wrap">
+                        <div class="roots-logo">KINGS &amp;<br>ELAN</div>
+                    </div>
+                    <div class="roots-year">2025</div>
+                    <div class="roots-info">
+                        <h4>Kings &amp; Elan Media Group</h4>
+                        <p>Launched a premier agency blending creative vision and strategic expertise to craft
+                            sophisticated, impactful brand experiences that resonate globally.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════
+     THE KEEPERS (FOUNDERS)
+    ════════════════════════════════════════════════ -->
+    <section class="keepers-sec section-pad">
+        <div class="container">
+            <div class="keepers-head" data-reveal>
+                <span class="eyebrow">Chapter IV</span>
+                <h2>The Keepers</h2>
+                <div class="keepers-line"></div>
+            </div>
+
+            <div class="keepers-grid">
+                <!-- Cory DV Navarro -->
+                <div class="keeper-card" data-reveal>
+                    <div class="keeper-img">
+                        <img src="../images/founder_cory_navarro.png" alt="Cory DV Navarro">
+                    </div>
+                    <span class="keeper-role">Founder, Kings Group of Companies</span>
+                    <h3>Cory DV Navarro</h3>
+                    <ul class="keeper-creds">
+                        <li>Hall of Famer, Manila's Best Dressed</li>
+                        <li>Hall of Famer, Zamboanga's Best Dressed</li>
+                        <li>Huwarang Ina Awardee (2017)</li>
+                        <li>Empowered Women of the Philippines (2012 / 2013)</li>
+                        <li>Charter President, Ambassador Charter Club of Melbourne</li>
+                        <li>Pioneer Nursing Batch, Ateneo de Zamboanga University</li>
+                    </ul>
+                </div>
+
+                <!-- Camille Navarro Makasiar -->
+                <div class="keeper-card" data-reveal>
+                    <div class="keeper-img">
+                        <img src="../images/founder_camille_makasiar.png" alt="Camille Navarro Makasiar">
+                    </div>
+                    <span class="keeper-role">Founder and Executive Director</span>
+                    <h3>Camille Navarro Makasiar</h3>
+                    <ul class="keeper-creds">
+                        <li>Master in Entrepreneurship, Ateneo Graduate School of Business</li>
+                        <li>Member, Entrepreneurs Organization (EO), PH South Chapter</li>
+                        <li>Trustee, Bayan Innovation Group, Inc.</li>
+                        <li>President, Inner Wheel Club of Metro Manila</li>
+                        <li>Knowledge Management, University of Oxford</li>
+                        <li>Strategic Management, Imperial College London</li>
+                    </ul>
+                </div>
+
+                <!-- Neil John S. Makasiar -->
+                <div class="keeper-card" data-reveal>
+                    <div class="keeper-img">
+                        <img src="../images/founder_neil_makasiar.png" alt="Neil John S. Makasiar">
+                    </div>
+                    <span class="keeper-role">Managing Director</span>
+                    <h3>Neil John S. Makasiar</h3>
+                    <ul class="keeper-creds">
+                        <li>Director, Makenter Construction and Development Corp.</li>
+                        <li>Vice President, Human Services Cluster, CDA Region IX</li>
+                        <li>Member, Rotary Club of Makati</li>
+                        <li>Member, Shriners International</li>
+                        <li>Alpha Phi Omega International Service Fraternity</li>
+                        <li>Bachelor's Degree, De La Salle University – Manila</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════
+     SHOWCASE CTA
+    ════════════════════════════════════════════════ -->
+    <section class="showcase-sec section-pad" id="join">
+        <div class="container">
+            <div class="showcase-wrap">
+                <div data-reveal>
+                    <span class="eyebrow">Membership</span>
+                    <h2 class="showcase-title">Join The Kings</h2>
+                    <div class="showcase-text">
+                        <p>Become part of a thriving ecosystem of professionals and businesses. Membership to The Kings
+                            City includes access to a beautiful workspace full of cozy corners, phone booths and
+                            bookable conference rooms.</p>
+                        <p>The Kings City has been designed with your needs in mind — including an in-house cafe.</p>
+                    </div>
+                    <div class="showcase-ctas">
+                        <a href="apply.html" class="btn btn-primary btn-lg">Apply for Membership</a>
+                        <a href="spaces.html" class="btn btn-outline btn-lg">View Spaces</a>
+                    </div>
+                </div>
+                <div data-reveal aria-hidden="true">
+                    <div class="ring-outer">
+                        <div class="ring-inner">
+                            <div class="ring-text">Kings<br>City</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

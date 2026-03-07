@@ -21,7 +21,7 @@
         .hero-slider {
             position: relative;
             height: 100vh;
-            min-height: 640px;
+            min-height: 600px;
             overflow: hidden;
             user-select: none;
         }
@@ -265,114 +265,153 @@
             color: var(--ink-60)
         }
 
-        /* About intro */
-        .about-grid {
+        /* Browse-by-workspace cards (WeWork-style) */
+        .browse-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 2.5rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .browse-heading h2 {
+            font-family: var(--f-head);
+            font-size: clamp(1.8rem, 3.5vw, 2.85rem);
+            font-weight: 600;
+            line-height: 1.18;
+            max-width: 580px;
+        }
+
+        .browse-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .browse-card {
+            background: #f7f7f7;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow .3s var(--ease), transform .3s var(--ease);
+        }
+
+        .browse-card:hover {
+            box-shadow: 0 16px 48px rgba(0, 0, 0, .1);
+            transform: translateY(-5px);
+        }
+
+        .browse-card-body {
+            padding: 1.75rem 1.5rem 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .browse-card-icon {
+            width: 36px;
+            height: 36px;
+            margin-bottom: 1.25rem;
+            color: var(--clr-dark);
+        }
+
+        .browse-card-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .browse-card-body h3 {
+            font-family: var(--f-head);
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin-bottom: .6rem;
+            color: var(--clr-dark);
+        }
+
+        .browse-card-body p {
+            font-size: .92rem;
+            line-height: 1.6;
+            color: var(--ink-60);
+            margin-bottom: 1.25rem;
+            flex: 1;
+        }
+
+        .browse-learn-more {
+            font-size: .92rem;
+            font-weight: 600;
+            color: var(--clr-dark);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color var(--t-base);
+        }
+
+        .browse-learn-more:hover {
+            color: var(--clr-orange);
+            text-decoration: underline;
+        }
+
+        .browse-card-img {
+            height: 220px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .browse-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s var(--ease);
+        }
+
+        .browse-card:hover .browse-card-img img {
+            transform: scale(1.05);
+        }
+
+        /* VMV Split Layout */
+        .vmv-split-sec {
+            background: #fff;
+        }
+
+        .vmv-split-sec.bg-cream {
+            background: var(--clr-cream);
+        }
+
+        .vmv-split-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 5rem;
-            align-items: center
-        }
-
-        .about-text h2 {
-            margin-bottom: 1rem
-        }
-
-        .about-text p {
-            margin-bottom: 1rem
-        }
-
-        .about-links {
-            display: flex;
             align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 1.75rem
         }
 
-        .stacked-imgs {
-            position: relative;
-            height: 420px
-        }
-
-        .stack-1 {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 82%;
-            height: 320px;
+        .vmv-split-img {
+            height: 480px;
             border-radius: var(--radius-xl);
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, .15);
-            z-index: 1
+            box-shadow: 0 16px 48px rgba(0, 0, 0, .12);
         }
 
-        .stack-2 {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 68%;
-            height: 240px;
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, .1);
-            z-index: 0;
-            opacity: .8
+        .vmv-split-img .img-ph {
+            height: 100%;
         }
 
-        .stack-1 .img-ph,
-        .stack-2 .img-ph {
-            height: 100%
+        .vmv-split-text h2 {
+            margin-bottom: 1rem;
         }
 
-        /* VMV */
-        .vmv-section {
-            background: var(--clr-footer)
+        .vmv-split-text p {
+            font-size: 1.05rem;
+            margin-bottom: 1.25rem;
+            color: var(--ink-80);
+        }
+        
+        .vmv-split-grid.reverse .vmv-split-img {
+            order: 2;
         }
 
-        .vmv-head {
-            text-align: center;
-            margin-bottom: 3rem
-        }
-
-        .vmv-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem
-        }
-
-        .vmv-card {
-            background: #fff;
-            border-radius: var(--radius-xl);
-            padding: 2.25rem 2rem;
-            border: 1px solid var(--ink-10);
-            transition: box-shadow .3s var(--ease), transform .3s var(--ease), background .22s;
-        }
-
-        .vmv-card:hover {
-            box-shadow: 0 14px 40px rgba(0, 0, 0, .1);
-            transform: translateY(-5px);
-            background: var(--clr-pink-lt)
-        }
-
-        .vmv-icon {
-            width: 44px;
-            height: 44px;
-            color: var(--clr-green-dk);
-            margin-bottom: 1rem
-        }
-
-        .vmv-icon svg {
-            width: 100%;
-            height: 100%
-        }
-
-        .vmv-card h3 {
-            margin-bottom: .5rem;
-            font-size: 1.2rem
-        }
-
-        .vmv-card p {
-            font-size: .9375rem
+        .vmv-learn-more {
+            margin-top: 1.5rem;
         }
 
         /* Spaces section */
@@ -493,7 +532,7 @@
             padding: 0 var(--pad-x);
             display: grid;
             grid-template-columns: 1fr 1fr;
-            min-height: 580px;
+            min-height: 560px;
         }
 
         .off-img {
@@ -573,7 +612,7 @@
             flex-wrap: wrap
         }
 
-        /* Difference */
+        /* Difference (WeWork-inspired) */
         .diff-head {
             text-align: center;
             margin-bottom: 3.5rem
@@ -590,36 +629,68 @@
         }
 
         .diff-card {
-            padding: 2.25rem 2rem;
-            border: 1px solid var(--ink-10);
-            border-radius: var(--radius-xl);
-            background: #fff;
-            transition: box-shadow .3s var(--ease), transform .3s var(--ease), background .22s;
+            background: #f7f7f7;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow .3s var(--ease), transform .3s var(--ease), background .25s var(--ease);
         }
 
         .diff-card:hover {
-            box-shadow: 0 12px 32px rgba(0, 0, 0, .09);
-            transform: translateY(-4px);
-            background: var(--clr-lavender)
+            box-shadow: 0 16px 48px rgba(0, 0, 0, .08);
+            transform: translateY(-5px);
+            background: #ffd2df;
         }
 
-        .diff-n {
-            font-family: var(--f-head);
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--clr-green-md);
-            line-height: 1;
-            margin-bottom: .875rem;
-            letter-spacing: .02em;
+        .diff-card-body {
+            padding: 1.75rem 1.5rem 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .diff-card-icon {
+            width: 36px;
+            height: 36px;
+            margin-bottom: 1.25rem;
+            color: var(--clr-dark);
+        }
+
+        .diff-card-icon svg {
+            width: 100%;
+            height: 100%;
         }
 
         .diff-card h3 {
-            margin-bottom: .5rem;
-            font-size: 1.15rem
+            font-family: var(--f-head);
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin-bottom: .6rem;
+            color: var(--clr-dark);
         }
 
         .diff-card p {
-            font-size: .9rem
+            font-size: .92rem;
+            line-height: 1.6;
+            color: var(--ink-60);
+        }
+
+        .diff-card-img {
+            height: 200px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .diff-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s var(--ease);
+        }
+
+        .diff-card:hover .diff-card-img img {
+            transform: scale(1.05);
         }
 
         /* Showcase */
@@ -788,7 +859,7 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            min-height: 480px
+            min-height: 500px
         }
 
         .cafe-img {
@@ -797,7 +868,7 @@
 
         .cafe-img .img-ph {
             height: 100%;
-            min-height: 480px;
+            min-height: 500px;
             transition: transform 7s var(--ease)
         }
 
@@ -915,19 +986,28 @@
                 grid-template-columns: 1fr 1fr
             }
 
-            .vmv-grid {
-                grid-template-columns: 1fr 1fr
+            .vmv-split-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
             }
 
-            .about-grid,
+            .vmv-split-grid.reverse .vmv-split-img {
+                order: -1;
+            }
+
+            .vmv-split-img {
+                height: 360px;
+                order: -1;
+            }
+
+            .browse-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
             .showcase-wrap,
             .quick-grid {
                 grid-template-columns: 1fr;
                 gap: 2.5rem
-            }
-
-            .stacked-imgs {
-                height: 300px
             }
         }
 
@@ -943,8 +1023,8 @@
 
             .spaces-grid,
             .diff-grid,
-            .vmv-grid,
-            .comm-grid {
+            .comm-grid,
+            .browse-grid {
                 grid-template-columns: 1fr
             }
 
@@ -1140,37 +1220,89 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════
-     ABOUT INTRO
+     BROWSE BY WORKSPACE (WeWork-style)
 ══════════════════════════════════════════════════ -->
-    <section class="section-pad" id="about" style="background:var(--clr-cream)">
+    <section class="section-pad" id="about" style="background:#fff">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-text" data-reveal>
-                    <span class="eyebrow">Who We Are</span>
-                    <h2>A Community of Jobs &amp; Workspaces</h2>
-                    <p>Founded in 2009, The Kings is a growing community of jobs across the country. We have expanded
-                        our services to beautiful <strong>Spaces</strong>, <strong>Outsourcing</strong> and
-                        <strong>Offshoring</strong> as we want to be a community of both workforce and workspace for our
-                        members.
-                    </p>
-                    <p>Kings Group of Companies has been founded in 1999 and has grown to support more than 10,000+
-                        employees across the Philippines.</p>
-                    <div class="about-links">
-                        <a href="html/who_we_are.html" class="btn btn-primary">Learn More</a>
-                        <a href="html/who_we_are.html" class="link-arrow">Contact Us &rarr;</a>
+            <div class="browse-heading" data-reveal>
+                <h2>Find the perfect workspace to fit your needs</h2>
+            </div>
+            <div class="browse-grid">
+                <!-- Card 1 – Who We Are -->
+                <div class="browse-card" data-reveal>
+                    <div class="browse-card-body">
+                        <div class="browse-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3>Who We Are</h3>
+                        <p>A growing community of jobs and workspaces across the Philippines, empowering businesses since 2009.</p>
+                        <a href="html/who_we_are.html" class="browse-learn-more">Learn more</a>
+                    </div>
+                    <div class="browse-card-img">
+                        <img src="images/office_index.webp" alt="Who We Are">
                     </div>
                 </div>
-                <div class="about-text" data-reveal>
-                    <div class="stacked-imgs">
-                        <div class="stack-1">
-                            <div class="img-ph ph-about"><img src="images/offshoring_office.jpg"
-                                    alt="Kings City Interior"><span class="ph-label" style="display:none">Kings City
-                                    Interior</span></div>
+
+                <!-- Card 2 – Spaces -->
+                <div class="browse-card" data-reveal>
+                    <div class="browse-card-body">
+                        <div class="browse-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
                         </div>
-                        <div class="stack-2">
-                            <div class="img-ph ph-comm-1"><img src="images/offshoring_office2.jpg" alt="Community"><span
-                                    class="ph-label" style="display:none">Community</span></div>
+                        <h3>Spaces</h3>
+                        <p>Premium co-working desks, private offices, meeting rooms and event spaces designed for productivity.</p>
+                        <a href="html/spaces.html" class="browse-learn-more">Learn more</a>
+                    </div>
+                    <div class="browse-card-img">
+                        <img src="images/office_index2.jpg" alt="Spaces">
+                    </div>
+                </div>
+
+                <!-- Card 3 – Offshoring -->
+                <div class="browse-card" data-reveal>
+                    <div class="browse-card-body">
+                        <div class="browse-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
                         </div>
+                        <h3>Offshoring</h3>
+                        <p>Build your dedicated offshore team in the Philippines and save up to 70% on operational costs.</p>
+                        <a href="html/offshoring.html" class="browse-learn-more">Learn more</a>
+                    </div>
+                    <div class="browse-card-img">
+                        <img src="images/office_index3.jpg" alt="Offshoring">
+                    </div>
+                </div>
+
+                <!-- Card 4 – Book Now -->
+                <div class="browse-card" data-reveal>
+                    <div class="browse-card-body">
+                        <div class="browse-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                        </div>
+                        <h3>Book Now</h3>
+                        <p>Reserve your workspace today — from hot desks to conference rooms, find the perfect fit for your team.</p>
+                        <a href="html/book_now.html" class="browse-learn-more">Learn more</a>
+                    </div>
+                    <div class="browse-card-img">
+                        <img src="images/office_index4.jpg" alt="Book Now">
                     </div>
                 </div>
             </div>
@@ -1180,46 +1312,49 @@
     <!-- ══════════════════════════════════════════════════
      VISION MISSION VALUES
 ══════════════════════════════════════════════════ -->
-    <section class="vmv-section section-pad" aria-labelledby="vmv-h">
+    <section class="vmv-split-sec section-pad" aria-labelledby="vmv-h-vision" style="background: #fff;">
         <div class="container">
-            <div class="vmv-head" data-reveal>
-                <span class="eyebrow">Our Foundation</span>
-                <h2 id="vmv-h">Vision, Mission &amp; Values</h2>
+            <div class="vmv-split-grid" data-reveal>
+                <div class="vmv-split-img">
+                    <div class="img-ph"><img src="images/vmv_vision.png" alt="Our Vision"></div>
+                </div>
+                <div class="vmv-split-text">
+                    <span class="eyebrow">The Future We See</span>
+                    <h2 id="vmv-h-vision">Our Vision</h2>
+                    <p>To be the leading provider of workforce and workspaces offering the best offshoring and outsourcing solutions in the Philippines.</p>
+                </div>
             </div>
-            <div class="vmv-grid">
-                <div class="vmv-card" data-reveal>
-                    <div class="vmv-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path
-                                d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                            <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                    </div>
-                    <h3>Our Vision</h3>
-                    <p>To be the leading provider of workforce and workspaces offering the best offshoring and
-                        outsourcing solutions in the Philippines.</p>
+        </div>
+    </section>
+
+    <section class="vmv-split-sec section-pad-sm bg-cream" aria-labelledby="vmv-h-mission" style="background: var(--clr-cream);">
+        <div class="container">
+            <div class="vmv-split-grid reverse" data-reveal>
+                <div class="vmv-split-img">
+                    <div class="img-ph"><img src="images/vmv_mission.png" alt="Our Mission"></div>
                 </div>
-                <div class="vmv-card" data-reveal>
-                    <div class="vmv-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path
-                                d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" />
-                        </svg>
-                    </div>
-                    <h3>Our Mission</h3>
-                    <p>Contributing to the growth of the economy by continuously providing jobs and creating beautiful
-                        workspaces for companies in the Asia Pacific Region.</p>
+                <div class="vmv-split-text">
+                    <span class="eyebrow">What Drives Us</span>
+                    <h2 id="vmv-h-mission">Our Mission</h2>
+                    <p>Contributing to the growth of the economy by continuously providing jobs and creating beautiful workspaces for companies in the Asia Pacific Region.</p>
                 </div>
-                <div class="vmv-card" data-reveal>
-                    <div class="vmv-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path
-                                d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-                        </svg>
+            </div>
+        </div>
+    </section>
+
+    <section class="vmv-split-sec section-pad" aria-labelledby="vmv-h-values" style="background: #fff;">
+        <div class="container">
+            <div class="vmv-split-grid" data-reveal>
+                <div class="vmv-split-img">
+                    <div class="img-ph"><img src="images/vmv_values.png" alt="Core Values"></div>
+                </div>
+                <div class="vmv-split-text">
+                    <span class="eyebrow">Our Foundation</span>
+                    <h2 id="vmv-h-values">Core Values</h2>
+                    <p>Integrity, transparency, professionalism and community building form the foundation for how we serve every client.</p>
+                    <div class="vmv-learn-more">
+                        <a href="html/who_we_are.html" class="link-arrow">Learn More About Us &rarr;</a>
                     </div>
-                    <h3>Core Values</h3>
-                    <p>Integrity, transparency, professionalism and community building form the foundation for how we
-                        serve every client.</p>
                 </div>
             </div>
         </div>
@@ -1410,9 +1545,9 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════
-     OUR DIFFERENCE
+     OUR DIFFERENCE (WeWork-inspired)
 ══════════════════════════════════════════════════ -->
-    <section class="section-pad" style="background:var(--clr-cream)">
+    <section class="section-pad" style="background:#fff">
         <div class="container">
             <div class="diff-head" data-reveal>
                 <span class="eyebrow">Our Difference</span>
@@ -1422,40 +1557,108 @@
             </div>
             <div class="diff-grid">
                 <div class="diff-card" data-reveal>
-                    <div class="diff-n">01</div>
-                    <h3>Local Dedicated Talent</h3>
-                    <p>Talent acquisition to build and scale your team with the right people for your specific business
-                        needs.</p>
+                    <div class="diff-card-body">
+                        <div class="diff-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3>Local Dedicated Talent</h3>
+                        <p>Talent acquisition to build and scale your team with the right people for your specific business needs.</p>
+                    </div>
+                    <div class="diff-card-img">
+                        <img src="images/talent_index.avif" alt="Local Dedicated Talent">
+                    </div>
                 </div>
+
                 <div class="diff-card" data-reveal>
-                    <div class="diff-n">02</div>
-                    <h3>Fully Maintained Facilities</h3>
-                    <p>Never worry about furniture, tech equipment or maintenance — we handle it all so your team can
-                        focus.</p>
+                    <div class="diff-card-body">
+                        <div class="diff-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <h3>Fully Maintained Facilities</h3>
+                        <p>Never worry about furniture, tech equipment or maintenance — we handle it all so your team can focus.</p>
+                    </div>
+                    <div class="diff-card-img">
+                        <img src="images/facilities_index.avif" alt="Fully Maintained Facilities">
+                    </div>
                 </div>
+
                 <div class="diff-card" data-reveal>
-                    <div class="diff-n">03</div>
-                    <h3>Professional HR Framework</h3>
-                    <p>Employee engagement activities, performance management and dozens of training development
-                        programs.</p>
+                    <div class="diff-card-body">
+                        <div class="diff-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3>Professional HR Framework</h3>
+                        <p>Employee engagement activities, performance management and dozens of training development programs.</p>
+                    </div>
+                    <div class="diff-card-img">
+                        <img src="images/hr_index.jpg" alt="Professional HR Framework">
+                    </div>
                 </div>
+
                 <div class="diff-card" data-reveal>
-                    <div class="diff-n">04</div>
-                    <h3>Risk &amp; Disaster Recovery</h3>
-                    <p>Comprehensive risk management and disaster recovery plans to keep your team safe and your
-                        business running.</p>
+                    <div class="diff-card-body">
+                        <div class="diff-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h3>Risk &amp; Disaster Recovery</h3>
+                        <p>Comprehensive risk management and disaster recovery plans to keep your team safe and your business running.</p>
+                    </div>
+                    <div class="diff-card-img">
+                        <img src="images/risk_&_disaster_index.jpg" alt="Risk and Disaster Recovery">
+                    </div>
                 </div>
+
                 <div class="diff-card" data-reveal>
-                    <div class="diff-n">05</div>
-                    <h3>Big-Business Infrastructure</h3>
-                    <p>Leverage global talent for up to 70% less than hiring onshore with enterprise-grade
-                        infrastructure behind you.</p>
+                    <div class="diff-card-body">
+                        <div class="diff-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                                <line x1="6" y1="6" x2="6.01" y2="6"/>
+                                <line x1="6" y1="18" x2="6.01" y2="18"/>
+                            </svg>
+                        </div>
+                        <h3>Big-Business Infrastructure</h3>
+                        <p>Leverage global talent for up to 70% less than hiring onshore with enterprise-grade infrastructure behind you.</p>
+                    </div>
+                    <div class="diff-card-img">
+                        <img src="images/infrastructure_index.jpg" alt="Big-Business Infrastructure">
+                    </div>
                 </div>
+
                 <div class="diff-card" data-reveal>
-                    <div class="diff-n">06</div>
-                    <h3>In-House Cafe</h3>
-                    <p>The Kings City Cafe — a cozy in-house destination designed with your comfort and productivity in
-                        mind.</p>
+                    <div class="diff-card-body">
+                        <div class="diff-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                                <line x1="6" y1="1" x2="6" y2="4"/>
+                                <line x1="10" y1="1" x2="10" y2="4"/>
+                                <line x1="14" y1="1" x2="14" y2="4"/>
+                            </svg>
+                        </div>
+                        <h3>In-House Cafe</h3>
+                        <p>The Kings City Cafe — a cozy in-house destination designed with your comfort and productivity in mind.</p>
+                    </div>
+                    <div class="diff-card-img">
+                        <img src="images/in_house_cafe_index.jpg" alt="In-House Cafe">
+                    </div>
                 </div>
             </div>
         </div>

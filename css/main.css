@@ -32,8 +32,8 @@
   --f-script: 'Great Vibes', cursive;
   --nav-h: 76px;
   --ann-h: 38px;
-  --max-w: 1340px;
-  --pad-x: clamp(1.25rem, 5vw, 4rem);
+  --max-w: 1440px;
+  --pad-x: clamp(1.25rem, 5vw, 3.75rem);
   --radius: 4px;
   --radius-md: 8px;
   --radius-lg: 14px;
@@ -180,11 +180,11 @@ strong {
 }
 
 .section-pad {
-  padding: 100px 0
+  padding: 96px 0
 }
 
 .section-pad-sm {
-  padding: 64px 0
+  padding: 80px 0
 }
 
 .btn {
@@ -227,15 +227,15 @@ strong {
 }
 
 .btn-primary {
-  background: var(--clr-orange);
-  color: #fff;
-  border-color: var(--clr-orange)
+  background: transparent;
+  color: var(--clr-dark);
+  border-color: var(--clr-dark)
 }
 
 .btn-primary:hover {
-  background: #e8551d;
+  border-color: #ff6224;
   box-shadow: var(--shadow-md);
-  color: #fff
+  color: #ff6224
 }
 
 .btn-secondary {
@@ -245,8 +245,8 @@ strong {
 }
 
 .btn-secondary:hover {
-  background: #2e6040;
-  color: #fff
+  border-color: #ff6224;
+  color: #ff6224
 }
 
 .btn-outline {
@@ -256,8 +256,8 @@ strong {
 }
 
 .btn-outline:hover {
-  background: var(--clr-dark);
-  color: #fff
+  border-color: #ff6224;
+  color: #ff6224
 }
 
 .btn-outline-green {
@@ -267,8 +267,8 @@ strong {
 }
 
 .btn-outline-green:hover {
-  background: var(--clr-green-dk);
-  color: #fff
+  border-color: #ff6224;
+  color: #ff6224
 }
 
 .btn-ghost-white {
@@ -278,9 +278,8 @@ strong {
 }
 
 .btn-ghost-white:hover {
-  background: #fff;
-  color: var(--clr-dark);
-  border-color: #fff
+  border-color: #ff6224;
+  color: #ff6224
 }
 
 .btn-light {
@@ -290,8 +289,8 @@ strong {
 }
 
 .btn-light:hover {
-  background: var(--clr-green-lt);
-  border-color: var(--clr-green-lt)
+  border-color: #ff6224;
+  color: #ff6224
 }
 
 .btn-ghost-light {
@@ -301,8 +300,8 @@ strong {
 }
 
 .btn-ghost-light:hover {
-  background: rgba(255, 255, 255, .15);
-  border-color: #fff
+  border-color: #ff6224;
+  color: #ff6224
 }
 
 .btn-nav-outline {
@@ -314,9 +313,8 @@ strong {
 }
 
 .btn-nav-outline:hover {
-  background: #fff;
-  color: var(--clr-dark);
-  border-color: #fff
+  border-color: #ff6224;
+  color: #ff6224
 }
 
 .navbar.scrolled .btn-nav-outline {
@@ -325,23 +323,22 @@ strong {
 }
 
 .navbar.scrolled .btn-nav-outline:hover {
-  background: var(--clr-dark);
-  color: #fff;
-  border-color: var(--clr-dark)
+  border-color: #ff6224;
+  color: #ff6224
 }
 
 .btn-nav-primary {
   padding: .45rem 1rem;
   font-family: var(--f-head);
   font-size: 1.05rem;
-  background: var(--clr-orange);
-  color: #fff;
-  border-color: var(--clr-orange)
+  background: transparent;
+  color: rgba(255, 255, 255, .85);
+  border-color: rgba(255, 255, 255, .45)
 }
 
 .btn-nav-primary:hover {
-  background: #e8551d;
-  color: #fff
+  border-color: #ff6224;
+  color: #ff6224
 }
 
 .link-arrow {
