@@ -295,12 +295,13 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            transition: box-shadow .3s var(--ease), transform .3s var(--ease);
+            transition: box-shadow .3s var(--ease), transform .3s var(--ease), background .25s var(--ease);
         }
 
         .browse-card:hover {
             box-shadow: 0 16px 48px rgba(0, 0, 0, .1);
             transform: translateY(-5px);
+            background: #ffd2df;
         }
 
         .browse-card-body {
@@ -810,12 +811,13 @@
             border-radius: var(--radius-xl);
             overflow: hidden;
             border: 1px solid var(--ink-10);
-            transition: box-shadow .3s var(--ease), transform .3s var(--ease);
+            transition: box-shadow .3s var(--ease), transform .3s var(--ease), background .25s var(--ease);
         }
 
         .comm-card:hover {
             box-shadow: 0 16px 44px rgba(0, 0, 0, .1);
             transform: translateY(-5px);
+            background: #ffd2df;
             text-decoration: none
         }
 
@@ -1056,6 +1058,65 @@
         @media(max-width:480px) {
             .stats-grid {
                 grid-template-columns: 1fr
+            }
+        }
+        /* Trust Logo Track */
+        .trust-bar {
+            background: #fff;
+            padding: 4rem 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .trust-bar-label {
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--ink-40);
+            margin-bottom: 2.5rem;
+            font-family: var(--f-body);
+        }
+
+        .trust-logos-track {
+            display: flex;
+            gap: 6rem;
+            animation: scrollLogos 50s linear infinite;
+            width: max-content;
+            align-items: center;
+        }
+
+        .trust-logos-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollLogos {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .trust-logos-track img {
+            height: 36px;
+            width: auto;
+            object-fit: contain;
+            opacity: 0.45;
+            filter: grayscale(100%);
+            transition: opacity .3s, filter .3s, transform .3s;
+        }
+
+        .trust-logos-track img:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .trust-logos-track img {
+                height: 28px;
+            }
+            .trust-logos-track {
+                gap: 4rem;
             }
         }
     </style>
@@ -1306,6 +1367,37 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- ── Trust Logo Track ── -->
+    <section class="trust-bar" data-reveal>
+        <div class="trust-bar-label">Trusted by leading organizations worldwide</div>
+        <div class="trust-logos-track">
+            <!-- First set -->
+            <img src="images/jollibee.png" alt="Jollibee">
+            <img src="images/kraft_phil.png" alt="Kraft Philippines">
+            <img src="images/karimadon.png" alt="Karimadon">
+            <img src="images/libbys.png" alt="Libbys">
+            <img src="images/maling.png" alt="Ma-Ling">
+            <img src="images/mamypoko.png" alt="MamyPoko">
+            <img src="images/maxicare.png" alt="Maxicare">
+            <img src="images/metro.png" alt="Metro">
+            <img src="images/adidas.png" alt="Adidas">
+            <img src="images/apple.png" alt="Apple">
+            <img src="images/alveo.png" alt="Alveo">
+            <!-- Duplicated set for seamless loop -->
+            <img src="images/jollibee.png" alt="Jollibee">
+            <img src="images/kraft_phil.png" alt="Kraft Philippines">
+            <img src="images/karimadon.png" alt="Karimadon">
+            <img src="images/libbys.png" alt="Libbys">
+            <img src="images/maling.png" alt="Ma-Ling">
+            <img src="images/mamypoko.png" alt="MamyPoko">
+            <img src="images/maxicare.png" alt="Maxicare">
+            <img src="images/metro.png" alt="Metro">
+            <img src="images/adidas.png" alt="Adidas">
+            <img src="images/apple.png" alt="Apple">
+            <img src="images/alveo.png" alt="Alveo">
         </div>
     </section>
 

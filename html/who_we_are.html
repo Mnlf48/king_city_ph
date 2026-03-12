@@ -527,6 +527,61 @@
             background: linear-gradient(90deg, var(--clr-green-lt), var(--clr-green-md), var(--clr-pink-lt), var(--clr-pink-md), var(--clr-lavender), var(--clr-amber), var(--clr-orange));
         }
 
+        /* ── Group of Companies ── */
+        .group-sec {
+            background: #9fd3af;
+            text-align: center;
+        }
+
+        .group-head {
+            margin-bottom: 3.5rem;
+        }
+
+        .group-head h2 {
+            font-family: var(--f-head);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--clr-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .group-head p {
+            font-size: 1.1rem;
+            color: rgba(0, 0, 0, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .group-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .group-logo-item {
+            width: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .group-logo-item:hover {
+            transform: scale(1.08);
+        }
+
+        .group-logo-item img {
+            max-width: 100%;
+            height: auto;
+            max-height: 60px;
+            object-fit: contain;
+            /* If logos are white and need contrast on #9fd3af, we might need a subtle filter or leave as is if they are dark */
+        }
+
         /* ── Responsive ── */
         @media(max-width:1024px) {
             .story-grid {
@@ -613,6 +668,14 @@
                 width: 100%;
                 max-width: 280px;
                 justify-content: center;
+            }
+
+            .group-logos {
+                gap: 2rem 2.5rem;
+            }
+
+            .group-logo-item {
+                width: 100px;
             }
         }
 
@@ -1161,6 +1224,53 @@
                         <li>Alpha Phi Omega International Service Fraternity</li>
                         <li>Bachelor's Degree, De La Salle University – Manila</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════
+     GROUP OF COMPANIES
+    ════════════════════════════════════════════════ -->
+    <section class="group-sec section-pad">
+        <div class="container">
+            <div class="group-head" data-reveal>
+                <h2>Group of Companies</h2>
+                <p>A unified ecosystem of businesses powering the Kings network.</p>
+            </div>
+            <div class="group-logos" data-reveal>
+                <div class="group-logo-item">
+                    <img src="../images/Group of Companies Logos/03_KingsCooperative.png" alt="Kings Cooperative">
+                </div>
+                <div class="group-logo-item">
+                    <img src="../images/Group of Companies Logos/01_KingsAsiaPacific.png" alt="Kings Asia Pacific">
+                </div>
+                <div class="group-logo-item">
+                    <img src="../images/Group of Companies Logos/04_KingsLending.png" alt="Kings Lending">
+                </div>
+                <div class="group-logo-item">
+                    <img src="../images/Group of Companies Logos/07_Makenter.png" alt="Makenter">
+                </div>
+                <div class="group-logo-item">
+                    <img src="../images/Group of Companies Logos/02_HomeCulinary.png" alt="Home Culinary">
+                </div>
+                <div class="group-logo-item">
+                    <img src="../images/Group of Companies Logos/10_MarianPalazz.png" alt="Marian Palazz">
+                </div>
+                <div class="group-logo-item">
+                    <img src="../images/Group of Companies Logos/06_NavishiShell.png" alt="Navishi Shell">
+                </div>
+                <div class="group-logo-item">
+                    <img src="../images/Group of Companies Logos/05_PacificWater.png" alt="Pacific Water">
+                </div>
+                <div class="group-logo-item">
+                    <img src="../images/Group of Companies Logos/08_PrintArtist.png" alt="Print Artist">
+                </div>
+                <div class="group-logo-item">
+                    <img src="../images/Group of Companies Logos/11_RNFoundation.png" alt="RN Foundation">
+                </div>
+                <div class="group-logo-item">
+                    <img src="../images/Group of Companies Logos/09_RPSMigration.png" alt="RPS Migration">
                 </div>
             </div>
         </div>
