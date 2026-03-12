@@ -74,11 +74,17 @@
             height: 520px;
             border-radius: var(--radius-xl);
             overflow: hidden;
-            box-shadow: 0 24px 64px rgba(0, 0, 0, .15)
+            /* box-shadow removed as per user request */
         }
 
         .story-img .img-ph {
-            height: 100%
+            height: 100%;
+            background: transparent !important;
+        }
+
+        .story-img .img-ph img {
+            object-fit: contain;
+            mix-blend-mode: multiply; /* Helps blend white map background with cream section background */
         }
 
         .story-text h2 {
