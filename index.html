@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -291,7 +291,10 @@
         }
 
         .browse-card {
-            background: #f7f7f7;
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 12px;
             overflow: hidden;
             display: flex;
@@ -433,13 +436,15 @@
         }
 
         .sp-card {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: var(--radius-xl);
             overflow: hidden;
-            border: 1px solid var(--ink-10);
             display: flex;
             flex-direction: column;
-            transition: box-shadow .3s var(--ease), transform .3s var(--ease);
+            transition: box-shadow .3s var(--ease), transform .3s var(--ease), background .25s var(--ease);
         }
 
         .sp-card:hover {
@@ -631,7 +636,10 @@
         }
 
         .diff-card {
-            background: #f7f7f7;
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 12px;
             overflow: hidden;
             display: flex;
@@ -697,9 +705,14 @@
 
         /* Showcase */
         .showcase-sec {
-            background: var(--clr-pink-lt);
+            background: rgba(255, 210, 223, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             position: relative;
-            overflow: hidden
+            overflow: hidden;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            width: 100%;
         }
 
         .showcase-sec::before {
@@ -707,7 +720,7 @@
             position: absolute;
             inset: 0;
             background: radial-gradient(ellipse at 65% 50%, var(--clr-pink-md) 0%, transparent 60%);
-            opacity: .25;
+            opacity: .15;
             pointer-events: none;
         }
 
@@ -721,70 +734,49 @@
         }
 
         .showcase-title {
-            font-family: var(--f-script);
-            font-size: clamp(2.4rem, 5vw, 4.5rem);
-            font-weight: 700;
+            font-family: var(--f-kish);
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            font-weight: 400;
             color: var(--clr-dark);
-            line-height: 1.1
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-transform: none;
         }
 
-        .showcase-text p {
-            font-size: .9375rem;
-            margin-bottom: 1rem
+        .showcase-content p {
+            font-family: var(--f-body);
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.7;
+            color: var(--ink-80);
         }
 
         .showcase-ctas {
             display: flex;
             gap: .875rem;
             flex-wrap: wrap;
-            margin-top: 1.75rem
+            margin-top: 2rem;
+            font-family: var(--f-body);
         }
 
-        .ring-outer {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            border: 1.5px solid rgba(0, 0, 0, .12);
+        .showcase-logo-wrap {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto;
-            animation: ringP 5s ease-in-out infinite;
+            padding: 2rem;
         }
 
-        .ring-inner {
-            width: 240px;
-            height: 240px;
-            border-radius: 50%;
-            border: 1.5px solid rgba(0, 0, 0, .08);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, .3);
-            animation: ringP 5s 1.5s ease-in-out infinite;
+        .showcase-logo-img {
+            max-width: 320px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.05));
+            animation: logoFloat 6s ease-in-out infinite;
         }
 
-        @keyframes ringP {
-
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: .6
-            }
-
-            50% {
-                transform: scale(1.04);
-                opacity: 1
-            }
-        }
-
-        .ring-text {
-            font-family: var(--f-script);
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--clr-dark);
-            opacity: .8;
-            text-align: center;
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
 
         /* Editorial Section (Clean / Borderless) */
@@ -824,21 +816,19 @@
             border: none !important;
             border-radius: 0 !important;
             box-shadow: none !important;
-        }
-
-        .featured-editorial:hover {
-            box-shadow: none !important;
-            transform: none !important;
+            align-items: stretch;
         }
 
         .featured-img {
-            height: clamp(300px, 45vh, 520px);
+            min-height: 480px;
             overflow: hidden;
             position: relative;
             border-radius: 0 !important;
         }
 
         .featured-img img {
+            position: absolute;
+            inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -855,7 +845,8 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background: #fff; 
+            background: #fff;
+            height: 100%;
         }
 
         .featured-content .eyebrow {
@@ -884,45 +875,54 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 2.5rem;
             padding-top: 1rem;
-            border: none !important;
         }
 
         .editorial-card {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            border: none !important;
-            border-radius: 0 !important;
-            box-shadow: none !important;
+            transition: box-shadow .3s var(--ease), transform .3s var(--ease), background .25s var(--ease);
         }
 
         .editorial-card:hover {
-            transform: none !important;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, .08);
+            transform: translateY(-5px);
+            background: #ffd2df;
         }
 
         .editorial-card-img {
             width: 100%;
             aspect-ratio: 16 / 10;
             overflow: hidden;
-            margin-bottom: 1.75rem;
             border-radius: 0 !important;
-            box-shadow: none !important;
         }
 
         .editorial-card-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 0 !important;
-            transition: none !important;
+            transition: transform .6s var(--ease);
         }
 
         .editorial-card:hover .editorial-card-img img {
-            transform: none !important;
+            transform: scale(1.05);
+        }
+
+        .editorial-card-body {
+            padding: 1.75rem 1.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
 
         .editorial-card h4 {
             font-family: var(--f-kish);
-            font-size: 1.8rem;
+            font-size: 1.35rem;
             font-weight: 400;
             margin-bottom: 0.85rem;
             color: var(--clr-dark);
@@ -932,11 +932,16 @@
         }
 
         .editorial-card p {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             margin-bottom: 1.5rem;
-            line-height: 1.65;
+            line-height: 1.6;
             color: var(--ink-60);
             flex-grow: 1;
+        }
+
+        .editorial-card .link-arrow {
+            border-bottom: none;
+            align-self: flex-end;
         }
 
         @media(max-width: 1024px) {
@@ -1860,7 +1865,7 @@
     <section class="showcase-sec section-pad" id="join">
         <div class="container">
             <div class="showcase-wrap">
-                <div data-reveal>
+                <div class="showcase-content" data-reveal>
                     <span class="eyebrow">Membership</span>
                     <h2 class="showcase-title">Join The Kings</h2>
                     <p>Become part of a thriving ecosystem of professionals and businesses. Membership to The Kings City
@@ -1872,12 +1877,8 @@
                         <a href="html/spaces.html" class="btn btn-outline btn-lg">View Spaces</a>
                     </div>
                 </div>
-                <div data-reveal aria-hidden="true">
-                    <div class="ring-outer">
-                        <div class="ring-inner">
-                            <div class="ring-text">Kings<br>City</div>
-                        </div>
-                    </div>
+                <div class="showcase-logo-wrap" data-reveal aria-hidden="true">
+                    <img src="images/kings_city_logo_icon_black.png" alt="Kings City Logo Icon" class="showcase-logo-img">
                 </div>
             </div>
         </div>
@@ -1891,7 +1892,7 @@
             <header class="editorial-header" data-reveal>
                 <div class="editorial-header-text">
                     <span class="eyebrow">Ideas & Insights</span>
-                    <h2>Work trends and insights</h2>
+                    <h2>Work Trends and Insights</h2>
                 </div>
                 <a href="html/who_we_are.html" class="link-arrow">Read on &rarr;</a>
             </header>
