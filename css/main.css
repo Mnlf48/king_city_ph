@@ -4,7 +4,14 @@
    Mobile Drawer · Buttons · Scroll Reveal · Utilities
 ================================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&display=swap');
+@font-face {
+  font-family: 'KISH';
+  src: url('../assets/kishtest-boldultrawide.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&display=swap');
 
 :root {
   --clr-green-lt: #d5edce;
@@ -27,9 +34,10 @@
   --ink-20: rgba(17, 17, 17, .20);
   --ink-10: rgba(17, 17, 17, .10);
   --ink-06: rgba(17, 17, 17, .06);
-  --f-head: 'Cormorant Garamond', Georgia, serif;
+  --f-head: 'KISH', sans-serif;
   --f-body: 'Libre Franklin', 'Franklin Gothic Medium', sans-serif;
   --f-script: 'Great Vibes', cursive;
+  --f-kish: 'KISH', sans-serif;
   --nav-h: 76px;
   --ann-h: 38px;
   --max-w: 1440px;
@@ -98,9 +106,9 @@ select {
 }
 
 h1 {
-  font-family: var(--f-head);
-  font-size: clamp(2.6rem, 5vw, 4rem);
-  font-weight: 600;
+  font-family: var(--f-kish);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
   line-height: 1.08;
   letter-spacing: .025em
 }
@@ -306,8 +314,9 @@ strong {
 
 .btn-nav-outline {
   padding: .45rem 1rem;
-  font-family: var(--f-head);
+  font-family: var(--f-kish);
   font-size: 1.05rem;
+  font-weight: 400;
   color: rgba(255, 255, 255, .85);
   border-color: rgba(255, 255, 255, .45)
 }
@@ -329,8 +338,9 @@ strong {
 
 .btn-nav-primary {
   padding: .45rem 1rem;
-  font-family: var(--f-head);
+  font-family: var(--f-kish);
   font-size: 1.05rem;
+  font-weight: 400;
   background: transparent;
   color: rgba(255, 255, 255, .85);
   border-color: rgba(255, 255, 255, .45)
@@ -577,9 +587,9 @@ strong {
 
 .nav-links>li>a,
 .nav-drop-btn {
-  font-family: var(--f-head);
+  font-family: var(--f-kish);
   font-size: 1.05rem;
-  font-weight: 500;
+  font-weight: 400;
   color: rgba(255, 255, 255, .88);
   background: none;
   border: none;
@@ -666,9 +676,9 @@ strong {
 .drop-menu a {
   display: block;
   padding: .65rem 1.25rem;
-  font-family: var(--f-head);
+  font-family: var(--f-kish);
   font-size: 1.05rem;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--ink-80);
   transition: background var(--t-fast), color var(--t-fast)
 }
@@ -885,4 +895,24 @@ strong {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0
+}
+
+/* Center Hero Content on Sub-pages */
+.apply-hero .container,
+.spaces-hero .container,
+.who-hero .container,
+.off-hero .container,
+.book-hero .book-hero-content,
+.what-hero .container {
+    text-align: center;
+}
+
+.apply-hero .container p,
+.spaces-hero .container p,
+.who-hero .container p,
+.off-hero .container p,
+.book-hero .book-hero-content p,
+.what-hero .container p {
+    margin-left: auto;
+    margin-right: auto;
 }
