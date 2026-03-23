@@ -226,10 +226,11 @@
   border: 1px solid var(--ink-10);
   display: flex;
   flex-direction: column;
-  transition: box-shadow .3s var(--ease), transform .3s var(--ease);
+  transition: box-shadow .3s var(--ease), transform .3s var(--ease), background .3s var(--ease);
 }
 
 .space-card:hover {
+  background: #ffd2df;
   box-shadow: 0 16px 48px rgba(0, 0, 0, .1);
   transform: translateY(-5px)
 }

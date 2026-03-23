@@ -20,41 +20,7 @@
       background: linear-gradient(90deg, var(--clr-green-lt), var(--clr-green-md), var(--clr-rose-lt), var(--clr-lavender), var(--clr-amber))
     }
 
-    /* Amenities highlight */
-    .amenities-bar {
-      background: #ffd2df;
-      padding: 2.5rem 0
-    }
-
-    .amenities-row {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      flex-wrap: wrap;
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 var(--pad-x);
-    }
-
-    .am-item {
-      display: flex;
-      align-items: center;
-      gap: .65rem;
-      color: #333
-    }
-
-    .am-item svg {
-      width: 20px;
-      height: 20px;
-      color: #ef0606
-    }
-
-    .am-item span {
-      font-size: .85rem;
-      font-weight: 500
-    }
-
-    /* ── CTA Strip (Showcase Style) ── */
+    /* Filter Bar */
     .showcase-sec {
       background: rgba(213, 237, 206, 0.6);
       backdrop-filter: blur(12px);
@@ -157,10 +123,11 @@
       border: 1px solid rgba(255, 255, 255, 0.3);
       border-radius: var(--radius-xl);
       padding: 2rem;
-      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease), background .3s var(--ease);
     }
 
     .t-card:hover {
+      background: var(--clr-pink-lt);
       transform: translateY(-5px);
       box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
     }
@@ -315,54 +282,6 @@
         premium workspaces designed for productivity and connection in the heart of Parañaque City.</p>
     </div>
   </section>
-
-  <!-- ── Amenities ── -->
-  <div class="amenities-bar">
-    <div class="amenities-row">
-      <div class="am-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path
-            d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z" />
-        </svg>
-        <span>High-Speed Wi-Fi</span>
-      </div>
-      <div class="am-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path
-            d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15m-6.75-12.896A24.305 24.305 0 0112 3c-.748 0-1.487.04-2.25.104M9.75 3.104A24.308 24.308 0 012.25 7.875m7.5-4.771V11.25a2.25 2.25 0 002.25 2.25h.75M19.8 15l-4.8 4.8m0 0L9.75 15M19.8 15H15" />
-        </svg>
-        <span>Printing &amp; Scanning</span>
-      </div>
-      <div class="am-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path
-            d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-        </svg>
-        <span>24/7 Access</span>
-      </div>
-      <div class="am-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path
-            d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-        </svg>
-        <span>In-House Cafe</span>
-      </div>
-      <div class="am-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path
-            d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-        </svg>
-        <span>Secure Premises</span>
-      </div>
-      <div class="am-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path
-            d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-        </svg>
-        <span>Community Events</span>
-      </div>
-    </div>
-  </div>
 
   <!-- ── Filter Bar ── -->
   <div class="filter-bar" role="navigation" aria-label="Space types">

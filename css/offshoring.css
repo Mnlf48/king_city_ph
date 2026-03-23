@@ -56,7 +56,7 @@
 .off-hero h1 {
   color: #fff;
   max-width: 750px;
-  margin-bottom: 1.25rem
+  margin: 0 auto 1.25rem;
 }
 
 .off-hero p {

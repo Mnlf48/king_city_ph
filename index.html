@@ -13,6 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/forms.css">
     <link rel="stylesheet" href="css/footer.css">
     <style>
         /* ── Index-specific styles ── */
@@ -299,13 +300,13 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            transition: box-shadow .3s var(--ease), transform .3s var(--ease), background .25s var(--ease);
+            transition: box-shadow .3s var(--ease), transform .3s var(--ease), background-color .3s var(--ease);
         }
 
         .browse-card:hover {
             box-shadow: 0 16px 48px rgba(0, 0, 0, .1);
             transform: translateY(-5px);
-            background: #ffd2df;
+            background-color: #ffd2df;
         }
 
         .browse-card-body {
@@ -385,8 +386,8 @@
 
         .vmv-split-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 3rem;
             align-items: center;
         }
 
@@ -444,10 +445,11 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            transition: box-shadow .3s var(--ease), transform .3s var(--ease), background .25s var(--ease);
+            transition: box-shadow .3s var(--ease), transform .3s var(--ease), background .3s var(--ease);
         }
 
         .sp-card:hover {
+            background: #ffd2df;
             box-shadow: 0 16px 48px rgba(0, 0, 0, .1);
             transform: translateY(-5px)
         }
@@ -512,7 +514,15 @@
         .sp-price-row {
             display: flex;
             justify-content: space-between;
-            font-size: .85rem
+            font-size: .85rem;
+            padding: .2rem .5rem;
+            margin: 0 -.5rem;
+            border-radius: 4px;
+            transition: background .2s var(--ease);
+        }
+
+        .sp-price-row:hover {
+            background: var(--clr-pink-lt);
         }
 
         .sp-price-row span:first-child {
@@ -650,7 +660,7 @@
         .diff-card:hover {
             box-shadow: 0 16px 48px rgba(0, 0, 0, .08);
             transform: translateY(-5px);
-            background: #ffd2df;
+            background: var(--clr-pink-lt);
         }
 
         .diff-card-body {
@@ -892,7 +902,7 @@
         .editorial-card:hover {
             box-shadow: 0 16px 48px rgba(0, 0, 0, .08);
             transform: translateY(-5px);
-            background: #ffd2df;
+            background: var(--clr-pink-lt);
         }
 
         .editorial-card-img {
@@ -1492,51 +1502,88 @@
     <!-- ══════════════════════════════════════════════════
      VISION MISSION VALUES
 ══════════════════════════════════════════════════ -->
-    <section class="vmv-split-sec section-pad" aria-labelledby="vmv-h-vision" style="background: #fff;">
+    <section class="vmv-split-sec" aria-labelledby="vmv-h-vision" style="background: #fff; padding: 40px 0 10px;">
         <div class="container">
-            <div class="vmv-split-grid" data-reveal>
-                <div class="vmv-split-img">
-                    <div class="img-ph"><img src="images/vmv_vision.png" alt="Our Vision"></div>
+            <div class="vmv-split-grid" data-reveal style="grid-template-columns: 1fr 1fr; gap: 4rem; align-items: stretch;">
+                <div class="vmv-split-img" style="min-height: 480px; height: auto;">
+                    <div class="img-ph"><img src="images/workspace0.webp" alt="Spaces Made Simple" style="object-fit: cover; height: 100%; width: 100%;"></div>
                 </div>
-                <div class="vmv-split-text">
-                    <span class="eyebrow">The Future We See</span>
-                    <h2 id="vmv-h-vision">Our Vision</h2>
-                    <p>A thriving creative and professional space where innovation meets community.</p>
+                <div class="vmv-split-text" style="display: flex; flex-direction: column; justify-content: center;">
+                    <span class="eyebrow">Workspaces Redefined</span>
+                    <h2 id="vmv-h-vision">Spaces Made Simple</h2>
+                    <p>We believe finding a workspace should be the easiest part of your day. From flexible hot desks to premium private suites, we provide turnkey solutions that let you focus on what truly matters: your work and your growth.</p>
+                    <a href="html/spaces.html" class="link-arrow" style="border-bottom: none; padding-bottom: 0;">Explore Spaces &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="vmv-split-sec section-pad-sm bg-cream" aria-labelledby="vmv-h-mission"
-        style="background: var(--clr-cream);">
+    <section class="vmv-split-sec bg-cream" aria-labelledby="vmv-h-mission"
+        style="background: var(--clr-cream); padding: 10px 0;">
         <div class="container">
-            <div class="vmv-split-grid reverse" data-reveal>
-                <div class="vmv-split-img">
-                    <div class="img-ph"><img src="images/vmv_mission.png" alt="Our Mission"></div>
+            <div class="vmv-split-grid reverse" data-reveal style="grid-template-columns: 1fr 1fr; gap: 4rem; align-items: stretch;">
+                <div class="vmv-split-img" style="min-height: 480px; height: auto;">
+                    <div class="img-ph"><img src="images/offshoring0.avif" alt="Offshoring Power" style="object-fit: cover; height: 100%; width: 100%;"></div>
                 </div>
-                <div class="vmv-split-text">
-                    <span class="eyebrow">What Drives Us</span>
-                    <h2 id="vmv-h-mission">Our Mission</h2>
-                    <p>To create spaces that empower individuals and organizations to connect, collaborate, and grow.
-                    </p>
+                <div class="vmv-split-text" style="display: flex; flex-direction: column; justify-content: center;">
+                    <span class="eyebrow">Global Reach</span>
+                    <h2 id="vmv-h-mission">Offshoring Power</h2>
+                    <p>Unlock the full potential of global talent. Our offshoring model provides you with a dedicated, high-performing team in the Philippines, fully managed and integrated into your business for maximum efficiency and significant cost savings.</p>
+                    <a href="html/offshoring.html" class="link-arrow" style="border-bottom: none; padding-bottom: 0;">Learn About Offshoring &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="vmv-split-sec section-pad" aria-labelledby="vmv-h-values" style="background: #fff;">
+    <section class="vmv-split-sec" aria-labelledby="vmv-h-values" style="background: #fff; padding: 60px 0 80px;">
         <div class="container">
-            <div class="vmv-split-grid" data-reveal>
-                <div class="vmv-split-img">
-                    <div class="img-ph"><img src="images/vmv_values.png" alt="Core Values"></div>
+            <div class="combined-apply-card" data-reveal style="display: flex; flex-wrap: wrap; background: #fff; border: 1px solid var(--ink-20); border-radius: var(--radius-xl); overflow: hidden; box-shadow: 0 20px 60px rgba(0, 0, 0, .05); width: 100%; min-height: 600px;">
+                <div class="apply-card-img" style="flex: 1 1 50%; min-width: 320px; position: relative; min-height: 400px; background: #f9f9f9;">
+                    <img src="images/shakehands.avif" alt="Apply Now" style="position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover;">
                 </div>
-                <div class="vmv-split-text">
-                    <span class="eyebrow">Our Foundation</span>
-                    <h2 id="vmv-h-values">Core Values</h2>
-                    <p>Integrity, transparency, professionalism and community building form the foundation for how we
-                        serve every client.</p>
-                    <div class="vmv-learn-more">
-                        <a href="html/who_we_are.html" class="link-arrow">Learn More About Us &rarr;</a>
+                <div class="apply-card-form" style="flex: 1 1 50%; min-width: 320px; padding: clamp(2rem, 5vw, 4rem); background: #fff; display: flex; flex-direction: column; justify-content: center;">
+                    <div style="width: 100%;">
+                        <h2 id="vmv-h-values" style="margin-bottom: 0.5rem; font-family: var(--f-kish); font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 400; line-height: 1.1;">Let us find a solution that works for you</h2>
+                        <p style="color: var(--ink-80); margin-bottom: 2rem; font-size: 0.95rem;">Complete the form below and our team will reach out to learn more about your workspace needs.</p>
+                        
+                        <form action="#" class="apply-form-mini" style="display: flex; flex-direction: column; gap: 1.25rem;">
+                            <!-- Application type -->
+                            <div>
+                                <p style="font-size: .8rem; font-weight: 600; color: var(--clr-dark); margin-bottom: 0.5rem">Find workspace in *</p>
+                                <div style="display: flex; gap: 0.4rem; flex-wrap: wrap">
+                                    <label style="display: flex; align-items: center; gap: 0.35rem; cursor: pointer; font-size: 0.85rem; padding: 0.5rem 0.8rem; border: 1px solid var(--ink-20); border-radius: 4px; transition: all 0.22s; flex: 1; justify-content: center;">
+                                        <input type="radio" name="application_type" value="coworking" checked style="accent-color: var(--clr-green-dk)"> Co-Work
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 0.35rem; cursor: pointer; font-size: 0.85rem; padding: 0.5rem 0.8rem; border: 1px solid var(--ink-20); border-radius: 4px; transition: all 0.22s; flex: 1; justify-content: center;">
+                                        <input type="radio" name="application_type" value="offshoring" style="accent-color: var(--clr-green-dk)"> Offshoring
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 0.35rem; cursor: pointer; font-size: 0.85rem; padding: 0.5rem 0.8rem; border: 1px solid var(--ink-20); border-radius: 4px; transition: all 0.22s; flex: 1; justify-content: center;">
+                                        <input type="radio" name="application_type" value="both" style="accent-color: var(--clr-green-dk)"> Both
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <input type="text" class="form-input" placeholder="First name *" required style="padding: 0.8rem; border: 1px solid var(--ink-20); border-radius: 4px; width: 100%; font-size: 0.9rem;">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-input" placeholder="Last name *" required style="padding: 0.8rem; border: 1px solid var(--ink-20); border-radius: 4px; width: 100%; font-size: 0.9rem;">
+                                </div>
+                            </div>
+
+                            <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <input type="email" class="form-input" placeholder="Email address *" required style="padding: 0.8rem; border: 1px solid var(--ink-20); border-radius: 4px; width: 100%; font-size: 0.9rem;">
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-input" placeholder="Phone number *" required style="padding: 0.8rem; border: 1px solid var(--ink-20); border-radius: 4px; width: 100%; font-size: 0.9rem;">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg" style="margin-top: 0.5rem; width: fit-content; min-width: 140px;">Submit</button>
+                            <p style="font-size: 0.7rem; color: var(--ink-60); margin-top: 0.5rem; line-height: 1.4;">By clicking the button below, you agree to our <a href="#" style="text-decoration: underline; color: inherit;">Terms of Service</a> and acknowledge our <a href="#" style="text-decoration: underline; color: inherit;">Global Privacy Policy</a>.</p>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -90,15 +90,35 @@
         { c: 'pe', n: 'Peru', p: '+51' }
     ];
 
+    function updateAllPhones(countryCode) {
+        const country = countryList.find(item => item.c === countryCode);
+        if (!country) return;
+
+        localStorage.setItem('selectedCountry', countryCode);
+
+        const placeholder = `${country.p} --- --- ---`;
+        const telValue = `tel:${country.p.replace('+', '')}000000000`;
+
+        $$('a[href^="tel:"]').forEach(a => {
+            a.href = telValue;
+            a.textContent = placeholder;
+        });
+
+        $$('.flag-btn').forEach(btn => {
+            btn.innerHTML = `<img src="https://flagcdn.com/w20/${countryCode}.png" alt="${country.n}" width="20" style="border-radius: 2px;"><span class="caret" aria-hidden="true"></span>`;
+        });
+    }
+
+    const savedCountry = localStorage.getItem('selectedCountry') || 'ph';
+    
     $$('.flag-drop').forEach(drop => {
         const btn = drop.querySelector('.flag-btn');
         const menu = drop.querySelector('.flag-menu');
-        const phoneEl = drop.previousElementSibling;
 
         if (menu) {
             menu.innerHTML = countryList.map(c => `
                 <li>
-                    <a href="#" role="menuitem" data-code="${c.c}" data-phone="${c.p}" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.5rem; font-size: 0.85rem;">
+                    <a href="#" role="menuitem" data-code="${c.c}" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.5rem; font-size: 0.85rem;">
                         <img src="https://flagcdn.com/w20/${c.c}.png" alt="${c.n}" width="20" style="border-radius: 2px; flex-shrink: 0;"> 
                         <span style="white-space: nowrap;">${c.n} (${c.p})</span>
                     </a>
@@ -109,25 +129,17 @@
             menu.style.overflowY = 'auto';
         }
 
-        const items = drop.querySelectorAll('.flag-menu a');
-        items.forEach(item => {
-            item.addEventListener('click', e => {
-                e.preventDefault();
-                const code = item.getAttribute('data-code');
-                const phone = item.getAttribute('data-phone');
-
-                btn.innerHTML = `<img src="https://flagcdn.com/w20/${code}.png" alt="${code}" width="20" style="border-radius: 2px;"><span class="caret" aria-hidden="true"></span>`;
-
-                if (phoneEl && phoneEl.classList.contains('nav-phone')) {
-                    phoneEl.textContent = `${phone} --- --- ---`;
-                    phoneEl.href = `tel:${phone.replace('+', '')}000000000`;
-                }
-
-                drop.classList.remove('open');
-                btn.setAttribute('aria-expanded', 'false');
-            });
+        menu && menu.addEventListener('click', e => {
+            const item = e.target.closest('a[data-code]');
+            if (!item) return;
+            e.preventDefault();
+            updateAllPhones(item.getAttribute('data-code'));
+            drop.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
         });
     });
+
+    updateAllPhones(savedCountry);
 
     /* ── Mobile drawer ── */
     const hamburger = $('#hamburger');
