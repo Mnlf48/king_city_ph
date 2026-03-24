@@ -90,8 +90,6 @@
 }
 
 /* ── Form wrapper ── */
-.apply-form-section {}
-
 .apply-form-section h2 {
   margin-bottom: .5rem
 }
@@ -228,5 +226,407 @@
 
   .apply-benefits-grid {
     grid-template-columns: 1fr
+  }
+}
+
+/* ── Team Builder (Offshoring) ── */
+.tb-header {
+  background: #9fd3af;
+  color: var(--clr-dark);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius) var(--radius) 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tb-body {
+  border: 1px solid var(--ink-10);
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  background: #fff;
+  overflow: hidden;
+}
+.tb-empty-state {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  border-bottom: 1px dashed var(--ink-20);
+}
+.tb-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1.25rem;
+  border: 4px solid #ffaec5;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.tb-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tb-empty-state h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  color: var(--clr-dark);
+}
+.tb-empty-state p {
+  font-size: 0.9rem;
+  color: var(--ink-60);
+  margin-bottom: 1.5rem;
+}
+.btn-amber {
+  background: #ffc022;
+  color: var(--clr-dark);
+  border: none;
+}
+.btn-amber:hover {
+  background: #ff6224;
+  color: #fff;
+}
+
+/* Selected roles UI */
+.tb-roles-container {
+  padding: 1.5rem;
+  border-bottom: 1px dashed var(--ink-20);
+}
+.tb-roles-headers {
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-50);
+  margin-bottom: 1rem;
+  align-items: center;
+}
+.tb-roles-headers > div {
+  padding: 0 0.5rem;
+}
+.tbr-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: #fcfcfc;
+  border: 1px solid var(--ink-10);
+  border-radius: var(--radius);
+  margin-bottom: 0.75rem;
+}
+.tbr-name {
+  flex: 1.8;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 0.5rem;
+}
+.tbr-name-icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(0,0,0,0.03);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-dark);
+}
+.tbr-name-text strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--clr-dark);
+}
+.tbr-name-text span {
+  font-size: 0.8rem;
+  color: var(--ink-50);
+}
+.tbr-level {
+  flex: 1.2;
+  padding: 0 0.5rem;
+}
+.tbr-level select {
+  width: 100%;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--ink-20);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--clr-dark);
+  cursor: pointer;
+}
+.tbr-count {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+}
+.tbr-count-ctl {
+  display: flex;
+  background: #fff;
+  border: 1px solid var(--ink-20);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.tbr-count-ctl button {
+  background: transparent;
+  border: none;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--ink-60);
+}
+.tbr-count-ctl button:hover {
+  background: rgba(0,0,0,0.03);
+}
+.tbr-count-ctl input {
+  width: 32px;
+  text-align: center;
+  border: none;
+  border-left: 1px solid var(--ink-10);
+  border-right: 1px solid var(--ink-10);
+  font-weight: 600;
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+.tbr-price {
+  flex: 1.2;
+  text-align: right;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--clr-dark);
+  padding: 0 0.5rem;
+}
+.tbr-price span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ink-50);
+}
+.tbr-remove {
+  width: 30px;
+  text-align: right;
+}
+.tbr-remove button {
+  background: transparent;
+  border: none;
+  color: var(--clr-rose-md);
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* Summary */
+.tb-summary {
+  padding: 1.5rem;
+  background: #fcfcfc;
+}
+.tb-summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--ink-70);
+}
+.tb-summary-savings {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #d5edce;
+  color: var(--clr-dark);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.tb-summary-savings svg {
+  width: 16px;
+  height: 16px;
+}
+.tb-summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--ink-20);
+  margin-top: 1rem;
+}
+
+/* Modal */
+.tb-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.tb-modal[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+.tb-modal-content {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  transform: translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tb-modal[aria-hidden="false"] .tb-modal-content {
+  transform: translateY(0);
+}
+.tb-modal-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(255, 210, 223, 0.92);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tb-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--ink-60);
+}
+.tb-modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+.tb-cat-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--clr-dark);
+  margin: 1.5rem 0 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--ink-10);
+}
+.tb-cat-title:first-child {
+  margin-top: 0;
+}
+.tb-role-card {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid var(--ink-10);
+  border-radius: var(--radius);
+  margin-bottom: 0.75rem;
+  transition: border-color 0.2s;
+}
+.tb-role-card:hover {
+  border-color: var(--ink-30);
+}
+.tb-role-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(0,0,0,0.04);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  color: var(--clr-dark);
+}
+.tb-role-info {
+  flex: 1;
+}
+.tb-role-info strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--clr-dark);
+}
+.tb-role-info span {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--ink-50);
+  line-height: 1.4;
+  margin-top: 0.15rem;
+}
+.btn-add-role {
+  background: #ffc022;
+  border: none;
+  color: var(--clr-dark);
+  border-radius: var(--radius);
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.btn-add-role:hover {
+  background: #ff6224;
+  color: #fff;
+}
+
+/* Custom Scrollbar for form blocks */
+#coworking-fields::-webkit-scrollbar,
+#offshoring-fields::-webkit-scrollbar {
+  width: 6px;
+}
+#coworking-fields::-webkit-scrollbar-track,
+#offshoring-fields::-webkit-scrollbar-track {
+  background: var(--ink-10);
+  border-radius: 4px;
+}
+#coworking-fields::-webkit-scrollbar-thumb,
+#offshoring-fields::-webkit-scrollbar-thumb {
+  background: var(--clr-green-dk);
+  border-radius: 4px;
+}
+
+@media(max-width: 600px) {
+  .tb-roles-headers, .tbr-level, .tbr-price span {
+    display: none;
+  }
+  .tbr-item {
+    flex-wrap: wrap;
+    position: relative;
+    padding-bottom: 3.5rem;
+  }
+  .tbr-name {
+    flex: 100%;
+    margin-bottom: 1rem;
+  }
+  .tbr-level {
+    display: block;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    width: 40%;
+  }
+  .tbr-count {
+    position: absolute;
+    bottom: 1rem;
+    left: 45%;
+  }
+  .tbr-price {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+  }
+  .tbr-remove {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
   }
 }

@@ -14,6 +14,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/apply.css">
     <link rel="stylesheet" href="css/footer.css">
     <style>
         /* ── Index-specific styles ── */
@@ -1546,44 +1547,230 @@
                         <h2 id="vmv-h-values" style="margin-bottom: 0.5rem; font-family: var(--f-kish); font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 400; line-height: 1.1;">Let us find a solution that works for you</h2>
                         <p style="color: var(--ink-80); margin-bottom: 2rem; font-size: 0.95rem;">Complete the form below and our team will reach out to learn more about your workspace needs.</p>
                         
-                        <form action="#" class="apply-form-mini" style="display: flex; flex-direction: column; gap: 1.25rem;">
-                            <!-- Application type -->
-                            <div>
-                                <p style="font-size: .8rem; font-weight: 600; color: var(--clr-dark); margin-bottom: 0.5rem">Find workspace in *</p>
-                                <div style="display: flex; gap: 0.4rem; flex-wrap: wrap">
-                                    <label style="display: flex; align-items: center; gap: 0.35rem; cursor: pointer; font-size: 0.85rem; padding: 0.5rem 0.8rem; border: 1px solid var(--ink-20); border-radius: 4px; transition: all 0.22s; flex: 1; justify-content: center;">
-                                        <input type="radio" name="application_type" value="coworking" checked style="accent-color: var(--clr-green-dk)"> Co-Work
-                                    </label>
-                                    <label style="display: flex; align-items: center; gap: 0.35rem; cursor: pointer; font-size: 0.85rem; padding: 0.5rem 0.8rem; border: 1px solid var(--ink-20); border-radius: 4px; transition: all 0.22s; flex: 1; justify-content: center;">
-                                        <input type="radio" name="application_type" value="offshoring" style="accent-color: var(--clr-green-dk)"> Offshoring
-                                    </label>
-                                    <label style="display: flex; align-items: center; gap: 0.35rem; cursor: pointer; font-size: 0.85rem; padding: 0.5rem 0.8rem; border: 1px solid var(--ink-20); border-radius: 4px; transition: all 0.22s; flex: 1; justify-content: center;">
-                                        <input type="radio" name="application_type" value="both" style="accent-color: var(--clr-green-dk)"> Both
-                                    </label>
-                                </div>
-                            </div>
+                        <form class="form-card" id="apply-form" style="margin-top:2rem; position:relative;" novalidate>
 
-                            <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                                <div class="form-group">
-                                    <input type="text" class="form-input" placeholder="First name *" required style="padding: 0.8rem; border: 1px solid var(--ink-20); border-radius: 4px; width: 100%; font-size: 0.9rem;">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-input" placeholder="Last name *" required style="padding: 0.8rem; border: 1px solid var(--ink-20); border-radius: 4px; width: 100%; font-size: 0.9rem;">
-                                </div>
-                            </div>
+            <!-- Application type -->
+            <div style="margin-bottom:2rem">
+              <p style="font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--clr-dark);margin-bottom:.875rem">
+                I am applying for
+              </p>
+              <div class="apply-type-group" style="display:flex;gap:.75rem;flex-wrap:wrap">
+                <label style="display:flex;align-items:center;justify-content:center;flex:1;gap:.5rem;cursor:pointer;font-size:.9rem;font-weight:500;padding:.65rem 1.1rem;border:1.5px solid var(--clr-green-dk);background:rgba(159,211,175,0.1);border-radius:var(--radius);transition:all .22s;" id="lbl-cowork">
+                  <input type="radio" name="application_type" value="coworking" checked style="accent-color:var(--clr-green-dk)"> Co-Working Membership
+                </label>
+                <label style="display:flex;align-items:center;justify-content:center;flex:1;gap:.5rem;cursor:pointer;font-size:.9rem;font-weight:500;padding:.65rem 1.1rem;border:1.5px solid var(--ink-20);border-radius:var(--radius);transition:all .22s;" id="lbl-offsh">
+                  <input type="radio" name="application_type" value="offshoring" style="accent-color:var(--clr-green-dk)"> Offshoring / Staffing
+                </label>
+              </div>
+            </div>
 
-                            <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                                <div class="form-group">
-                                    <input type="email" class="form-input" placeholder="Email address *" required style="padding: 0.8rem; border: 1px solid var(--ink-20); border-radius: 4px; width: 100%; font-size: 0.9rem;">
-                                </div>
-                                <div class="form-group">
-                                    <input type="tel" class="form-input" placeholder="Phone number *" required style="padding: 0.8rem; border: 1px solid var(--ink-20); border-radius: 4px; width: 100%; font-size: 0.9rem;">
-                                </div>
-                            </div>
+            <!-- Co-working View -->
+            <div id="coworking-fields" style="height: 600px; overflow-y: auto; overflow-x: hidden; padding-right: 12px;">
+              <div class="tb-header">
+                <div style="display:flex;align-items:center;gap:0.75rem;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:20px;height:20px;color:var(--clr-dark);"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                  <h3 style="margin:0;font-size:1.1rem;color:var(--clr-dark);">Your Workspace</h3>
+                </div>
+              </div>
+              <div class="tb-body" style="padding:1.5rem;">
+                <div class="form-row" style="margin-bottom:1.25rem">
+                  <div class="form-group">
+                    <label class="form-label" for="ap-firstname">First Name</label>
+                    <input class="form-input" type="text" id="ap-firstname" name="first_name" placeholder="First name" required>
+                    <span class="form-error-msg">This field is required.</span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="ap-lastname">Last Name</label>
+                    <input class="form-input" type="text" id="ap-lastname" name="last_name" placeholder="Last name" required>
+                    <span class="form-error-msg">This field is required.</span>
+                  </div>
+                </div>
 
-                            <button type="submit" class="btn btn-primary btn-lg" style="margin-top: 0.5rem; width: fit-content; min-width: 140px;">Submit</button>
-                            <p style="font-size: 0.7rem; color: var(--ink-60); margin-top: 0.5rem; line-height: 1.4;">By clicking the button below, you agree to our <a href="#" style="text-decoration: underline; color: inherit;">Terms of Service</a> and acknowledge our <a href="#" style="text-decoration: underline; color: inherit;">Global Privacy Policy</a>.</p>
-                        </form>
+                <div class="form-group" style="margin-bottom:1.25rem">
+                  <label class="form-label" for="ap-email">Email Address</label>
+                  <input class="form-input" type="email" id="ap-email" name="email" placeholder="you@company.com" required>
+                  <span class="form-error-msg">Please enter a valid email address.</span>
+                </div>
+
+                <div class="form-row" style="margin-bottom:1.25rem">
+                  <div class="form-group">
+                    <label class="form-label" for="ap-phone">Phone Number</label>
+                    <input class="form-input" type="tel" id="ap-phone" name="phone" placeholder="+63 XXX XXX XXXX" required>
+                    <span class="form-error-msg">This field is required.</span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="ap-country">Country</label>
+                    <select class="form-select" id="ap-country" name="country">
+                      <option value="ph">Philippines</option>
+                      <option value="au">Australia</option>
+                      <option value="nz">New Zealand</option>
+                      <option value="us">United States</option>
+                      <option value="uk">United Kingdom</option>
+                      <option value="sg">Singapore</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom:1.25rem">
+                  <label class="form-label" for="ap-company">Company / Business Name</label>
+                  <input class="form-input" type="text" id="ap-company" name="company" placeholder="Your company or business name">
+                </div>
+
+                <div class="form-group" style="margin-bottom:1.25rem">
+                  <label class="form-label" for="apply-message">
+                    Tell Us About Your Needs
+                    <span style="color:var(--ink-40);font-weight:400;margin-left:.35rem">(<span id="apply-msg-count">0</span> characters)</span>
+                  </label>
+                  <textarea class="form-textarea" id="apply-message" name="message" rows="5" placeholder="Describe what you're looking for — workspace, timeline, etc." style="min-height:140px"></textarea>
+                </div>
+
+                <div style="display:flex;align-items:flex-start;gap:.65rem;margin-bottom:1.75rem">
+                  <input type="checkbox" id="ap-consent-co" name="consent-co" required style="margin-top:.2rem;accent-color:var(--clr-green-dk)">
+                  <label for="ap-consent-co" style="font-size:.85rem;color:var(--ink-60);cursor:pointer">
+                    I agree to receive communications from Kings City regarding my application. I understand I can unsubscribe at any time.
+                  </label>
+                </div>
+
+                <button type="submit" class="btn btn-amber btn-lg" style="width:100%;justify-content:center;color:var(--clr-dark);font-weight:700;">
+                  SUBMIT APPLICATION
+                </button>
+              </div>
+            </div>
+
+            <!-- Offshoring Team Builder UI -->
+            <div id="offshoring-fields" style="display:none; height: 600px; overflow-y: auto; overflow-x: hidden; padding-right: 12px;">
+              <div class="tb-header">
+                <div style="display:flex;align-items:center;gap:0.75rem;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:20px;height:20px;color:var(--clr-dark);"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  <h3 style="margin:0;font-size:1.1rem;color:var(--clr-dark);">Your Team Selection</h3>
+                </div>
+                <button type="button" class="btn btn-amber btn-sm" id="btn-add-member" style="height:36px; padding:0 1rem;font-weight:700;">+ ADD MEMBER</button>
+              </div>
+              
+              <div class="tb-body">
+                <div class="tb-empty-state" id="tb-empty">
+                  <div class="tb-avatar">
+                    <img src="images/kings_city_logo_icon_red.png" alt="Offshore team">
+                  </div>
+                  <h4>Build your offshore team with Kings City.</h4>
+                  <p>Select roles below and instantly see a transparent monthly estimate.</p>
+                  <button type="button" class="btn btn-amber btn-lg" id="btn-get-started" style="font-weight:700;">GET STARTED</button>
+                </div>
+
+                <div class="tb-roles-container" id="tb-roles-list" style="display:none;">
+                  <div class="tb-roles-headers">
+                    <div style="flex:1.8">ROLE FUNCTION</div>
+                    <div style="flex:1.2">EXPERIENCE LEVEL</div>
+                    <div style="flex:1;text-align:center;">HEADCOUNT</div>
+                    <div style="flex:1.2;text-align:right;">EST. MONTHLY</div>
+                    <div style="width:30px"></div>
+                  </div>
+                  <div id="tb-roles-inner"></div>
+                </div>
+
+                <div class="tb-summary">
+                  <div class="tb-summary-row">
+                    <span>Team Size:</span>
+                    <strong id="tb-total-size">0</strong>
+                  </div>
+                  <div class="tb-summary-row">
+                    <span>Est. Monthly Base:</span>
+                    <strong id="tb-total-base">$0</strong>
+                  </div>
+                  <div class="tb-summary-savings" id="tb-savings" style="display:none;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Saving <strong id="tb-save-amount">~ $0</strong> vs. local hire</span>
+                  </div>
+                  <div class="tb-summary-total">
+                    <span style="font-size:1.1rem;font-weight:700;color:var(--clr-dark);">Estimated Total</span>
+                    <span style="font-size:1.5rem;font-weight:700;color:var(--clr-dark);font-family:var(--f-head);" id="tb-final-total">$0</span>
+                  </div>
+                </div>
+
+                <div class="tb-form-fields" style="padding:1.5rem;border-top:1px dashed var(--ink-20);">
+                  <div class="form-row" style="margin-bottom:1.25rem">
+                    <div class="form-group">
+                      <label class="form-label" for="off-firstname" style="display:none;">First Name</label>
+                      <input class="form-input" type="text" id="off-firstname" name="off_firstname" placeholder="First Name" required>
+                      <span class="form-error-msg">This field is required.</span>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="off-lastname" style="display:none;">Last Name</label>
+                      <input class="form-input" type="text" id="off-lastname" name="off_lastname" placeholder="Last Name" required>
+                      <span class="form-error-msg">This field is required.</span>
+                    </div>
+                  </div>
+
+                  <div class="form-row" style="margin-bottom:1.25rem">
+                    <div class="form-group">
+                      <label class="form-label" for="off-email" style="display:none;">Email Address</label>
+                      <input class="form-input" type="email" id="off-email" name="off_email" placeholder="Work Email" required>
+                      <span class="form-error-msg">Please enter a valid email.</span>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="off-phone" style="display:none;">Phone Number</label>
+                      <input class="form-input" type="tel" id="off-phone" name="off_phone" placeholder="Phone Number" required>
+                      <span class="form-error-msg">This field is required.</span>
+                    </div>
+                  </div>
+
+                  <div class="form-row" style="margin-bottom:1.5rem">
+                    <div class="form-group">
+                      <label class="form-label" for="off-country" style="display:none;">Country</label>
+                      <select class="form-select" id="off-country" name="off_country">
+                        <option value="ph">Philippines</option>
+                        <option value="au">Australia</option>
+                        <option value="nz">New Zealand</option>
+                        <option value="us">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="sg">Singapore</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="off-company" style="display:none;">Company / Business Name</label>
+                      <input class="form-input" type="text" id="off-company" name="off_company" placeholder="Company Name">
+                    </div>
+                  </div>
+
+                  <button type="button" id="btn-request-quote" class="btn btn-amber btn-lg" style="width:100%;justify-content:center;color:var(--clr-dark);font-weight:700;">REQUEST DETAILED QUOTE</button>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <!-- Select Role Modal Overlay -->
+          <div class="tb-modal" id="tb-modal" aria-hidden="true">
+            <div class="tb-modal-content">
+              <div class="tb-modal-header">
+                <h3 style="margin:0;font-size:1.25rem;">Select a Role</h3>
+                <button type="button" class="tb-modal-close" id="tb-modal-close" aria-label="Close">&times;</button>
+              </div>
+              <div class="tb-modal-body" id="tb-modal-roles">
+                <!-- Roles injected via JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Success State ── -->
+        <div class="apply-success" id="apply-success" style="display:none">
+          <div class="apply-success-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <span class="eyebrow" style="display:block">Application Received</span>
+          <h2>Thank You for Applying!</h2>
+          <p>We've received your application and a member of our team will be in touch within 24 hours. In the meantime,
+            feel free to explore our spaces or learn more about offshoring with Kings City.</p>
+          <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+            <a href="html/spaces.html" class="btn btn-primary btn-lg">Explore Spaces</a>
+            <a href="html/offshoring.html" class="btn btn-outline btn-lg">Learn About Offshoring</a>
+          </div>
+        
                     </div>
                 </div>
             </div>
@@ -2105,6 +2292,7 @@
 
     <script src="js/main.js"></script>
     <script src="js/footer.js"></script>
+    <script src="js/apply.js"></script>
 </body>
 
 </html>

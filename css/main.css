@@ -5,16 +5,23 @@
 ================================================================ */
 
 @font-face {
-  font-family: 'kish-test-webfont';
-  src: url('../assets/fonts/kish-test-webfont/kishtest-boldultrawide.woff') format('woff');
-  font-weight: normal;
+  font-family: 'Butler';
+  src: url('../assets/fonts/butler/Butler%20FREE/Webfont%20formats/Woff2/Butler-Free-Rmn.woff2') format('woff2');
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'franklin-gothic-webfont';
-  src: url('../assets/fonts/franklin-gothic-webfont/FranklinGothic.woff') format('woff');
-  font-weight: normal;
+  font-family: 'Butler';
+  src: url('../assets/fonts/butler/Butler%20FREE/Webfont%20formats/Woff2/Butler-Free-Bd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../assets/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
   font-style: normal;
 }
 
@@ -41,10 +48,10 @@
   --ink-20: rgba(17, 17, 17, .20);
   --ink-10: rgba(17, 17, 17, .10);
   --ink-06: rgba(17, 17, 17, .06);
-  --f-head: 'kish-test-webfont', sans-serif;
-  --f-body: 'franklin-gothic-webfont', sans-serif;
+  --f-head: 'Butler', serif;
+  --f-body: 'Roboto', sans-serif;
   --f-script: 'Great Vibes', cursive;
-  --f-kish: 'kish-test-webfont', sans-serif;
+  --f-kish: 'Butler', serif;
   --nav-h: 76px;
   --ann-h: 38px;
   --max-w: 1440px;
@@ -242,15 +249,16 @@ strong {
 }
 
 .btn-primary {
-  background: transparent;
+  background: #ffc022;
   color: var(--clr-dark);
-  border-color: var(--clr-dark)
+  border-color: transparent;
 }
 
 .btn-primary:hover {
-  border-color: #ff6224;
+  background: #ff6224;
+  border-color: transparent;
   box-shadow: var(--shadow-md);
-  color: #ff6224
+  color: #fff;
 }
 
 .btn-secondary {
