@@ -220,7 +220,8 @@ strong {
   font-weight: 600;
   letter-spacing: .06em;
   text-transform: uppercase;
-  border-radius: var(--radius);
+  /* Setting border-radius to a very high pixel value (like 9999px) ensures the button ends turn into perfect semi-circles (pill shape) regardless of how wide the button expands. */
+  border-radius: 9999px;
   border: 1.5px solid transparent;
   transition: background var(--t-base) var(--ease), color var(--t-base) var(--ease), border-color var(--t-base) var(--ease), transform .2s var(--ease), box-shadow var(--t-base) var(--ease);
   white-space: nowrap;

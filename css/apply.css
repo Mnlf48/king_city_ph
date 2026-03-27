@@ -565,7 +565,8 @@
   background: #ffc022;
   border: none;
   color: var(--clr-dark);
-  border-radius: var(--radius);
+  /* 9999px makes the button perfectly pill-shaped instead of slightly rounded */
+  border-radius: 9999px;
   padding: 0.45rem 1rem;
   font-size: 0.85rem;
   font-weight: 700;
